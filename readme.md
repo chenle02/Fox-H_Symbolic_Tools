@@ -1,6 +1,6 @@
 # Symbolic computation tools for Fox-H function
 1. In this repo, we have some Mathematica codes that are used to show conditions for Fox-H function.
-2. The codes are used to verify Theorem C.1 of [arXiv:2206.10069](https://arxiv.org/abs/2206.10069):
+2. The codes are used to verify Theorem C.1 of [arXiv:2206.10069](https://arxiv.org/abs/2206.10069).
 
 # Procedures
 1. Write the parameters of Fox H as FoxH and save the file
