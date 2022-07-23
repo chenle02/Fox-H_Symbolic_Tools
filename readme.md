@@ -10,8 +10,11 @@ Save["./FoxH32-21", A]
 ```
 2. Use [FoxH wls](./FoxH.wls) to show the parameters `./FoxH.wls FoxH32-21`
 3. The results are stored in [FoxH_Results mx](./FoxH_Results.mx)
-4. To load the results, do the following `<<FoxH_Results.mx`, make sure 
+4. To load the results, do the following `<<FoxH_Results.mx`, make sure
 ```
 Quit[] (* start a fresh kernel *)
 ```
 
+
+# LICENSE
+[MIT License](LICENSE)
