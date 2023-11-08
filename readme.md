@@ -1,3 +1,4 @@
+[![Screenshot]](./media/Screenshot.png)
 [![asciicast](https://asciinema.org/a/619828.svg)](https://asciinema.org/a/619828)
 
 # Symbolic computation tools for Fox-H function
