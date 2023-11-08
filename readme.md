@@ -17,7 +17,8 @@ Save["./FoxH32-21", A]
 Quit[] (* start a fresh kernel *)
 ```
 
-# Reference
+# References
+1. To refer to this code, please use
 ```
 @misc{ chen:22:some,
   author       = {Chen, Le},
@@ -28,6 +29,58 @@ Quit[] (* start a fresh kernel *)
   note         = {Accessed: 11/08/2023}
 }
 ```
+2. Conditions and conventions for the Fox H function follow from
+```
+@book{kilbas.saigo:04:h-transforms,
+  author        = {Kilbas, Anatoly A. and Saigo, Megumi},
+  publisher     = {Chapman \& Hall/CRC, Boca Raton, FL},
+  url           = {https://doi.org/10.1201/9780203487372},
+  date          = {2004},
+  doi           = {10.1201/9780203487372},
+  isbn          = {0-415-29916-0},
+  note          = {Theory and applications},
+  pages         = {xii+389},
+  series        = {Analytical Methods and Special Functions},
+  title         = {{$H$}-transforms},
+  volume        = {9}
+}
+``` 
+3. Related papers that use this code:
+```
+@article{chen.hu.ea:17:space-time,
+  author        = {Chen, Le and Hu, Guannan and Hu, Yaozhong and Huang, Jingyu},
+  url           = {https://doi.org/10.1080/17442508.2016.1146282},
+  date          = {2017},
+  doi           = {10.1080/17442508.2016.1146282},
+  issn          = {1744-2508},
+  journaltitle  = {Stochastics},
+  number        = {1},
+  pages         = {171--206},
+  title         = {Space-time fractional diffusions in {G}aussian noisy environment},
+  volume        = {89}
+}
+@article{chen.hu.ea:19:nonlinear,
+  author        = {Chen, Le and Hu, Yaozhong and Nualart, David},
+  url           = {https://doi.org/10.1016/j.spa.2019.01.003},
+  date          = {2019},
+  doi           = {10.1016/j.spa.2019.01.003},
+  issn          = {0304-4149},
+  journaltitle  = {Stochastic Process. Appl.},
+  number        = {12},
+  pages         = {5073--5112},
+  title         = {Nonlinear stochastic time-fractional slow and fast diffusion equations on {$\mathbb{R}^d$}},
+  volume        = {129}
+}
+@article{chen.guo.ea:22:moments,
+  title = {Moments and asymptotics for a class of SPDEs with space-time white noise},
+  author = {Le Chen and Yuhui Guo and Jian Song},
+  year = {2022},
+  month = {June},
+  journal = {preprint arXiv:2206.10069, to appear in Trans. Amer. Math. Soc.},
+  url = {https://www.arxiv.org/abs/2206.10069},
+}
+``` 
+4. References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib)
 
 # LICENSE
 [MIT License](LICENSE)
