@@ -1,3 +1,4 @@
+![Fox H-function Diagram](./refs/FoxH-Diagram.png)
 ![Screenshot](./media/Screenshot.png)
 [![asciicast](https://asciinema.org/a/619828.svg)](https://asciinema.org/a/619828)
 
