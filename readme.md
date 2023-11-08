@@ -24,7 +24,7 @@ Quit[] (* start a fresh kernel *)
 
 3. Conditions and conventions for the Fox H function follow from
 
-  * Kilbas, Anatoly A., and Megumi Saigo. 2004. *$H$-Transforms*. Vol. 9. Analytical Methods and Special Functions. Chapman & Hall/CRC, Boca Raton, FL. <https://doi.org/10.1201/9780203487372>.
+  * Kilbas, Anatoly A., and Megumi Saigo. 2004. $H$*-Transforms*. Vol. 9. Analytical Methods and Special Functions. Chapman & Hall/CRC, Boca Raton, FL. <https://doi.org/10.1201/9780203487372>.
 
 4. Related papers that use this code include:
 
