@@ -16,8 +16,7 @@ Save["./FoxH32-21", A]
 ```
 Quit[] (* start a fresh kernel *)
 ```
-<details>
-<summary>References</summary>
+<details><summary># References</summary>
 
 1. To refer to this code, please use
 
@@ -35,8 +34,9 @@ Quit[] (* start a fresh kernel *)
 
 5. Bib entries can be found [here](./refs/refs.bib). References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib).
 
-<summary>LICENSE</summary>
-[MIT License](LICENSE)
 
 </details>
 
+<details><summary># LICENSE</summary>
+[MIT License](LICENSE)
+</details>
