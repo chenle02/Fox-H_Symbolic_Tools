@@ -39,6 +39,4 @@ Quit[] (* start a fresh kernel *)
 </details>
 
 # LICENSE
-<details><summary></summary>
 [MIT License](LICENSE)
-</details>
