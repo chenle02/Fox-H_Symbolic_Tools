@@ -71,13 +71,13 @@ Quit[] (* start a fresh kernel *)
   title         = {Nonlinear stochastic time-fractional slow and fast diffusion equations on {$\mathbb{R}^d$}},
   volume        = {129}
 }
-@article{chen.guo.ea:22:moments,
-  title = {Moments and asymptotics for a class of SPDEs with space-time white noise},
-  author = {Le Chen and Yuhui Guo and Jian Song},
-  year = {2022},
-  month = {June},
-  journal = {preprint arXiv:2206.10069, to appear in Trans. Amer. Math. Soc.},
-  url = {https://www.arxiv.org/abs/2206.10069},
+@article{arXiv:2206.10069,
+  title         = {Moments and asymptotics for a class of SPDEs with space-time white noise},
+  author        = {Le Chen and Yuhui Guo and Jian Song},
+  year          = {2022},
+  month         = {June},
+  journal       = {preprint arXiv:2206.10069, to appear in Trans. Amer. Math. Soc.},
+  url           = {https://www.arxiv.org/abs/2206.10069}
 }
 ``` 
 4. References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib)
