@@ -20,12 +20,12 @@ Quit[] (* start a fresh kernel *)
 # Reference
 ```
 @misc{ chen:22:fox-h,
-  author = {Chen, L.},
-  title = {Fox-H Symbolic Tools},
-  year = {2022},
-  publisher = {GitHub},
+  author       = {Chen, L.},
+  title        = {Fox-H Symbolic Tools},
+  year         = {2022},
+  publisher    = {GitHub Repository},
   howpublished = {\url{https://github.com/chenle02/Fox-H_Symbolic_Tools}},
-  note = {Accessed: 11/08/2023}
+  note         = {Accessed: 11/08/2023}
 }
 ```
 
