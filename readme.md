@@ -19,7 +19,7 @@ Quit[] (* start a fresh kernel *)
 
 # Reference
 ```
-@misc{ chen:22:symbolic,
+@misc{ chen:22:some,
   author       = {Chen, Le},
   title        = {Some symbolic tools for the {F}ox {$H$}-function},
   year         = {2022},
