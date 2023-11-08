@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-pandoc --citeproc ../readme.md --bibliography=refs.bib --csl=./Journal_of_Math_Physics.csl -t markdown-citations -o citations.md
+# --csl=./Journal_of_Math_Physics.csl
+pandoc --citeproc ./refs.md --bibliography=refs.bib  -o citations.md -t markdown-citations
+sed -i 's/::.*$//g' citations.md
