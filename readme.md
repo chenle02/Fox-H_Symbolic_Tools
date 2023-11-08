@@ -16,43 +16,25 @@ Save["./FoxH32-21", A]
 ```
 Quit[] (* start a fresh kernel *)
 ```
-<summary>References</summary>
-
 <details>
 <summary>References</summary>
 
-# References
 1. To refer to this code, please use @chen:22:some
 
-  Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function."
-  <https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository.
+  * Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function." <https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository.
 
 3. Conditions and conventions for the Fox H function follow from @kilbas.saigo:04:h-transforms
 
-  Kilbas, Anatoly A., and Megumi Saigo. 2004. *$H$-Transforms*. Vol. 9.
-  Analytical Methods and Special Functions. Chapman & Hall/CRC, Boca
-  Raton, FL. <https://doi.org/10.1201/9780203487372>.
-
+  * Kilbas, Anatoly A., and Megumi Saigo. 2004. *$H$-Transforms*. Vol. 9. Analytical Methods and Special Functions. Chapman & Hall/CRC, Boca Raton, FL. <https://doi.org/10.1201/9780203487372>.
 
 4. Related papers that use this code include @chen.hu.ea:17:space-time, @chen.hu.ea:19:nonlinear, and @chen.guo.ea:22:moments
 
-  Chen, Le, Yuhui Guo, and Jian Song. 2022. "Moments and Asymptotics for a
-  Class of SPDEs with Space-Time White Noise." *Preprint arXiv:2206.10069,
-  to Appear in Trans. Amer. Math. Soc.*
-  <https://www.arxiv.org/abs/2206.10069>.
-
-  Chen, Le, Guannan Hu, Yaozhong Hu, and Jingyu Huang. 2017. "Space-Time
-  Fractional Diffusions in Gaussian Noisy Environment." *Stochastics* 89
-  (1): 171--206. <https://doi.org/10.1080/17442508.2016.1146282>.
-
-  Chen, Le, Yaozhong Hu, and David Nualart. 2019. "Nonlinear Stochastic
-  Time-Fractional Slow and Fast Diffusion Equations on $\mathbb{R}^d$."
-  *Stochastic Process. Appl.* 129 (12): 5073--5112.
-  <https://doi.org/10.1016/j.spa.2019.01.003>.
-
+  * Chen, Le, Yuhui Guo, and Jian Song. 2022. "Moments and Asymptotics for a Class of SPDEs with Space-Time White Noise." *Preprint arXiv:2206.10069, to Appear in Trans. Amer. Math. Soc.* <https://www.arxiv.org/abs/2206.10069>.
+  * Chen, Le, Guannan Hu, Yaozhong Hu, and Jingyu Huang. 2017. "Space-Time Fractional Diffusions in Gaussian Noisy Environment." *Stochastics* 89 (1): 171--206. <https://doi.org/10.1080/17442508.2016.1146282>.
+  * Chen, Le, Yaozhong Hu, and David Nualart. 2019. "Nonlinear Stochastic Time-Fractional Slow and Fast Diffusion Equations on $\mathbb{R}^d$." *Stochastic Process. Appl.* 129 (12): 5073--5112. <https://doi.org/10.1016/j.spa.2019.01.003>.
 
 5. References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib).
- 
+
 </details>
 
 # LICENSE
