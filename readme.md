@@ -16,7 +16,8 @@ Save["./FoxH32-21", A]
 ```
 Quit[] (* start a fresh kernel *)
 ```
-<details><summary># References</summary>
+# References
+<details><summary></summary>
 
 1. To refer to this code, please use
 
@@ -37,6 +38,7 @@ Quit[] (* start a fresh kernel *)
 
 </details>
 
-<details><summary># LICENSE</summary>
+# LICENSE
+<details><summary></summary>
 [MIT License](LICENSE)
 </details>
