@@ -16,9 +16,10 @@ Save["./FoxH32-21", A]
 ```
 Quit[] (* start a fresh kernel *)
 ```
+<summary>References</summary>
 
 # References
-1. To refer to this code, please use
+1. To refer to this code, please use @chen:22:some
 ```
 @misc{ chen:22:some,
   author       = {Chen, Le},
@@ -29,7 +30,7 @@ Quit[] (* start a fresh kernel *)
   note         = {Accessed: 11/08/2023}
 }
 ```
-2. Conditions and conventions for the Fox H function follow from
+2. Conditions and conventions for the Fox H function follow from @kilbas.saigo:04:h-transforms
 ```
 @book{kilbas.saigo:04:h-transforms,
   author        = {Kilbas, Anatoly A. and Saigo, Megumi},
@@ -45,7 +46,7 @@ Quit[] (* start a fresh kernel *)
   volume        = {9}
 }
 ``` 
-3. Related papers that use this code:
+3. Related papers that use this code include @chen.hu.ea:17:space-time, @chen.hu.ea:19:nonlinear, and @arXiv:2206.10069
 ```
 @article{chen.hu.ea:17:space-time,
   author        = {Chen, Le and Hu, Guannan and Hu, Yaozhong and Huang, Jingyu},
