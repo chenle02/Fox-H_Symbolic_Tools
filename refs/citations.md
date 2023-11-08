@@ -36,7 +36,7 @@ References
 ```
 # References
 
-1.  To refer to this code, please use Chen (2022)
+1.  To refer to this code, please use^1^
 
 ```{=html}
 <!-- -->
@@ -50,8 +50,7 @@ References
       note         = {Accessed: 11/08/2023}
     }
 
-2.  Conditions and conventions for the Fox H function follow from Kilbas
-    and Saigo (2004)
+2.  Conditions and conventions for the Fox H function follow from^2^
 
 ```{=html}
 <!-- -->
@@ -70,8 +69,7 @@ References
       volume        = {9}
     }
 
-3.  Related papers that use this code include Chen et al. (2017), Chen,
-    Hu, and Nualart (2019), and Chen, Guo, and Song (2022)
+3.  Related papers that use this code include^3^,^4^, and^5^
 
 ```{=html}
 <!-- -->
@@ -116,35 +114,35 @@ References
 
 [MIT License](LICENSE)
 
-::: {#refs .references .csl-bib-body .hanging-indent entry-spacing="0"}
+::: {#refs .references .csl-bib-body entry-spacing="0"}
 ::: {#ref-chen:22:some .csl-entry}
-Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function."
-<https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository.
-:::
-
-::: {#ref-arXiv:2206.10069 .csl-entry}
-Chen, Le, Yuhui Guo, and Jian Song. 2022. "Moments and Asymptotics for a
-Class of SPDEs with Space-Time White Noise." *Preprint arXiv:2206.10069,
-to Appear in Trans. Amer. Math. Soc.*
-<https://www.arxiv.org/abs/2206.10069>.
-:::
-
-::: {#ref-chen.hu.ea:17:space-time .csl-entry}
-Chen, Le, Guannan Hu, Yaozhong Hu, and Jingyu Huang. 2017. "Space-Time
-Fractional Diffusions in Gaussian Noisy Environment." *Stochastics* 89
-(1): 171--206. <https://doi.org/10.1080/17442508.2016.1146282>.
-:::
-
-::: {#ref-chen.hu.ea:19:nonlinear .csl-entry}
-Chen, Le, Yaozhong Hu, and David Nualart. 2019. "Nonlinear Stochastic
-Time-Fractional Slow and Fast Diffusion Equations on $\mathbb{R}^d$."
-*Stochastic Process. Appl.* 129 (12): 5073--5112.
-<https://doi.org/10.1016/j.spa.2019.01.003>.
+^1^ L. Chen, "Some symbolic tools for the Fox $H$-function," (2022).
 :::
 
 ::: {#ref-kilbas.saigo:04:h-transforms .csl-entry}
-Kilbas, Anatoly A., and Megumi Saigo. 2004. *$H$-Transforms*. Vol. 9.
-Analytical Methods and Special Functions. Chapman & Hall/CRC, Boca
-Raton, FL. <https://doi.org/10.1201/9780203487372>.
+^2^ A.A. Kilbas, and M. Saigo,
+*[$H$-Transforms](https://doi.org/10.1201/9780203487372)* (Chapman &
+Hall/CRC, Boca Raton, FL, 2004), p. xii+389.
+:::
+
+::: {#ref-chen.hu.ea:17:space-time .csl-entry}
+^3^ L. Chen, G. Hu, Y. Hu, and J. Huang, "[Space-time fractional
+diffusions in Gaussian noisy
+environment](https://doi.org/10.1080/17442508.2016.1146282),"
+Stochastics **89**(1), 171--206 (2017).
+:::
+
+::: {#ref-chen.hu.ea:19:nonlinear .csl-entry}
+^4^ L. Chen, Y. Hu, and D. Nualart, "[Nonlinear stochastic
+time-fractional slow and fast diffusion equations on
+$\mathbb{R}^d$](https://doi.org/10.1016/j.spa.2019.01.003)," Stochastic
+Process. Appl. **129**(12), 5073--5112 (2019).
+:::
+
+::: {#ref-arXiv:2206.10069 .csl-entry}
+^5^ L. Chen, Y. Guo, and J. Song, "[Moments and asymptotics for a class
+of SPDEs with space-time white
+noise](https://www.arxiv.org/abs/2206.10069)," Preprint
+arXiv:2206.10069, to Appear in Trans. Amer. Math. Soc., (2022).
 :::
 :::
