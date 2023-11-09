@@ -1,8 +1,20 @@
 #!/usr/bin/env wolframscript
+(* By Le Chen, Auburn University *)
+(* Le.Chen@auburn.edu, chenle02@gmail.com *)
+(* Thu Nov 9 09:01:26 AM EST 2023 *)
 
 argv = Rest @ $ScriptCommandLine;
 argc = Length @ argv;
 (* Do[Print[argv[[i]]], {i, argc}] *)
+
+If[argc == 0,
+  (* No arguments were passed. Print help information *)
+  Print["Usage: scriptname.wls <argument>"];
+  Print["<argument>: wls file for the Fox H function specification"];
+  Print["Please provide the wls file."];
+  Exit[]
+];
+
 (* Only the first argument will be passed *)
 A = Get[argv[[1]]]
 
