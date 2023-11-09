@@ -6,21 +6,27 @@
 #
 
 import os
+import argparse
 import sys
 
-# Check the number of arguments, only one argument is allowed and it should be the input file
-if len(sys.argv) != 2:
-    print("Error: Incorrect number of arguments.")
-    print("Usage: python parseArg.py <input_file>")
-    sys.exit(1)
+
+# Function to convert a list to a string without square brackets
+def list_to_string(lst):
+    return ', '.join(str(x) for x in lst)
+
+
+# Set up the argument parser
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('input_file', metavar='input_file', type=str,              help='an input file to process')
+parser.add_argument('-o',         '--output',           metavar='output_file', type=str,                  help='the output file where to write the result')
+
+# Parse arguments
+args = parser.parse_args()
 
 # Check if the input file exists
-if not os.path.exists(sys.argv[1]):
+if not os.path.exists(args.input_file):
     print("Error: Input file does not exist.")
     sys.exit(1)
-
-# Define the name of the input file
-input_file = sys.argv[1]
 
 # Initialize four empty lists
 list1, list2, list3, list4 = [], [], [], []
@@ -29,7 +35,7 @@ list1, list2, list3, list4 = [], [], [], []
 lists = [list1, list2, list3, list4]
 
 # Open the file and read lines
-with open(input_file, 'r') as file:
+with open(args.input_file, 'r') as file:
     lines = file.readlines()
 
 # Check if the number of lines is a multiple of 4
@@ -38,21 +44,10 @@ if len(lines) % 4 != 0:
 
 # Loop through each line and append it to the corresponding list
 for i, line in enumerate(lines):
-    # Remove newline characters and whitespace, if any, and append to the corresponding list
     lists[i % 4].append(line.strip())
 
-
-def list_to_string(lst):
-    return ', '.join(str(x) for x in lst)
-
-
-# Output the contents of the lists
-# print("List 1:", list1)
-# print("List 2:", list2)
-# print("List 3:", list3)
-# print("List 4:", list4)
-
-print(f"""
+# Prepare the output
+output = f"""
 A = {{
        (* Upper List *) {{
          (* Upper Front list *) {{
@@ -71,4 +66,13 @@ A = {{
          }}
        }}
      }}
-""")
+"""
+
+# Determine the output file name
+output_file = args.output if args.output else os.path.splitext(args.input_file)[0] + '.wls'
+
+# Write to the output file
+with open(output_file, 'w') as file:
+    file.write(output)
+
+print(f"Output written to {output_file}")

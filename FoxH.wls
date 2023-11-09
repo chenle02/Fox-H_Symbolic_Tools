@@ -60,7 +60,7 @@ If[argv[[1]] == "-h" || argv[[1]] == "--help",
   Print["\[Chi]          Type \\[Chi] for χ (chi)"];
   Print["\[Psi]          Type \\[Psi] for ψ (psi)"];
   Print["\[Omega]        Type \\[Omega] for ω (omega)"];
-  Print[""]
+  Prine[""]
   Print["For capital Greek letters, capitalize the first letter of the input:"];
   Print["\[CapitalAlpha] Type \\[CapitalAlpha] for Α (Alpha)"];
   Print["\[CapitalBeta]  Type \\[CapitalBeta] for Β (Beta)"];
@@ -74,26 +74,64 @@ If[argv[[1]] == "-h" || argv[[1]] == "--help",
   Print["\[CurlyPi]      Type \\[CurlyPi] for ϖ (curly pi)"];
   Print["\[CurlyPhi]     Type \\[CurlyPhi] for φ (curly phi)"];
   Print["\[CurlyRho]     Type \\[CurlyRho] for ϱ (curly rho)"];
-  Print["\[CurlySigma]   Type \\[CurlySigma] for ς (curly sigma)"];
-  Print["\[CurlyOmega]   Type \\[CurlyOmega] for ϖ (curly omega)"];
   Print["... and so on for other Greek letters."];
   Exit[]
 ];
 
 (* Only the first argument will be passed *)
-A = Get[argv[[1]]]
+inputFilePath = argv[[1]]
+Print["Input file: ", inputFilePath]
+
+(* Set the path of your Python script for conversion from csv to wls *)
+pythonScriptPath = "./parseArg.py";
+
+(* Determine the file extension *)
+fileExtension = ToLowerCase[FileExtension[inputFilePath]];
+
+wlsFilePath = "";
+
+If[fileExtension === "wls",
+  (* If the file is a .wls file, use it directly *)
+  wlsFilePath = inputFilePath,
+  If[fileExtension === "csv",
+    (* If the file is a .csv file, run the Python script parseArg.py to convert it *)
+    RunProcess[{"python", pythonScriptPath, inputFilePath}];
+    wlsFilePath = StringReplace[inputFilePath, ".csv" -> ".wls"];
+    If[!FileExistsQ[wlsFilePath],
+      (* If the .wls file does not exist, handle the error *)
+      Print["The conversion to .wls did not succeed or the file does not exist."];
+      Exit[]
+    ];
+    Print["The file ", inputFilePath, " has been transformed to ", wlsFilePath]
+  ,
+    (* If the file is neither .wls nor .csv, handle accordingly *)
+    Print["Unsupported file type."];
+    Exit[]
+  ]
+];
+
+(* Load the Mathematica content from the .wls file *)
+If[wlsFilePath =!= "",
+  A = Get[wlsFilePath]
+,
+  Print["No valid .wls file path available."];
+  Exit[]
+];
 
 
 (* First print the FoxH parameters *)
 Print["\n"]
 Print["Here is the input:"]
-(* A={{{{1, 1/\[Alpha]}}, {{Ceil[\[Beta]], \[Beta]}}}, {{{1/2, \[Alpha]/2}, {1, 1}}, {{1, \[Alpha]/2}}}} *)
-Print["A= ", A]
+fileContent = RunProcess[{"cat", wlsFilePath}, "StandardOutput"];
+Print[fileContent];
+Print["The input in the compact form:"]
+Print["A = ", A]
 Print["Upper = ", A[[1]]]
 Print["Lower = ", A[[2]]]
 Print["\n"]
 
 (* Now computing the parameters *)
+Print["First determine the configure numbers (m,n,p,q):"]
 p = Length[A[[1]][[1]]] + Length[A[[1]][[2]]]
 q = Length[A[[2]][[1]]] + Length[A[[2]][[2]]]
 m = Length[A[[2]][[1]]]
@@ -103,10 +141,10 @@ Print["m = ", m, ", n = ", n]
 Print["p = ", p, ", q = ", q]
 Print["\n"]
 
-Print["Upper = ", A[[1]]]
+Print["Upper List = ", A[[1]]]
 Print["\n"]
 
-Print["Upper Front List  = ", A[[1]][[1]]]
+Print["Upper Front List = ", A[[1]][[1]]]
 sumafront = If[Length[A[[1]][[1]]] == 0, 0,Total[A[[1]][[1]]][[1]]]
 Print["Sum of front a's = ", sumafront]
 sumalphafront = If[Length[A[[1]][[1]]] == 0, 0,Total[A[[1]][[1]]][[2]]]
@@ -120,10 +158,10 @@ sumalphabehind = If[Length[A[[1]][[2]]] == 0, 0, Total[A[[1]][[2]]][[2]]]
 Print["Sum of rear \[Alpha]'s = ", sumalphabehind]
 Print["\n"]
 
-Print["Lower = ", A[[2]]]
+Print["Lower List = ", A[[2]]]
 Print["\n"]
 
-Print["Lower Front List  = ", A[[2]][[1]]]
+Print["Lower Front List = ", A[[2]][[1]]]
 sumbfront = If[Length[A[[2]][[1]]] == 0, 0, Total[A[[2]][[1]]][[1]]]
 Print["Sum of front b's = ", sumbfront]
 sumbetafront = If[Length[A[[2]][[1]]] == 0, 0, Total[A[[2]][[1]]][[2]]]
@@ -142,35 +180,36 @@ Spaces = StringJoin[Table["\[NonBreakingSpace]", {6}]]
 
 astar = FullSimplify[sumalphafront - sumalphabehind + sumbetafront - sumbetabehind]
 (* Print[ToString[SuperStar[a],InputForm], " = ", astar] *)
-Print["(1.1.7)", Spaces, "a^* = ", astar]
+Print["(1.1.7) ", Spaces, "a^* = ", astar]
 
 Delta = FullSimplify[sumbetafront + sumbetabehind - sumalphafront - sumalphabehind]
-Print["(1.1.8)", Spaces, "\[CapitalDelta] = ", Delta]
+Print["(1.1.8) ", Spaces, "\[CapitalDelta] = ", Delta]
 
 f[x_] := x^x
 delta = FullSimplify[(Total[f /@ A[[2]][[1]]] Total[f /@ A[[2]][[2]]] / Total[f /@ A[[1]][[1]]] / Total[f /@ A[[1]][[2]]] )[[2]]]
-Print["(1.1.9)", Spaces, "\[Delta] = ", delta]
+Print["(1.1.9) ", Spaces, "\[Delta] = ", delta]
 
 mu = FullSimplify[sumbfront + sumbbehind - sumafront - sumabehind + (p-q)/2]
-Print[ \[Mu], " = ", mu]
+Print["(1.1.10)", Spaces, "\[Mu] = ", mu]
 
 a1star = FullSimplify[sumbetafront - sumalphabehind]
 (* Print[ToString[SuperStar[Subscript[a, 1]],InputForm], " = ", a1star] *)
-Print["a_1^* = ", a1star]
+Print["(1.1.11)", Spaces, "a_1^* = ", a1star]
 
 a2star = FullSimplify[sumalphafront - sumbetabehind]
 (* Print[ToString[SuperStar[Subscript[a, 2]],InputForm], " = ", a2star] *)
-Print["a_2^* = ", a2star]
+Print["(1.1.12)", Spaces, "a_2^* = ", a2star]
 
 xi = FullSimplify[sumbfront - sumbbehind + sumafront - sumabehind]
-Print["(1.1.15)   \[Xi]  = ", xi ]
+Print["(1.1.14)", Spaces, "\[Xi] = ", xi ]
 
 cstar = FullSimplify[m+n-(p+q)/2]
 (* Print[ToString[SuperStar[c],InputForm], " = ", cstar] *)
-Print["(1.1.15)    c^* = ", cstar]
+Print["(1.1.15)", Spaces, "c^* = ", cstar]
 Print["\n"]
 
 (* Poles *)
+Print["Poles:"]
 aik = FullSimplify[Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]],{i,1,n}],{k,0,10}]]
 Print["First ten Poles aik = ", Flatten[aik]]
 bjl = FullSimplify[Table[Table[(-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]],{j,1,m}],{l,0,10}]]
