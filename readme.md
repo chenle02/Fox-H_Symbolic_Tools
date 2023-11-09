@@ -6,18 +6,41 @@
 1. In this repo, we have some Mathematica codes that are used to show conditions for Fox-H function.
 2. The codes are used to verify Theorem C.1 of [arXiv:2206.10069](https://arxiv.org/abs/2206.10069).
 
-# Procedures
-1. Write the parameters of Fox H as FoxH and save the file
-```
-A = {{{{1, \[Alpha]^(-1)}}, {{Ceil[\[Beta]], \[Beta]}}}, {{{1/2, \[Alpha]/2}, {1, 1}}, {{1, \[Alpha]/2}}}}
-Save["./FoxH32-21", A]
-```
-2. Use [FoxH wls](./FoxH.wls) to show the parameters `./FoxH.wls FoxH32-21.wls`
-3. The results are stored in [FoxH_Results mx](./FoxH_Results.mx)
-4. To load the results, do the following `<<FoxH_Results.mx`, make sure
+# Usage
+1. The input file for the Fox H function can be either csv file or wls file.
+  * If the input the file is csv file, it should contain four rows, corresponding four lists:
+    * Upper Front List
+    * Upper Rear List
+    * Lower Front List
+    * Lower Rear List
+    Example is here: [test csv](test.csv)
+  * Or you can directly write the wls file in the format given in [test.wls](test.wls). Here is one example in the compact form:
+    ```
+    A = {{{{1, \[Alpha]^(-1)}}, {{Ceil[\[Beta]], \[Beta]}}}, {{{1/2, \[Alpha]/2}, {1, 1}}, {{1, \[Alpha]/2}}}}
+    Save["./FoxH32-21", A]
+    ```
+  * You can use the python script [parseArg py](./parseArg.py) to convert the csv file to wls file.
+2. Use [FoxH wls](./FoxH.wls) to compute all conditions:
+  * Run 
+    ```bash
+    ./FoxH.wls
+    ```
+    to see the usage.
+  * Run 
+    ```bash
+    ./FoxH.wls --help
+    ```
+    to see how to type Greek letters.
+  * In action, run
+    ```bash
+    ./FoxH.wls FoxH32-21.wls
+    ```
+4. The results are stored in [FoxH_Results mx](./FoxH_Results.mx)
+5. To load the results from the Mathematica notebook, do the following `<<FoxH_Results.mx`, make sure
 ```
 Quit[] (* start a fresh kernel *)
 ```
+
 # References
 
 1. To refer to this code, please use

@@ -7,13 +7,23 @@ argv = Rest @ $ScriptCommandLine;
 argc = Length @ argv;
 (* Do[Print[argv[[i]]], {i, argc}] *)
 
+PrintUsage[scriptName_] := Module[{},
+  Print["Usage: ", scriptName, " <Fox-H-File>"];
+  Print["<Fox-H-File>: The file for the parameters of the Fox H function."];
+  Print["              1. It can be wls file."];
+  Print["              2. It can also be csv file, which contains four rows that corresponding to four lists:"];
+  Print["                 * Upper Front List"];
+  Print["                 * Upper Rear List"];
+  Print["                 * Lower Front List"];
+  Print["                 * Lower Rear List"];
+]
+
 If[argc == 0,
   (* No arguments were passed. Print help information *)
-  Print["Usage: scriptname.wls <argument>"];
-  Print["<argument>: Description of what the argument should be."];
+  PrintUsage["./FoxH.wls"]
   Print[""];
   Print["Help Options:"];
-  Print["-h, --help           Show help options."];
+  Print["-h, --help           Show help for typing Greek letters."];
   Print[""];
   Print["Common Greek Letters Input:"];
   Print["\[Alpha]              Type \\[Alpha] to get the α character."];
@@ -21,21 +31,21 @@ If[argc == 0,
   Print["\[Gamma]              Type \\[Gamma] to get the γ character."];
   Print["... and so on for other Greek letters."];
   Print[""];
-  Print["Please provide an argument or use -h for help."];
+  Print["Please provide an argument or use -h for more help regarding typing Greek letters."];
   Exit[]
 ];
 
 (* Check for help argument *)
 If[argv[[1]] == "-h" || argv[[1]] == "--help",
-  (* Help argument was passed. Print help information *)
-  Print["Usage: scriptname.wls <argument>"];
-  Print["<argument>: Description of what the argument should be."];
+  PrintUsage["./FoxH.wls"]
   Print[""];
-  Print["Help Options:"];
+  Print["More help Options:"];
   Print["-h, --help           Show help options."];
   Print[""];
   Print["Common Greek Letters Input:"];
+  Print[""];
   Print["Complete list of Greek letters and their Mathematica input:"];
+  Print[""];
   Print["\[Alpha]        Type \\[Alpha] for α (alpha)"];
   Print["\[Beta]         Type \\[Beta] for β (beta)"];
   Print["\[Gamma]        Type \\[Gamma] for γ (gamma)"];
@@ -61,13 +71,16 @@ If[argv[[1]] == "-h" || argv[[1]] == "--help",
   Print["\[Psi]          Type \\[Psi] for ψ (psi)"];
   Print["\[Omega]        Type \\[Omega] for ω (omega)"];
   Prine[""]
+  Print[""];
   Print["For capital Greek letters, capitalize the first letter of the input:"];
+  Print[""];
   Print["\[CapitalAlpha] Type \\[CapitalAlpha] for Α (Alpha)"];
   Print["\[CapitalBeta]  Type \\[CapitalBeta] for Β (Beta)"];
   Print["\[CapitalGamma] Type \\[CapitalGamma] for Γ (Gamma)"];
   Print["... and so on."];
   Print[""]
   Print["For the variant forms of certain Greek letters:"];
+  Print[""];
   Print["\[CurlyEpsilon] Type \\[CurlyEpsilon] for ε (curly epsilon)"];
   Print["\[CurlyTheta]   Type \\[CurlyTheta] for ϑ (curly theta)"];
   Print["\[CurlyKappa]   Type \\[CurlyKappa] for ϰ (curly kappa)"];

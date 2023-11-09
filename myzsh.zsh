@@ -7,3 +7,5 @@ Screenshot() {
   fi
   import "./media/Screenshot_${filename}.png"
 }
+
+alias help='cat ./myzsh.zsh'
