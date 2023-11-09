@@ -10,8 +10,73 @@ argc = Length @ argv;
 If[argc == 0,
   (* No arguments were passed. Print help information *)
   Print["Usage: scriptname.wls <argument>"];
-  Print["<argument>: wls file for the Fox H function specification"];
-  Print["Please provide the wls file."];
+  Print["<argument>: Description of what the argument should be."];
+  Print[""];
+  Print["Help Options:"];
+  Print["-h, --help           Show help options."];
+  Print[""];
+  Print["Common Greek Letters Input:"];
+  Print["\[Alpha]              Type \\[Alpha] to get the α character."];
+  Print["\[Beta]               Type \\[Beta] to get the β character."];
+  Print["\[Gamma]              Type \\[Gamma] to get the γ character."];
+  Print["... and so on for other Greek letters."];
+  Print[""];
+  Print["Please provide an argument or use -h for help."];
+  Exit[]
+];
+
+(* Check for help argument *)
+If[argv[[1]] == "-h" || argv[[1]] == "--help",
+  (* Help argument was passed. Print help information *)
+  Print["Usage: scriptname.wls <argument>"];
+  Print["<argument>: Description of what the argument should be."];
+  Print[""];
+  Print["Help Options:"];
+  Print["-h, --help           Show help options."];
+  Print[""];
+  Print["Common Greek Letters Input:"];
+  Print["Complete list of Greek letters and their Mathematica input:"];
+  Print["\[Alpha]        Type \\[Alpha] for α (alpha)"];
+  Print["\[Beta]         Type \\[Beta] for β (beta)"];
+  Print["\[Gamma]        Type \\[Gamma] for γ (gamma)"];
+  Print["\[Delta]        Type \\[Delta] for δ (delta)"];
+  Print["\[Epsilon]      Type \\[Epsilon] for ϵ (epsilon)"];
+  Print["\[Zeta]         Type \\[Zeta] for ζ (zeta)"];
+  Print["\[Eta]          Type \\[Eta] for η (eta)"];
+  Print["\[Theta]        Type \\[Theta] for θ (theta)"];
+  Print["\[Iota]         Type \\[Iota] for ι (iota)"];
+  Print["\[Kappa]        Type \\[Kappa] for κ (kappa)"];
+  Print["\[Lambda]       Type \\[Lambda] for λ (lambda)"];
+  Print["\[Mu]           Type \\[Mu] for μ (mu)"];
+  Print["\[Nu]           Type \\[Nu] for ν (nu)"];
+  Print["\[Xi]           Type \\[Xi] for ξ (xi)"];
+  Print["\[Omicron]      Type \\[Omicron] for ο (omicron)"];
+  Print["\[Pi]           Type \\[Pi] for π (pi)"];
+  Print["\[Rho]          Type \\[Rho] for ρ (rho)"];
+  Print["\[Sigma]        Type \\[Sigma] for σ (sigma)"];
+  Print["\[Tau]          Type \\[Tau] for τ (tau)"];
+  Print["\[Upsilon]      Type \\[Upsilon] for υ (upsilon)"];
+  Print["\[Phi]          Type \\[Phi] for φ (phi)"];
+  Print["\[Chi]          Type \\[Chi] for χ (chi)"];
+  Print["\[Psi]          Type \\[Psi] for ψ (psi)"];
+  Print["\[Omega]        Type \\[Omega] for ω (omega)"];
+  Print[""]
+  Print["For capital Greek letters, capitalize the first letter of the input:"];
+  Print["\[CapitalAlpha] Type \\[CapitalAlpha] for Α (Alpha)"];
+  Print["\[CapitalBeta]  Type \\[CapitalBeta] for Β (Beta)"];
+  Print["\[CapitalGamma] Type \\[CapitalGamma] for Γ (Gamma)"];
+  Print["... and so on."];
+  Print[""]
+  Print["For the variant forms of certain Greek letters:"];
+  Print["\[CurlyEpsilon] Type \\[CurlyEpsilon] for ε (curly epsilon)"];
+  Print["\[CurlyTheta]   Type \\[CurlyTheta] for ϑ (curly theta)"];
+  Print["\[CurlyKappa]   Type \\[CurlyKappa] for ϰ (curly kappa)"];
+  Print["\[CurlyPi]      Type \\[CurlyPi] for ϖ (curly pi)"];
+  Print["\[CurlyPhi]     Type \\[CurlyPhi] for φ (curly phi)"];
+  Print["\[CurlyRho]     Type \\[CurlyRho] for ϱ (curly rho)"];
+  Print["\[CurlySigma]   Type \\[CurlySigma] for ς (curly sigma)"];
+  Print["\[CurlyOmega]   Type \\[CurlyOmega] for ϖ (curly omega)"];
+  Print["... and so on for other Greek letters."];
   Exit[]
 ];
 
