@@ -106,70 +106,76 @@ Print["\n"]
 Print["Upper = ", A[[1]]]
 Print["\n"]
 
-Print["Upper Front  = ", A[[1]][[1]]]
+Print["Upper Front List  = ", A[[1]][[1]]]
 sumafront = If[Length[A[[1]][[1]]] == 0, 0,Total[A[[1]][[1]]][[1]]]
-Print["sum a front = ", sumafront]
+Print["Sum of front a's = ", sumafront]
 sumalphafront = If[Length[A[[1]][[1]]] == 0, 0,Total[A[[1]][[1]]][[2]]]
-Print["sum alpha front = ", sumalphafront]
+Print["Sum of front \[Alpha]'s = ", sumalphafront]
 Print["\n"]
 
-Print["Upper Behind = ", A[[1]][[2]]]
+Print["Upper Rear List = ", A[[1]][[2]]]
 sumabehind = If[Length[A[[1]][[2]]] == 0, 0, Total[A[[1]][[2]]][[1]]]
-Print["sum a behind = ", sumabehind]
+Print["Sum of rear a's = ", sumabehind]
 sumalphabehind = If[Length[A[[1]][[2]]] == 0, 0, Total[A[[1]][[2]]][[2]]]
-Print["sum alpha behind = ", sumalphabehind]
+Print["Sum of rear \[Alpha]'s = ", sumalphabehind]
 Print["\n"]
 
 Print["Lower = ", A[[2]]]
 Print["\n"]
 
-Print["Lower Front  = ", A[[2]][[1]]]
+Print["Lower Front List  = ", A[[2]][[1]]]
 sumbfront = If[Length[A[[2]][[1]]] == 0, 0, Total[A[[2]][[1]]][[1]]]
-Print["sum b front = ", sumbfront]
+Print["Sum of front b's = ", sumbfront]
 sumbetafront = If[Length[A[[2]][[1]]] == 0, 0, Total[A[[2]][[1]]][[2]]]
-Print["sum beta front = ", sumbetafront]
+Print["Sum of front \[Beta]'s = ", sumbetafront]
 Print["\n"]
 
-Print["Lower Behind = ", A[[2]][[2]]]
+Print["Lower Rear List = ", A[[2]][[2]]]
 sumbbehind = If[Length[A[[2]][[2]]] == 0, 0, Total[A[[2]][[2]]][[1]]]
-Print["sum b behind = ", sumbbehind]
+Print["Sum of rear b's = ", sumbbehind]
 sumbetabehind = If[Length[A[[2]][[2]]] == 0, 0, Total[A[[2]][[2]]][[2]]]
-Print["sum beta behind = ", sumbetabehind]
+Print["Sum of rear \[Beta]'s = ", sumbetabehind]
 Print["\n"]
 
 Print["Summary:"]
-astar = sumalphafront - sumalphabehind + sumbetafront - sumbetabehind
-Print[ToString[SuperStar[a],InputForm], " = ", astar]
+Spaces = StringJoin[Table["\[NonBreakingSpace]", {6}]]
 
-Delta = sumbetafront + sumbetabehind - sumalphafront - sumalphabehind
-Print[\[CapitalDelta], " = ", Delta]
+astar = FullSimplify[sumalphafront - sumalphabehind + sumbetafront - sumbetabehind]
+(* Print[ToString[SuperStar[a],InputForm], " = ", astar] *)
+Print["(1.1.7)", Spaces, "a^* = ", astar]
+
+Delta = FullSimplify[sumbetafront + sumbetabehind - sumalphafront - sumalphabehind]
+Print["(1.1.8)", Spaces, "\[CapitalDelta] = ", Delta]
 
 f[x_] := x^x
-delta = (Total[f /@ A[[2]][[1]]] Total[f /@ A[[2]][[2]]] / Total[f /@ A[[1]][[1]]] / Total[f /@ A[[1]][[2]]] )[[2]]
-Print[ \[Delta], " = ", delta]
+delta = FullSimplify[(Total[f /@ A[[2]][[1]]] Total[f /@ A[[2]][[2]]] / Total[f /@ A[[1]][[1]]] / Total[f /@ A[[1]][[2]]] )[[2]]]
+Print["(1.1.9)", Spaces, "\[Delta] = ", delta]
 
-mu = sumbfront + sumbbehind - sumafront - sumabehind + (p-q)/2
+mu = FullSimplify[sumbfront + sumbbehind - sumafront - sumabehind + (p-q)/2]
 Print[ \[Mu], " = ", mu]
 
-a1star = sumbetafront - sumalphabehind
-Print[ToString[SuperStar[Subscript[a, 1]],InputForm], " = ", a1star]
+a1star = FullSimplify[sumbetafront - sumalphabehind]
+(* Print[ToString[SuperStar[Subscript[a, 1]],InputForm], " = ", a1star] *)
+Print["a_1^* = ", a1star]
 
-a2star = sumalphafront - sumbetabehind
-Print[ToString[SuperStar[Subscript[a, 2]],InputForm], " = ", a2star]
+a2star = FullSimplify[sumalphafront - sumbetabehind]
+(* Print[ToString[SuperStar[Subscript[a, 2]],InputForm], " = ", a2star] *)
+Print["a_2^* = ", a2star]
 
-xi = sumbfront - sumbbehind + sumafront - sumabehind
-Print[ \[Xi],  " = ", xi ]
+xi = FullSimplify[sumbfront - sumbbehind + sumafront - sumabehind]
+Print["(1.1.15)   \[Xi]  = ", xi ]
 
-cstar = m+n-(p+q)/2
-Print[ToString[SuperStar[c],InputForm], " = ", cstar]
+cstar = FullSimplify[m+n-(p+q)/2]
+(* Print[ToString[SuperStar[c],InputForm], " = ", cstar] *)
+Print["(1.1.15)    c^* = ", cstar]
 Print["\n"]
 
 (* Poles *)
-aik = Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]],{i,1,n}],{k,0,10}]
+aik = FullSimplify[Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]],{i,1,n}],{k,0,10}]]
 Print["First ten Poles aik = ", Flatten[aik]]
-bjl = Table[Table[(-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]],{j,1,m}],{l,0,10}]
+bjl = FullSimplify[Table[Table[(-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]],{j,1,m}],{l,0,10}]]
 Print["First ten Poles bjl = ", Flatten[bjl]]
-poles = Table[Solve[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]] == (-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {k}], {i,1,n}, {j,1,m}]
+poles = FullSimplify[Table[Solve[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]] == (-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {k}], {i,1,n}, {j,1,m}]]
 Print["Poles overlap? ", Flatten[poles]]
 
 (* Save all variables *)
