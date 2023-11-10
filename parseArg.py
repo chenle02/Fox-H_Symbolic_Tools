@@ -36,7 +36,8 @@ lists = [list1, list2, list3, list4]
 
 # Open the file and read lines
 with open(args.input_file, 'r') as file:
-    lines = file.readlines()
+    # Filter out lines that start with '#'
+    lines = [line for line in file if not line.strip().startswith('#')]
 
 # Check if the number of lines is a multiple of 4
 if len(lines) % 4 != 0:
