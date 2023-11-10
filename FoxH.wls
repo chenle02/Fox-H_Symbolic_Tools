@@ -3,6 +3,40 @@
 (* Le.Chen@auburn.edu, chenle02@gmail.com *)
 (* Thu Nov 9 09:01:26 AM EST 2023 *)
 
+
+CreateOutputFilePath[inputFilePath_] := Module[
+  {inputDirectory, inputBaseName, outputFilePath, file},
+  
+  (* Extract the directory and base name from the input file path *)
+  inputDirectory = DirectoryName[inputFilePath];
+  inputBaseName = FileBaseName[inputFilePath];
+
+  (* If the input file path does not contain a directory, use the current directory *)
+  If[inputDirectory === "", inputDirectory = Directory[]];
+
+  (* Construct the output file name *)
+  outputFilePath = FileNameJoin[{inputDirectory, inputBaseName <> "_output.tex"}];
+  (* Print["Output file: ", outputFilePath]; *)
+
+  (* Check if the directory exists, if not, exit or handle as needed *)
+  If[!DirectoryQ[inputDirectory],
+    Print["The specified directory does not exist: ", inputDirectory];
+    Abort[];  (* or handle error as needed *)
+  ];
+
+  (* Try to open the output file *)
+  file = OpenWrite[outputFilePath, PageWidth -> Infinity];
+  If[file === $Failed,
+    Print["Cannot open file for writing: ", outputFilePath];
+    Abort[];  (* or handle error as needed *)
+  ];
+
+  (* Print["successfully open file"] *)
+  {file, outputFilePath}
+];
+
+
+(* Main function start from here *)
 argv = Rest @ $ScriptCommandLine;
 argc = Length @ argv;
 (* Do[Print[argv[[i]]], {i, argc}] *)
@@ -221,47 +255,19 @@ cstar = FullSimplify[m+n-(p+q)/2]
 Print["(1.1.15)", Spaces, "c^* = ", cstar]
 Print["\n"]
 
-(* Assuming inputFilePath contains the full path to the input file *)
-inputFilePath = argv[[1]];
-Print["Input file: ", inputFilePath];
+(* Call the function to create the output LaTex file path and open the file *)
+{file, outputFilePath} = CreateOutputFilePath[inputFilePath];
 
-(* Extract the directory and base name from the input file path *)
-inputDirectory = DirectoryName[inputFilePath];
-inputBaseName = FileBaseName[inputFilePath];
-
-(* If the input file path does not contain a directory, use the current directory *)
-If[inputDirectory === "", inputDirectory = Directory[]];
-
-(* Construct the output file name *)
-outputFilePath = FileNameJoin[{inputDirectory, inputBaseName <> "_output.tex"}];
-Print["\n"]
-Print["Check the output latex file and its pdf: ", outputFilePath];
-Print["\n"]
-
-(* Check if the directory exists, if not, exit or handle as needed *)
-If[!DirectoryQ[inputDirectory],
-  Print["The specified directory does not exist: ", inputDirectory];
+(* Check if the file was opened successfully *)
+If[file === $Failed,
+  Print["Failed to open the output file."];
+  (* Handle error or exit *)
   Exit[];
 ];
-
-(* Now try to open the output file *)
-Check[
-  file = OpenWrite[outputFilePath, PageWidth -> Infinity],
-  (* Error handling if the file cannot be opened *)
-  Print["Cannot open file for writing: ", outputFilePath];
-  Exit[];
-];
-
 
 (* Format the upper and lower lists as comma-separated LaTeX compatible strings *)
 upperList = StringJoin[Riffle["\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ Flatten[A[[1]], 1], ", "]];
 lowerList = StringJoin[Riffle["\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ Flatten[A[[2]], 1], ", "]];
-
-(* Then continue with the file writing as before *)
-
-(* Then continue with the file writing as before *)
-
-(* Use the command with specific parameters *)
 
 (* LaTeX header *)
 WriteString[file, "\\documentclass{article}\n"];
@@ -284,7 +290,10 @@ WriteString[file, "c^* &= ", TeXForm[cstar], " \\\\", "\n"];  (* Replace cstar w
 WriteString[file, "\\end{align*}", "\n"];
 WriteString[file, "\\end{document}"];
 Close[file];
-RunProcess[{"lualatex", outputFilePath}];
+(* RunProcess[{"lualatex", outputFilePath}]; *)
+result = RunProcess[{"lualatex", "--interaction=nonstopmode", outputFilePath}, "StandardOutput", "StandardError"];
+(* Print[result["StandardOutput"]]; *)
+(* Print[result["StandardError"]]; *)
 
 (* Poles *)
 Print["Poles:"]
