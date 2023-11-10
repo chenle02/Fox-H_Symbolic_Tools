@@ -1,2 +1,10 @@
-A = {{{{1, \[Alpha]^(-1)}}, {{Ceil[\[Beta]], \[Beta]}}},
-     {{{1/2, \[Alpha]/2}, {1, 1}}, {{1, \[Alpha]/2}}}}
+{
+  (* Upper List *) {
+    (* Upper Front List *) {{1, α^(-1)}},
+    (* Upper Rear List *)  {{Ceil[β], β}}
+  },
+  (* Lower List *) {
+    (* Lower Front List *) {{1/2, α/2}, {1, 1}},
+    (* Lower Rear List *)  {{1, α/2}}
+  }
+}

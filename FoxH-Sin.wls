@@ -1,3 +1,10 @@
-(* This is (2.9.7) on p. 63 of Kilbas *)
-A = {{{}, {}},
-     {{{1/2,1}}, {{0, 1}}}}
+{
+  (* Upper List *) {
+    (* Upper Front List *) {},
+    (* Upper Rear List *)  {}
+  },
+  (* Lower List *) {
+    (* Lower Front List *) {{1/2, 1}},
+    (* Lower Rear List *)  {{0, 1}}
+  }
+}

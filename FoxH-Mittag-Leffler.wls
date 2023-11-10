@@ -1,3 +1,10 @@
-(* This is (2.9.27) on p. 65 of Kilbas *)
-A = {{{{0, 1}}, {}},
-     {{{0,1}}, {{1- \[Mu], \[Rho]}}}}
+{
+  (* Upper List *) {
+    (* Upper Front List *) {{0, 1}},
+    (* Upper Rear List *)  {}
+  },
+  (* Lower List *) {
+    (* Lower Front List *) {{0, 1}},
+    (* Lower Rear List *)  {{1 - μ, ρ}}
+  }
+}
