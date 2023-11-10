@@ -68,7 +68,8 @@ formattedContent = FormatExpressionWithComments[expr];
 (* Overwrite the input file or print the result *)
 If[modifyFlag,
   (* Modify the input file *)
-  Put[formattedContent, inputFilePath];
+  (* Put[formattedContent, inputFilePath]; *)
+  Export[inputFilePath, formattedContent, "Text"];
   Print["File modified: ", inputFilePath];
 ,
   (* Print the result to the screen *)
