@@ -269,25 +269,66 @@ If[file === $Failed,
 upperList = StringJoin[Riffle["\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ Flatten[A[[1]], 1], ", "]];
 lowerList = StringJoin[Riffle["\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ Flatten[A[[2]], 1], ", "]];
 
+(* Format each sublist as a comma-separated LaTeX compatible string *)
+formatList[list_] := StringJoin[Riffle[
+  "\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ list, 
+  ", "
+]];
+
+(* Parse each list *)
+upperFrontList = formatList[A[[1, 1]]];
+upperRearList = formatList[A[[1, 2]]];
+lowerFrontList = formatList[A[[2, 1]]];
+lowerRearList = formatList[A[[2, 2]]];
+(* Print[upperFrontList] *)
+(* Print[upperRearList] *)
+(* Print[lowerFrontList] *)
+(* Print[lowerRearList] *)
+
+
+
 (* LaTeX header *)
 WriteString[file, "\\documentclass{article}\n"];
-WriteString[file, "\\usepackage{amsmath}\n"];
-WriteString[file, "\\newcommand{\\FoxH}[5]{H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\: \\begin{subarray}{l}#4\\\\[0.4em] #5\\end{subarray}\\right)}\n"];
-WriteString[file, "\\begin{document}\n"];
+WriteString[file, "\\usepackage{amsmath, url, hyperref, minted, fontspec}\n"];
+WriteString[file, "\\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]\n"];
+WriteString[file, "\\newcommand{\\FoxH}[5]{H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\: \\begin{array}{l}#4\\\\[0.4em] #5\\end{array}\\right)}\n"];
+WriteString[file,
+"\\newcommand{\\FoxHext}[7]{\n",
+"  \\renewcommand{\\arraystretch}{1.5} % Adjust the factor 1.5 as needed\n",
+"  H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\:\n",
+"  \\begin{array}{c|c}\n",
+"    #4 & #5 \\\\ \\hline\n",
+"    #6 & #7\n",
+"  \\end{array}\n",
+"  \\right)\n",
+"}\n"
+];
+WriteString[file,"\\renewcommand{\\arraystretch}{1.8}\n\n"];
+WriteString[file, "\\begin{document}\n\n"];
+WriteString[file, "\\section{Example \\url{" <> inputFilePath <>"}}\n\n"];
+WriteString[file, "\\paragraph{File content}\n\n"];
+(* WriteString[file, "\\begin{minted}{text}\n"]; *)
+(* WriteString[file, fileContent]; *)
+(* WriteString[file, "\\end{minted}\n\n"]; *)
+WriteString[file, "\\inputminted{text}{" <> inputFilePath <> "}\n\n"];
+WriteString[file, "\\paragraph{Fox H-function}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "\\FoxH{" <> ToString[p] <> "," <> ToString[q] <> "}{" <> ToString[m] <> "," <> ToString[n] <> "}{\\cdot}{" <> upperList <> "}{" <> lowerList <> "}\n"];
-WriteString[file, "\\end{align*}", "\n"];
-WriteString[file, "\\noindent\\textbf{Summary}\n"];
+WriteString[file, "  \\FoxH\n    {" <> ToString[m] <> "," <> ToString[n] <> "}\n    {" <> ToString[p] <> "," <> ToString[q] <> "}\n    {\\cdot}\n    {" <> upperList <> "}\n    {" <> lowerList <> "}\n"];
+WriteString[file, "\\end{align*}", "\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "a^* &= ",       TeXForm[astar],  " \\\\", "\n"];
-WriteString[file, "\\Delta &= ",   TeXForm[Delta],  " \\\\", "\n"];
-WriteString[file, "\\delta &= ",   TeXForm[delta],  " \\\\", "\n"];
-WriteString[file, "\\mu &= ",      TeXForm[mu],     " \\\\", "\n"];
-WriteString[file, "a_1^* &= ",     TeXForm[a1star], " \\\\", "\n"];
-WriteString[file, "a_2^* &= ",     TeXForm[a2star], " \\\\", "\n"];
-WriteString[file, "\\xi &= ",      TeXForm[xi],     " \\\\", "\n"];
-WriteString[file, "c^* &= ",       TeXForm[cstar],  " \\\\", "\n"];
-WriteString[file, "\\end{align*}", "\n"];
+WriteString[file, "  \\FoxHext\n    {" <> ToString[m] <> "," <> ToString[n] <> "}\n    {" <> ToString[p] <> "," <> ToString[q] <> "}\n    {\\cdot}\n    {" <> upperFrontList <> "}\n    {" <> upperRearList <> "}\n    {" <> lowerFrontList <> "}\n    {" <> lowerRearList <> "}\n"];
+WriteString[file, "\\end{align*}", "\n\n"];
+WriteString[file, "\\paragraph{Summary}\n\n"];
+WriteString[file, "\\begin{align*}\n"];
+WriteString[file, "  a^*    & = ",  TeXForm[astar],  " \\\\", "\n"];
+WriteString[file, "  \\Delta & = ", TeXForm[Delta],  " \\\\", "\n"];
+WriteString[file, "  \\delta & = ", TeXForm[delta],  " \\\\", "\n"];
+WriteString[file, "  \\mu    & = ", TeXForm[mu],     " \\\\", "\n"];
+WriteString[file, "  a_1^*  & = ",  TeXForm[a1star], " \\\\", "\n"];
+WriteString[file, "  a_2^*  & = ",  TeXForm[a2star], " \\\\", "\n"];
+WriteString[file, "  \\xi    & = ", TeXForm[xi],     " \\\\", "\n"];
+WriteString[file, "  c^*    & = ",  TeXForm[cstar],  " \\\\", "\n"];
+WriteString[file, "\\end{align*}",  "\n\n"];
 
 (* Poles *)
 Print["Poles:"]
@@ -299,20 +340,19 @@ poles = FullSimplify[Table[Solve[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]
 Print["Poles overlap? ", Flatten[poles]]
 
 
-
-WriteString[file, "\\noindent\\textbf{Poles}\\\\\n"];
-WriteString[file, "\\noindent\\textbf{1. First ten poles from upper front list}\n"];
+WriteString[file, "\\paragraph{Poles}\n\n"];
+WriteString[file, "\\noindent\\textbf{1. First ten poles from upper front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "a_{i,k} &= ", TeXForm[aik],  "\n"];
+WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "\n"];
 WriteString[file, "\\end{align*}", "\n"];
-WriteString[file, "\\noindent\\textbf{2. First ten poles from lower front list}\n"];
+WriteString[file, "\\noindent\\textbf{2. First ten poles from lower front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "b_{j,\\ell} &= ", TeXForm[bjl], "\n"];
-WriteString[file, "\\end{align*}", "\n"];
+WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[bjl], "\n"];
+WriteString[file, "\\end{align*}", "\n\n"];
 WriteString[file, "\\end{document}"];
 Close[file];
 
-result = RunProcess[{"lualatex", "--interaction=nonstopmode", outputFilePath}, "StandardOutput", "StandardError"];
+result = RunProcess[{"lualatex", "--interaction=nonstopmode -shell-escape ", outputFilePath}, "StandardOutput", "StandardError"];
 (* Print[result["StandardOutput"]]; *)
 (* Print[result["StandardError"]]; *)
 

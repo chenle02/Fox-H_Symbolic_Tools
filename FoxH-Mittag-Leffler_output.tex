@@ -1,25 +1,68 @@
 \documentclass{article}
-\usepackage{amsmath}
-\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{subarray}{l}#4\\[0.4em] #5\end{subarray}\right)}
+\usepackage{amsmath, url, hyperref, minted, fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
+\newcommand{\FoxHext}[7]{
+  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
+  H_{#2}^{#1}\left(#3\:\middle\vert\:
+  \begin{array}{c|c}
+    #4 & #5 \\ \hline
+    #6 & #7
+  \end{array}
+  \right)
+}
+\renewcommand{\arraystretch}{1.8}
+
 \begin{document}
+
+\section{Example \url{FoxH-Mittag-Leffler.wls}}
+
+\paragraph{File content}
+
+\inputminted{text}{FoxH-Mittag-Leffler.wls}
+
+\paragraph{Fox H-function}
+
 \begin{align*}
-\FoxH{1,2}{1,1}{\cdot}{\left(0, 1\right)}{\left(0, 1\right), \left(1-\mu, \rho\right)}
+  \FoxH
+    {1,1}
+    {1,2}
+    {\cdot}
+    {\left(0, 1\right)}
+    {\left(0, 1\right), \left(1-\mu, \rho\right)}
 \end{align*}
-\noindent\textbf{Summary}
+
 \begin{align*}
-a^* &= 2-\rho \\
-\Delta &= \rho \\
-\delta &= \text{ComplexInfinity} \\
-\mu &= \frac{1}{2}-\mu \\
-a_1^* &= 1 \\
-a_2^* &= 1-\rho \\
-\xi &= \mu -1 \\
-c^* &= \frac{1}{2} \\
+  \FoxHext
+    {1,1}
+    {1,2}
+    {\cdot}
+    {\left(0, 1\right)}
+    {}
+    {\left(0, 1\right)}
+    {\left(1-\mu, \rho\right)}
 \end{align*}
-\noindent\textbf{Poles}\\
+
+\paragraph{Summary}
+
+\begin{align*}
+  a^*    & = 2-\rho \\
+  \Delta & = \rho \\
+  \delta & = \text{ComplexInfinity} \\
+  \mu    & = \frac{1}{2}-\mu \\
+  a_1^*  & = 1 \\
+  a_2^*  & = 1-\rho \\
+  \xi    & = \mu -1 \\
+  c^*    & = \frac{1}{2} \\
+\end{align*}
+
+\paragraph{Poles}
+
 \noindent\textbf{1. First ten poles from upper front list}
+
 \begin{align*}
-a_{i,k} &= \left(
+  a_{i,k} = 
+  \left(
 \begin{array}{c}
  1 \\
  2 \\
@@ -36,8 +79,10 @@ a_{i,k} &= \left(
 \right)
 \end{align*}
 \noindent\textbf{2. First ten poles from lower front list}
+
 \begin{align*}
-b_{j,\ell} &= \left(
+  b_{j,\ell} = 
+  \left(
 \begin{array}{c}
  0 \\
  -1 \\
@@ -53,4 +98,5 @@ b_{j,\ell} &= \left(
 \end{array}
 \right)
 \end{align*}
+
 \end{document}

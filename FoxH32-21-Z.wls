@@ -1,7 +1,7 @@
 {
   (* Upper List *) {
     (* Upper Front List *) {{1, 1}},
-    (* Upper Rear List *)  {{Ceil[β], β}}
+    (* Upper Rear List *)  {{Ceiling[β], β}}
   },
   (* Lower List *) {
     (* Lower Front List *) {{d/2, α/2}, {1, 1}},

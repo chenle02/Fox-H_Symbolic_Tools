@@ -1,0 +1,9 @@
+{
+  (* Upper List *) {
+    (* Upper Front List *) {},
+    (* Upper Rear List *)  {}
+  },
+  (* Lower List *) {
+    (* Lower Front List *) {{1/2, 1}},
+    (* Lower Rear List *)  {{0, 1}}
+  }
