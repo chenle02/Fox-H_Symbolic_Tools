@@ -46,47 +46,47 @@ If[argv[[1]] == "-h" || argv[[1]] == "--help",
   Print[""];
   Print["Complete list of Greek letters and their Mathematica input:"];
   Print[""];
-  Print["\[Alpha]        Type \\[Alpha] for α (alpha)"];
-  Print["\[Beta]         Type \\[Beta] for β (beta)"];
-  Print["\[Gamma]        Type \\[Gamma] for γ (gamma)"];
-  Print["\[Delta]        Type \\[Delta] for δ (delta)"];
-  Print["\[Epsilon]      Type \\[Epsilon] for ϵ (epsilon)"];
-  Print["\[Zeta]         Type \\[Zeta] for ζ (zeta)"];
-  Print["\[Eta]          Type \\[Eta] for η (eta)"];
-  Print["\[Theta]        Type \\[Theta] for θ (theta)"];
-  Print["\[Iota]         Type \\[Iota] for ι (iota)"];
-  Print["\[Kappa]        Type \\[Kappa] for κ (kappa)"];
-  Print["\[Lambda]       Type \\[Lambda] for λ (lambda)"];
-  Print["\[Mu]           Type \\[Mu] for μ (mu)"];
-  Print["\[Nu]           Type \\[Nu] for ν (nu)"];
-  Print["\[Xi]           Type \\[Xi] for ξ (xi)"];
-  Print["\[Omicron]      Type \\[Omicron] for ο (omicron)"];
-  Print["\[Pi]           Type \\[Pi] for π (pi)"];
-  Print["\[Rho]          Type \\[Rho] for ρ (rho)"];
-  Print["\[Sigma]        Type \\[Sigma] for σ (sigma)"];
-  Print["\[Tau]          Type \\[Tau] for τ (tau)"];
-  Print["\[Upsilon]      Type \\[Upsilon] for υ (upsilon)"];
-  Print["\[Phi]          Type \\[Phi] for φ (phi)"];
-  Print["\[Chi]          Type \\[Chi] for χ (chi)"];
-  Print["\[Psi]          Type \\[Psi] for ψ (psi)"];
-  Print["\[Omega]        Type \\[Omega] for ω (omega)"];
+  Print["\[Alpha]        Type \\[Alpha] for \[Alpha] (alpha)"];                       (* α *)
+  Print["\[Beta]         Type \\[Beta] for \[Beta] (beta)"];                          (* β *)
+  Print["\[Gamma]        Type \\[Gamma] for \[Gamma] (gamma)"];                       (* γ *)
+  Print["\[Delta]        Type \\[Delta] for \[Delta] (delta)"];                       (* δ *)
+  Print["\[Epsilon]      Type \\[Epsilon] for \[Epsilon] (epsilon)"];                 (* ϵ *)
+  Print["\[Zeta]         Type \\[Zeta] for \[Zeta] (zeta)"];                          (* ζ *)
+  Print["\[Eta]          Type \\[Eta] for \[Eta] (eta)"];                             (* η *)
+  Print["\[Theta]        Type \\[Theta] for \[Theta] (theta)"];                       (* θ *)
+  Print["\[Iota]         Type \\[Iota] for \[Iota] (iota)"];                          (* ι *)
+  Print["\[Kappa]        Type \\[Kappa] for \[Kappa] (kappa)"];                       (* κ *)
+  Print["\[Lambda]       Type \\[Lambda] for \[Lambda] (lambda)"];                    (* λ *)
+  Print["\[Mu]           Type \\[Mu] for \[Mu] (mu)"];                                (* μ *)
+  Print["\[Nu]           Type \\[Nu] for \[Nu] (nu)"];                                (* ν *)
+  Print["\[Xi]           Type \\[Xi] for \[Xi] (xi)"];                                (* ξ *)
+  Print["\[Omicron]      Type \\[Omicron] for \[Omicron] (omicron)"];                 (* ο *)
+  Print["\[Pi]           Type \\[Pi] for \[Pi] (pi)"];                                (* π *)
+  Print["\[Rho]          Type \\[Rho] for \[Rho] (rho)"];                             (* ρ *)
+  Print["\[Sigma]        Type \\[Sigma] for \[Sigma] (sigma)"];                       (* σ *)
+  Print["\[Tau]          Type \\[Tau] for \[Tau] (tau)"];                             (* τ *)
+  Print["\[Upsilon]      Type \\[Upsilon] for \[Upsilon] (upsilon)"];                 (* υ *)
+  Print["\[Phi]          Type \\[Phi] for \[Phi] (phi)"];                             (* φ *)
+  Print["\[Chi]          Type \\[Chi] for \[Chi] (chi)"];                             (* χ *)
+  Print["\[Psi]          Type \\[Psi] for \[Psi] (psi)"];                             (* ψ *)
+  Print["\[Omega]        Type \\[Omega] for \[Omega] (omega)"];                       (* ω *)
   Prine[""]
   Print[""];
   Print["For capital Greek letters, capitalize the first letter of the input:"];
   Print[""];
-  Print["\[CapitalAlpha] Type \\[CapitalAlpha] for Α (Alpha)"];
-  Print["\[CapitalBeta]  Type \\[CapitalBeta] for Β (Beta)"];
-  Print["\[CapitalGamma] Type \\[CapitalGamma] for Γ (Gamma)"];
+  Print["\[CapitalAlpha] Type \\[CapitalAlpha] for \[CapitalAlpha] (Alpha)"];         (* Α *)
+  Print["\[CapitalBeta]  Type \\[CapitalBeta] for \[CapitalBeta] (Beta)"];            (* Β *)
+  Print["\[CapitalGamma] Type \\[CapitalGamma] for \[CapitalGamma] (Gamma)"];         (* Γ *)
   Print["... and so on."];
   Print[""]
-  Print["For the variant forms of certain Greek letters:"];
+  Print["For the variant forms certain Greek letters:"];
   Print[""];
-  Print["\[CurlyEpsilon] Type \\[CurlyEpsilon] for ε (curly epsilon)"];
-  Print["\[CurlyTheta]   Type \\[CurlyTheta] for ϑ (curly theta)"];
-  Print["\[CurlyKappa]   Type \\[CurlyKappa] for ϰ (curly kappa)"];
-  Print["\[CurlyPi]      Type \\[CurlyPi] for ϖ (curly pi)"];
-  Print["\[CurlyPhi]     Type \\[CurlyPhi] for φ (curly phi)"];
-  Print["\[CurlyRho]     Type \\[CurlyRho] for ϱ (curly rho)"];
+  Print["\[CurlyEpsilon] Type \\[CurlyEpsilon] for \[CurlyEpsilon] (curly epsilon)"]; (* ε *)
+  Print["\[CurlyTheta]   Type \\[CurlyTheta] for \[CurlyTheta] (curly theta)"];       (* ϑ *)
+  Print["\[CurlyKappa]   Type \\[CurlyKappa] for \[CurlyKappa] (curly kappa)"];       (* ϰ *)
+  Print["\[CurlyPi]      Type \\[CurlyPi] for \[CurlyPi] (curly pi)"];                (* ϖ *)
+  Print["\[CurlyPhi]     Type \\[CurlyPhi] for \[CurlyPhi] (curly phi)"];             (* φ *)
+  Print["\[CurlyRho]     Type \\[CurlyRho] for \[CurlyRho] (curly rho)"];             (* ϱ *)
   Print["... and so on for other Greek letters."];
   Exit[]
 ];
