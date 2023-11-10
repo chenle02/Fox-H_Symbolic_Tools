@@ -49,24 +49,16 @@ for i, line in enumerate(lines):
 
 # Prepare the output
 output = f"""
-A = {{
-       (* Upper List *) {{
-         (* Upper Front list *) {{
-           {list_to_string(list1)}
-         }},
-         (* Upper Rear List *) {{
-           {list_to_string(list2)}
-         }}
-       }},
-       (* Lower List *) {{
-         (* Lower Front List *){{
-           {list_to_string(list3)}
-         }},
-         (* Lower Rear List *){{
-           {list_to_string(list4)}
-         }}
-       }}
-     }}
+{{
+  (* Upper List *) {{
+    (* Upper Front list *) {{{list_to_string(list1)}}},
+    (* Upper Rear List *)  {{{list_to_string(list2)}}}
+  }},
+  (* Lower List *) {{
+    (* Lower Front List *) {{{list_to_string(list3)}}},
+    (* Lower Rear List *)  {{{list_to_string(list4)}}}
+  }}
+}}
 """
 
 # Determine the output file name
