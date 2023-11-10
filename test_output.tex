@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{amsmath}
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{subarray}{l}#4\\[0.4em] #5\end{subarray}\right)}
+\begin{document}
+\begin{align*}
+\FoxH{4,5}{4,2}{\cdot}{\left(1, \frac{1}{\alpha }\right), \left(1, 1\right), \left(\text{Ceil}(\beta ), \beta\right), \left(1, 1\right)}{\left(\frac{1}{2}, \frac{\alpha }{2}\right), \left(1, 1\right), \left(3, 3\right), \left(2, 2\right), \left(1, \frac{\alpha }{2}\right)}
+\end{align*}
+\noindent\textbf{Summary}
+\begin{align*}
+a^* &= \frac{1}{\alpha }-\beta +6 \\
+\Delta &= \alpha -\frac{1}{\alpha }-\beta +4 \\
+\delta &= \frac{2^{-\alpha } \left(2^{\frac{\alpha }{2}+5} \alpha ^{\alpha /2}+\alpha ^{\alpha }\right)}{\left(\left(\frac{1}{\alpha }\right)^{\frac{1}{\alpha }}+1\right) \left(\beta ^{\beta }+1\right)} \\
+\mu &= 4-\text{Ceil}(\beta ) \\
+a_1^* &= \frac{\alpha }{2}-\beta +5 \\
+a_2^* &= -\frac{\alpha }{2}+\frac{1}{\alpha }+1 \\
+\xi &= \frac{13}{2}-\text{Ceil}(\beta ) \\
+c^* &= \frac{3}{2} \\
+\end{align*}
+\noindent\textbf{Poles}\\
+\noindent\textbf{1. First ten poles from upper front list}
+\begin{align*}
+a_{i,k} &= \left(
+\begin{array}{cc}
+ 0 & 0 \\
+ \alpha  & 1 \\
+ 2 \alpha  & 2 \\
+ 3 \alpha  & 3 \\
+ 4 \alpha  & 4 \\
+ 5 \alpha  & 5 \\
+ 6 \alpha  & 6 \\
+ 7 \alpha  & 7 \\
+ 8 \alpha  & 8 \\
+ 9 \alpha  & 9 \\
+ 10 \alpha  & 10 \\
+\end{array}
+\right)
+\end{align*}
+\noindent\textbf{2. First ten poles from lower front list}
+\begin{align*}
+b_{j,\ell} &= \left(
+\begin{array}{cccc}
+ -\frac{1}{\alpha } & -1 & -1 & -1 \\
+ -\frac{3}{\alpha } & -2 & -\frac{4}{3} & -\frac{3}{2} \\
+ -\frac{5}{\alpha } & -3 & -\frac{5}{3} & -2 \\
+ -\frac{7}{\alpha } & -4 & -2 & -\frac{5}{2} \\
+ -\frac{9}{\alpha } & -5 & -\frac{7}{3} & -3 \\
+ -\frac{11}{\alpha } & -6 & -\frac{8}{3} & -\frac{7}{2} \\
+ -\frac{13}{\alpha } & -7 & -3 & -4 \\
+ -\frac{15}{\alpha } & -8 & -\frac{10}{3} & -\frac{9}{2} \\
+ -\frac{17}{\alpha } & -9 & -\frac{11}{3} & -5 \\
+ -\frac{19}{\alpha } & -10 & -4 & -\frac{11}{2} \\
+ -\frac{21}{\alpha } & -11 & -\frac{13}{3} & -6 \\
+\end{array}
+\right)
+\end{align*}
+\end{document}

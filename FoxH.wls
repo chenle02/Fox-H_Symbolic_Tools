@@ -279,21 +279,15 @@ WriteString[file, "\\FoxH{" <> ToString[p] <> "," <> ToString[q] <> "}{" <> ToSt
 WriteString[file, "\\end{align*}", "\n"];
 WriteString[file, "\\noindent\\textbf{Summary}\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "a^* &= ", TeXForm[astar], " \\\\", "\n"];  (* Replace astar with its value *)
-WriteString[file, "\\Delta &= ", TeXForm[Delta], " \\\\", "\n"];  (* Replace Delta with its value *)
-WriteString[file, "\\delta &= ", TeXForm[delta], " \\\\", "\n"];  (* Replace delta with its value *)
-WriteString[file, "\\mu &= ", TeXForm[mu], " \\\\", "\n"];  (* Replace mu with its value *)
-WriteString[file, "a_1^* &= ", TeXForm[a1star], " \\\\", "\n"];  (* Replace a1star with its value *)
-WriteString[file, "a_2^* &= ", TeXForm[a2star], " \\\\", "\n"];  (* Replace a2star with its value *)
-WriteString[file, "\\xi &= ", TeXForm[xi], " \\\\", "\n"];  (* Replace xi with its value *)
-WriteString[file, "c^* &= ", TeXForm[cstar], " \\\\", "\n"];  (* Replace cstar with its value *)
+WriteString[file, "a^* &= ",       TeXForm[astar],  " \\\\", "\n"];
+WriteString[file, "\\Delta &= ",   TeXForm[Delta],  " \\\\", "\n"];
+WriteString[file, "\\delta &= ",   TeXForm[delta],  " \\\\", "\n"];
+WriteString[file, "\\mu &= ",      TeXForm[mu],     " \\\\", "\n"];
+WriteString[file, "a_1^* &= ",     TeXForm[a1star], " \\\\", "\n"];
+WriteString[file, "a_2^* &= ",     TeXForm[a2star], " \\\\", "\n"];
+WriteString[file, "\\xi &= ",      TeXForm[xi],     " \\\\", "\n"];
+WriteString[file, "c^* &= ",       TeXForm[cstar],  " \\\\", "\n"];
 WriteString[file, "\\end{align*}", "\n"];
-WriteString[file, "\\end{document}"];
-Close[file];
-(* RunProcess[{"lualatex", outputFilePath}]; *)
-result = RunProcess[{"lualatex", "--interaction=nonstopmode", outputFilePath}, "StandardOutput", "StandardError"];
-(* Print[result["StandardOutput"]]; *)
-(* Print[result["StandardError"]]; *)
 
 (* Poles *)
 Print["Poles:"]
@@ -304,9 +298,25 @@ Print["First ten Poles bjl = ", Flatten[bjl]]
 poles = FullSimplify[Table[Solve[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]] == (-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {k}], {i,1,n}, {j,1,m}]]
 Print["Poles overlap? ", Flatten[poles]]
 
+
+
+WriteString[file, "\\noindent\\textbf{Poles}\\\\\n"];
+WriteString[file, "\\noindent\\textbf{1. First ten poles from upper front list}\n"];
+WriteString[file, "\\begin{align*}\n"];
+WriteString[file, "a_{i,k} &= ", TeXForm[aik],  "\n"];
+WriteString[file, "\\end{align*}", "\n"];
+WriteString[file, "\\noindent\\textbf{2. First ten poles from lower front list}\n"];
+WriteString[file, "\\begin{align*}\n"];
+WriteString[file, "b_{j,\\ell} &= ", TeXForm[bjl], "\n"];
+WriteString[file, "\\end{align*}", "\n"];
+WriteString[file, "\\end{document}"];
+Close[file];
+
+result = RunProcess[{"lualatex", "--interaction=nonstopmode", outputFilePath}, "StandardOutput", "StandardError"];
+(* Print[result["StandardOutput"]]; *)
+(* Print[result["StandardError"]]; *)
+
 (* Save all variables *)
 Names["Global `*"];
 DumpSave["FoxH_Results.mx", "Global`"];
-
-
 
