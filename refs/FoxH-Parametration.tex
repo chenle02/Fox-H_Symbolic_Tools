@@ -1,5 +1,5 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath,amsthm,amsfonts,amssymb, xcolor,enumerate,enumitem,xfrac,tikz,comment, pgfplots,soul, mathtools}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb, xcolor,enumerate,enumitem,xfrac,tikz,comment, pgfplots,soul, mathtools, minted, fontspec, standalone}
 \usetikzlibrary{shapes.geometric,positioning,calc}
 \usepackage{url}
 \usepackage[colorlinks=true,
@@ -9,13 +9,26 @@
             citecolor=magenta,
             pdftitle={Reviewing report},
             pdfpagemode=FullScreen,
-           ]{hyperref}
+          ]{hyperref}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Norm}[1]{\left|\left|  #1   \right|\right|}
 \newcommand{\E}{\mathbb{E}}
-\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{subarray}{l}#4\\[0.4em] #5\end{subarray}\right)}
 \newcommand{\ud}{\ensuremath{\mathrm{d}}}
+
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
+\newcommand{\FoxHext}[7]{
+  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
+  H_{#2}^{#1}\left(#3\:\middle\vert\:
+  \begin{array}{c|c}
+    #4 & #5 \\ \hline
+    #6 & #
+  \end{array}
+  \right)
+}
+\renewcommand{\arraystretch}{1.8}
 
 \begin{document}
 
@@ -66,6 +79,15 @@ Then the Fox $H$-function $\FoxH{2,1}{2,3}{z}{\cdots}{\cdots}$ is defined by a M
   \caption{Diagram for the parameterization of the Fox $H$-function.}
   \label{F:Diagram}
 \end{figure}
+
+\include{FoxH32-21_output}
+\include{FoxH32-21-Y_output}
+\include{FoxH32-21-Z_output}
+\include{FoxH32-21-Z-Star_output}
+\include{FoxH-Cos_output}
+\include{FoxH-Mittag-Leffler_output}
+\include{FoxH-Sin_output}
+
 \bibliographystyle{alpha} \bibliography{refs.bib}
 \end{document}
 

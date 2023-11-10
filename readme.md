@@ -40,6 +40,7 @@
 ```
 Quit[] (* start a fresh kernel *)
 ```
+6. Documentation [Fox Parametration pdf](./refs/FoxH-Parametration.pdf) (Under construction)
 
 # References
 

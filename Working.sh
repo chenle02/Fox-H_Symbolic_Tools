@@ -20,3 +20,8 @@ fi
 ./FoxH.wls FoxH-Cos.wls
 ./FoxH.wls FoxH-Mittag-Leffler.wls
 ./FoxH.wls FoxH-Sin.wls
+cd refs
+lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
+bibtex FoxH-Parametration
+lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
+cd ..

@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[preview]{standalone}
 \usepackage{amsmath, url, hyperref, minted, fontspec}
 \setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
 \newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
@@ -28,7 +28,7 @@
     {2,1}
     {2,3}
     {\cdot}
-    {\left(1, \frac{1}{\alpha }\right), \left(\text{Ceil}(\beta ), \beta\right)}
+    {\left(1, \frac{1}{\alpha }\right), \left(\lceil \beta \rceil, \beta\right)}
     {\left(\frac{1}{2}, \frac{\alpha }{2}\right), \left(1, 1\right), \left(1, \frac{\alpha }{2}\right)}
 \end{align*}
 
@@ -38,7 +38,7 @@
     {2,3}
     {\cdot}
     {\left(1, \frac{1}{\alpha }\right)}
-    {\left(\text{Ceil}(\beta ), \beta\right)}
+    {\left(\lceil \beta \rceil, \beta\right)}
     {\left(\frac{1}{2}, \frac{\alpha }{2}\right), \left(1, 1\right)}
     {\left(1, \frac{\alpha }{2}\right)}
 \end{align*}
@@ -49,10 +49,10 @@
   a^*    & = \frac{1}{\alpha }-\beta +1 \\
   \Delta & = \alpha -\frac{1}{\alpha }-\beta +1 \\
   \delta & = 2^{-\alpha } \left(\frac{1}{\alpha }\right)^{-1/\alpha } \left(2^{\alpha /2} \alpha ^{\alpha /2}+\alpha ^{\alpha }\right) \beta ^{-\beta } \\
-  \mu    & = 1-\text{Ceil}(\beta ) \\
+  \mu    & = 1-\lceil \beta \rceil \\
   a_1^*  & = \frac{1}{2} (\alpha -2 \beta +2) \\
   a_2^*  & = \frac{1}{\alpha }-\frac{\alpha }{2} \\
-  \xi    & = \frac{3}{2}-\text{Ceil}(\beta ) \\
+  \xi    & = \frac{3}{2}-\lceil \beta \rceil \\
   c^*    & = \frac{1}{2} \\
 \end{align*}
 
