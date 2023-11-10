@@ -1,5 +1,7 @@
 Chen et al. (2017), Chen, Hu, and Nualart (2019), Chen, Guo, and Song
-(2022), Kilbas and Saigo (2004), Chen (2022),
+(2022), Kilbas and Saigo (2004), Chen (2022), Fox (1961),
+
+# References {#references .unnumbered}
 
 
 
@@ -25,6 +27,12 @@ Chen, Le, Yaozhong Hu, and David Nualart. 2019. "Nonlinear Stochastic
 Time-Fractional Slow and Fast Diffusion Equations on $\mathbb{R}^d$."
 *Stochastic Process. Appl.* 129 (12): 5073--5112.
 <https://doi.org/10.1016/j.spa.2019.01.003>.
+
+
+
+Fox, Charles. 1961. "The $G$ and $H$ Functions as Symmetrical Fourier
+Kernels." *Trans. Amer. Math. Soc.* 98: 395--429.
+<https://doi.org/10.2307/1993339>.
 
 
 

@@ -21,12 +21,12 @@
     ```
   * You can use the python script [parseArg py](./parseArg.py) to convert the csv file to wls file.
 2. Use [FoxH wls](./FoxH.wls) to compute all conditions:
-  * Run 
+  * Run
     ```bash
     ./FoxH.wls
     ```
     to see the usage.
-  * Run 
+  * Run
     ```bash
     ./FoxH.wls --help
     ```
@@ -57,7 +57,11 @@ Quit[] (* start a fresh kernel *)
   * Chen, Le, Guannan Hu, Yaozhong Hu, and Jingyu Huang. 2017. "Space-Time Fractional Diffusions in Gaussian Noisy Environment." *Stochastics* 89 (1): 171--206. <https://doi.org/10.1080/17442508.2016.1146282>.
   * Chen, Le, Yaozhong Hu, and David Nualart. 2019. "Nonlinear Stochastic Time-Fractional Slow and Fast Diffusion Equations on $\mathbb{R}^d$." *Stochastic Process. Appl.* 129 (12): 5073--5112. <https://doi.org/10.1016/j.spa.2019.01.003>.
 
-5. Bib entries can be found [here](./refs/refs.bib). References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib).
+5. The original paper by Fox on this special function:
+
+  * Fox, Charles. 1961. "The $G$ and $H$ Functions as Symmetrical Fourier Kernels." *Trans. Amer. Math. Soc.* 98: 395--429. <https://doi.org/10.2307/1993339>.
+
+6. Bib entries can be found [here](./refs/refs.bib). References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib).
 
 
 # LICENSE
