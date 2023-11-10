@@ -221,6 +221,71 @@ cstar = FullSimplify[m+n-(p+q)/2]
 Print["(1.1.15)", Spaces, "c^* = ", cstar]
 Print["\n"]
 
+(* Assuming inputFilePath contains the full path to the input file *)
+inputFilePath = argv[[1]];
+Print["Input file: ", inputFilePath];
+
+(* Extract the directory and base name from the input file path *)
+inputDirectory = DirectoryName[inputFilePath];
+inputBaseName = FileBaseName[inputFilePath];
+
+(* If the input file path does not contain a directory, use the current directory *)
+If[inputDirectory === "", inputDirectory = Directory[]];
+
+(* Construct the output file name *)
+outputFilePath = FileNameJoin[{inputDirectory, inputBaseName <> "_output.tex"}];
+Print["\n"]
+Print["Check the output latex file and its pdf: ", outputFilePath];
+Print["\n"]
+
+(* Check if the directory exists, if not, exit or handle as needed *)
+If[!DirectoryQ[inputDirectory],
+  Print["The specified directory does not exist: ", inputDirectory];
+  Exit[];
+];
+
+(* Now try to open the output file *)
+Check[
+  file = OpenWrite[outputFilePath, PageWidth -> Infinity],
+  (* Error handling if the file cannot be opened *)
+  Print["Cannot open file for writing: ", outputFilePath];
+  Exit[];
+];
+
+
+(* Format the upper and lower lists as comma-separated LaTeX compatible strings *)
+upperList = StringJoin[Riffle["\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ Flatten[A[[1]], 1], ", "]];
+lowerList = StringJoin[Riffle["\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ Flatten[A[[2]], 1], ", "]];
+
+(* Then continue with the file writing as before *)
+
+(* Then continue with the file writing as before *)
+
+(* Use the command with specific parameters *)
+
+(* LaTeX header *)
+WriteString[file, "\\documentclass{article}\n"];
+WriteString[file, "\\usepackage{amsmath}\n"];
+WriteString[file, "\\newcommand{\\FoxH}[5]{H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\: \\begin{subarray}{l}#4\\\\[0.4em] #5\\end{subarray}\\right)}\n"];
+WriteString[file, "\\begin{document}\n"];
+WriteString[file, "\\begin{align*}\n"];
+WriteString[file, "\\FoxH{" <> ToString[p] <> "," <> ToString[q] <> "}{" <> ToString[m] <> "," <> ToString[n] <> "}{\\cdot}{" <> upperList <> "}{" <> lowerList <> "}\n"];
+WriteString[file, "\\end{align*}", "\n"];
+WriteString[file, "\\noindent\\textbf{Summary}\n"];
+WriteString[file, "\\begin{align*}\n"];
+WriteString[file, "a^* &= ", TeXForm[astar], " \\\\", "\n"];  (* Replace astar with its value *)
+WriteString[file, "\\Delta &= ", TeXForm[Delta], " \\\\", "\n"];  (* Replace Delta with its value *)
+WriteString[file, "\\delta &= ", TeXForm[delta], " \\\\", "\n"];  (* Replace delta with its value *)
+WriteString[file, "\\mu &= ", TeXForm[mu], " \\\\", "\n"];  (* Replace mu with its value *)
+WriteString[file, "a_1^* &= ", TeXForm[a1star], " \\\\", "\n"];  (* Replace a1star with its value *)
+WriteString[file, "a_2^* &= ", TeXForm[a2star], " \\\\", "\n"];  (* Replace a2star with its value *)
+WriteString[file, "\\xi &= ", TeXForm[xi], " \\\\", "\n"];  (* Replace xi with its value *)
+WriteString[file, "c^* &= ", TeXForm[cstar], " \\\\", "\n"];  (* Replace cstar with its value *)
+WriteString[file, "\\end{align*}", "\n"];
+WriteString[file, "\\end{document}"];
+Close[file];
+RunProcess[{"lualatex", outputFilePath}];
+
 (* Poles *)
 Print["Poles:"]
 aik = FullSimplify[Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]],{i,1,n}],{k,0,10}]]
