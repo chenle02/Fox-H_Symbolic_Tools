@@ -10,6 +10,7 @@
 1. Wolfram Mathematica
 2. Python 3.8
 3. [lualatex](https://www.luatex.org/) for generating pdf files.
+4. Some scripts are written in bash, run in Linux. For Mac OS or Windows, you need to modify the scripts accordingly.
 
 # Usage
 1. The input file for the Fox H function can be either csv file or wls file.
