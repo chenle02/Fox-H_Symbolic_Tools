@@ -68,27 +68,38 @@ Quit[] (* start a fresh kernel *)
 6. Documentation [Fox Parametration pdf](./documentation/FoxH-Parametration.pdf) (Under construction)
 7. Several examples are given in [examples](./examples) folder.
 
-# References
+# Cite this Repository
 
-1. To refer to this code, please use
+* Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function." <https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository.
+ 
+```
+@misc{chen:22:some,
+  author       = {Chen, Le},
+  title        = {Some symbolic tools for the {F}ox {$H$}-function},
+  year         = {2022},
+  publisher    = {GitHub Repository},
+  howpublished = {\url{https://github.com/chenle02/Fox-H_Symbolic_Tools}},
+  note         = {Accessed: 11/11/2023, Version V1.3}
+}
+```
 
-  * Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function." <https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository.
+# Other references
 
-3. Conditions and conventions for the Fox H function follow from
+1. Conditions and conventions for the Fox H function follow from
 
   * Kilbas, Anatoly A., and Megumi Saigo. 2004. $H$*-Transforms*. Vol. 9. Analytical Methods and Special Functions. Chapman & Hall/CRC, Boca Raton, FL. <https://doi.org/10.1201/9780203487372>.
 
-4. Related papers that use this code include:
+2. Related papers that use this code include:
 
   * Chen, Le, Yuhui Guo, and Jian Song. 2022. "Moments and Asymptotics for a Class of SPDEs with Space-Time White Noise." *Preprint arXiv:2206.10069, to Appear in Trans. Amer. Math. Soc.* <https://www.arxiv.org/abs/2206.10069>.
   * Chen, Le, Guannan Hu, Yaozhong Hu, and Jingyu Huang. 2017. "Space-Time Fractional Diffusions in Gaussian Noisy Environment." *Stochastics* 89 (1): 171--206. <https://doi.org/10.1080/17442508.2016.1146282>.
   * Chen, Le, Yaozhong Hu, and David Nualart. 2019. "Nonlinear Stochastic Time-Fractional Slow and Fast Diffusion Equations on $\mathbb{R}^d$." *Stochastic Process. Appl.* 129 (12): 5073--5112. <https://doi.org/10.1016/j.spa.2019.01.003>.
 
-5. The original paper by Fox on this special function:
+3. The original paper by Fox on this special function:
 
   * Fox, Charles. 1961. "The $G$ and $H$ Functions as Symmetrical Fourier Kernels." *Trans. Amer. Math. Soc.* 98: 395--429. <https://doi.org/10.2307/1993339>.
 
-6. Bib entries can be found [here](./refs/refs.bib). References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib).
+4. Bib entries can be found [here](./refs/refs.bib). References are produced using the reference bank: [SPDEs-Bib](https://github.com/chenle02/SPDEs-Bib).
 
 
 # LICENSE
