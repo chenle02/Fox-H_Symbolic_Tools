@@ -58,6 +58,7 @@ If[argc == 0,
   Print[""];
   Print["Help Options:"];
   Print["-h, --help           Show help for typing Greek letters."];
+  Print["-s, --standalone     Generate standalone latex and pdf."];
   Print[""];
   Print["Common Greek Letters Input:"];
   Print["\[Alpha]              Type \\[Alpha] to get the α character."];
@@ -70,7 +71,7 @@ If[argc == 0,
 ];
 
 (* Check for help argument *)
-If[argv[[1]] == "-h" || argv[[1]] == "--help",
+If[MemberQ[argv, "-h"] || MemberQ[argv, "--help"],
   PrintUsage["./FoxH.wls"]
   Print[""];
   Print["More help Options:"];
@@ -104,7 +105,7 @@ If[argv[[1]] == "-h" || argv[[1]] == "--help",
   Print["\[Chi]          Type \\[Chi] for \[Chi] (chi)"];                             (* χ *)
   Print["\[Psi]          Type \\[Psi] for \[Psi] (psi)"];                             (* ψ *)
   Print["\[Omega]        Type \\[Omega] for \[Omega] (omega)"];                       (* ω *)
-  Prine[""]
+  Print[""]
   Print[""];
   Print["For capital Greek letters, capitalize the first letter of the input:"];
   Print[""];
@@ -125,8 +126,26 @@ If[argv[[1]] == "-h" || argv[[1]] == "--help",
   Exit[]
 ];
 
-(* Only the first argument will be passed *)
-inputFilePath = argv[[1]]
+(* Function to retrieve the input file path and ignore flags *)
+GetInputFilePath[args_List] := Module[
+  {fileArg},
+  fileArg = Select[args, Not[StringStartsQ[#, "-"]] &]; (* Select arguments that are not flags *)
+  If[Length[fileArg] >= 1,
+    First[fileArg], (* Return the first non-flag argument as the file path *)
+    None (* or a default value indicating no file path was provided *)
+  ]
+];
+
+(* Usage *)
+argv = Drop[$ScriptCommandLine, 1]; (* Drop the script's own name *)
+inputFilePath = GetInputFilePath[argv];
+
+(* Check if an input file path was provided *)
+If[inputFilePath === None,
+  Print["No input file path provided."];
+  (* Handle error or provide usage message *)
+  Exit[]
+];
 Print["Input file: ", inputFilePath]
 
 (* Set the path of your Python script for conversion from csv to wls *)
@@ -288,8 +307,11 @@ lowerRearList = formatList[A[[2, 2]]];
 
 
 (* LaTeX header *)
-(* WriteString[file, "\\documentclass[preview]{standalone}\n"]; *)
-WriteString[file, "\\documentclass[11pt]{article}\n"];
+If[MemberQ[argv, "-s"] || MemberQ[argv, "--standalone"],
+  WriteString[file, "\\documentclass[preview]{standalone}\n"],
+  WriteString[file, "\\documentclass[11pt]{article}\n"]
+];
+
 WriteString[file, "\\usepackage{amsmath, url, hyperref, minted, fontspec}\n"];
 WriteString[file, "\\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]\n"];
 WriteString[file, "\\newcommand{\\FoxH}[5]{H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\: \\begin{array}{l}#4\\\\[0.4em] #5\\end{array}\\right)}\n"];
