@@ -16,16 +16,15 @@
   * Example is here: [test csv](test.csv); Comment lines start with `#`.
     <details>
     <summary>Content of test.csv</summary>
-    ```
+```
+# Comment line starts with #
+{1, \[Alpha]^(-1)}, {1, 1}
+{Ceil[\[Beta]], \[Beta]}, {1, 1}
+{1/2, \[Alpha]/2}, {1, 1}, {3, 3}, {2, 2}
+# The following is the Lower Rear List
+{1, \[Alpha]/2}
 
-    # Comment line starts with #
-    {1, \[Alpha]^(-1)}, {1, 1}
-    {Ceil[\[Beta]], \[Beta]}, {1, 1}
-    {1/2, \[Alpha]/2}, {1, 1}, {3, 3}, {2, 2}
-    # The following is the Lower Rear List
-    {1, \[Alpha]/2}
-
-    ```
+```
     </details>
 
   * Or you can directly write the wls file in the format given in [test.wls](test.wls). Here is one example in the compact form:
