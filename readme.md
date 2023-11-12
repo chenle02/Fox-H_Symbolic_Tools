@@ -19,7 +19,7 @@
     * Lower Front List
     * Lower Rear List
   * Example is here: [test csv](test.csv), where comment lines start with `#`.
-    ```
+```
 # Comment line starts with #
 {1, \[Alpha]^(-1)}, {1, 1}
 {Ceil[\[Beta]], \[Beta]}, {1, 1}
@@ -27,9 +27,9 @@
 # The following is the Lower Rear List
 {1, \[Alpha]/2}
 
-    ```
+```
   * Or you can directly write the wls file in the format given in [test.wls](test.wls). Here is one example in the compact form:
-    ```
+```
 {
   (* Upper List *) {
     (* Upper Front list *) {{1, \[Alpha]^(-1)}, {1, 1}},
@@ -40,7 +40,7 @@
     (* Lower Rear List *)  {{1, \[Alpha]/2}}
   }
 }
-    ```
+```
   * You can use the python script [parseArg py](./parseArg.py) to convert the csv file to wls file.
   * You can use [PrettyFoxH wls](./PrettyFoxH.wls) to convert the nested list of wls file to the pretty form with comment lines as above.
 
