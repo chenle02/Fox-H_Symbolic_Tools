@@ -43,7 +43,7 @@
 
 In this note, we explain the code for checking the conditions of the Fox
 $H$-function~\cite{fox:61:g}. Here we follow the notation from Kilbas and
-Saigo~\cite{kilbas.saigo:04:h-transforms}.
+Saigo~\cite{kilbas.saigo:04:h-transforms}. \bigskip
 
 
 Let $m,n,p,q$ be configure integers such that
@@ -62,17 +62,50 @@ Let $a_i,b_j\in \mathbb{C}$ and $\alpha_i, \beta_j \in\R_+$ be the parameters gi
   \end{tabular}
 \end{center}
 and denote
-\begin{align*}
+\begin{align}\label{E:H}
   H^{m,n}_{p,q}(s) \coloneqq
          \dfrac{ \displaystyle \prod_{i=1}^n\Gamma\left(1-a_i-\alpha_is\right) }{ \displaystyle \prod_{i=n+1}^p\Gamma\left(a_j+\alpha_is\right)    }
   \times \dfrac{ \displaystyle \prod_{j=1}^m\Gamma\left(b_j+\beta_js\right)    }{ \displaystyle \prod_{j=m+1}^q\Gamma\left(1- b_j-\alpha_js\right) }\:.
-\end{align*}
+\end{align}
 Then the Fox $H$-function $\FoxH{2,1}{2,3}{z}{\cdots}{\cdots}$ is defined by a Mellin-Barnes type integral of the form
-\begin{align*}
+\begin{align}\label{E:Fox-H}
   \FoxH{p,q}{m,n}{z}{(a_1,\alpha_1),\cdots, (a_p,\alpha_p)}{(b_1,\beta_1),\cdots, (b_q,\beta_q)}
   \coloneqq \frac{1}{2\pi i} \int_{\mathcal{L}} H^{m,n}_{p,q}(s) z^{-s} \ud s.
-\end{align*}
+\end{align}
 
+The basic assumption for the well-posedness of the Fox H-function is that two
+sets of poles do not overlap, i.e.,
+\begin{align}\label{E:poles}
+  \bigg\{b_{j\ell}=\frac{-b_j-\ell}{\beta_j },  \ell =0, 1, \cdots\bigg\} \bigcap
+  \bigg\{a_{ik}   =\frac{1-a_i + k}{\alpha_i},  k=0, 1,     \cdots\bigg\} = \emptyset.
+\end{align}
+
+The contour $\mathcal{L}$ in~\eqref{E:Fox-H} is given by one of the following
+three cases:
+\begin{enumerate}
+
+  \item $\mathcal{L}=\mathcal{L}_{-\infty}$ is a left loop situated in a
+    horizontal strip starting at point $-\infty+i\phi_1$ and terminating at
+    point $-\infty+i\phi_2$ for some $-\infty<\phi_1< \phi_2<\infty$;
+
+  \item $\mathcal{L}=\mathcal{L}_{+\infty}$ is a right loop situated in a
+    horizontal strip starting at point $+\infty+i\phi_1$ and terminating at
+    point $\infty+i\phi_2$ for some $-\infty<\phi_1< \phi_2<\infty$;
+
+  \item $\mathcal{L}=\mathcal{L}_{i\gamma\infty}$ is a contour starting at point
+    $\gamma-i\infty$ and terminating at point $\gamma+i\infty$ for some
+    $\gamma\in(-\infty, \infty)$.
+
+\end{enumerate}
+
+We need a set of conditions to ensure the convergence of the integral
+in~\eqref{E:Fox-H}. To explain this, let's denote
+(following~p.~2~of~\cite{kilbas.saigo:04:h-transforms})
+\begin{align*}
+  a^*    & \coloneqq\sum_{i=1}^n \alpha_i -\sum_{i=n+1}^p\alpha_i+\sum_{j=1}^m\beta_j-\sum_{j=m+1}^{q}\beta_j; \\
+  \Delta & \coloneqq \sum_{j=1}^q\beta_j-\sum_{i=1}^p\alpha_i \\
+  \delta & \coloneqq \prod_{n=1 }^{\infty} \cdots
+\end{align*}
 \begin{figure}[htp]
   \centering
   \includegraphics[width=1.0\textwidth]{./FoxH-Diagram.pdf}
