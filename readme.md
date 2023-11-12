@@ -13,9 +13,9 @@
     * Upper Rear List
     * Lower Front List
     * Lower Rear List
-  * Example is here: [test csv](test.csv); Comment lines start with `#`.
     <details>
-    <summary>Content of test.csv</summary>
+    <summary>Example</summary>
+      * Example is here: [test csv](test.csv).
 ```
       # Comment line starts with #
       {1, \[Alpha]^(-1)}, {1, 1}
@@ -25,6 +25,7 @@
       {1, \[Alpha]/2}
 
 ```
+      * Comment lines start with `#`.
     </details>
 
   * Or you can directly write the wls file in the format given in [test.wls](test.wls). Here is one example in the compact form:
