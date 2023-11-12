@@ -83,7 +83,7 @@ Quit[] (* start a fresh kernel *)
 }
 ```
 
-# Other references
+# References
 
 1. Conditions and conventions for the Fox H function follow from
 
