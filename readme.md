@@ -13,13 +13,28 @@
     * Upper Rear List
     * Lower Front List
     * Lower Rear List
-    Example is here: [test csv](test.csv); Comment lines start with `#`.
+  * Example is here: [test csv](test.csv); Comment lines start with `#`.
+    <detalis>
+    <summary>Content of test.csv</summary>
+    ```
+
+    # Comment line starts with #
+    {1, \[Alpha]^(-1)}, {1, 1}
+    {Ceil[\[Beta]], \[Beta]}, {1, 1}
+    {1/2, \[Alpha]/2}, {1, 1}, {3, 3}, {2, 2}
+    # The following is the Lower Rear List
+    {1, \[Alpha]/2}
+
+    ```
+    </detalis>
+
   * Or you can directly write the wls file in the format given in [test.wls](test.wls). Here is one example in the compact form:
     ```
     A = {{{{1, \[Alpha]^(-1)}}, {{Ceil[\[Beta]], \[Beta]}}}, {{{1/2, \[Alpha]/2}, {1, 1}}, {{1, \[Alpha]/2}}}}
     Save["./FoxH32-21", A]
     ```
   * You can use the python script [parseArg py](./parseArg.py) to convert the csv file to wls file.
+
 2. Use [FoxH wls](./FoxH.wls) to compute all conditions:
   * Run
     ```bash
