@@ -6,7 +6,7 @@
 
 CreateOutputFilePath[inputFilePath_] := Module[
   {inputDirectory, inputBaseName, outputFilePath, file},
-  
+
   (* Extract the directory and base name from the input file path *)
   inputDirectory = DirectoryName[inputFilePath];
   inputBaseName = FileBaseName[inputFilePath];
@@ -15,7 +15,7 @@ CreateOutputFilePath[inputFilePath_] := Module[
   If[inputDirectory === "", inputDirectory = Directory[]];
 
   (* Construct the output file name *)
-  outputFilePath = FileNameJoin[{inputDirectory, inputBaseName <> "_output.tex"}];
+  outputFilePath = FileNameJoin[{inputDirectory, inputBaseName <> "_output"}];
   (* Print["Output file: ", outputFilePath]; *)
 
   (* Check if the directory exists, if not, exit or handle as needed *)
@@ -25,7 +25,7 @@ CreateOutputFilePath[inputFilePath_] := Module[
   ];
 
   (* Try to open the output file *)
-  file = OpenWrite[outputFilePath, PageWidth -> Infinity];
+  file = OpenWrite[outputFilePath <> ".tex", PageWidth -> Infinity];
   If[file === $Failed,
     Print["Cannot open file for writing: ", outputFilePath];
     Abort[];  (* or handle error as needed *)
@@ -136,7 +136,6 @@ GetInputFilePath[args_List] := Module[
   ]
 ];
 
-(* Usage *)
 argv = Drop[$ScriptCommandLine, 1]; (* Drop the script's own name *)
 inputFilePath = GetInputFilePath[argv];
 
@@ -290,7 +289,7 @@ lowerList = StringJoin[Riffle["\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> 
 
 (* Format each sublist as a comma-separated LaTeX compatible string *)
 formatList[list_] := StringJoin[Riffle[
-  "\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ list, 
+  "\\left(" <> ToString[#[[1]], TeXForm] <> ", " <> ToString[#[[2]], TeXForm] <> "\\right)" & /@ list,
   ", "
 ]];
 
@@ -380,6 +379,9 @@ result = RunProcess[{"lualatex", "--shell-escape", outputFilePath}, "StandardOut
 (* Print[result["StandardOutput"]]; *)
 (* Print[result["StandardError"]]; *)
 
+If[MemberQ[argv, "-s"] || MemberQ[argv, "--standalone"],
+  RunProcess[{"convert", "-density", "300", "-quality", "90", "-background", "white", "-alpha", "remove", "-alpha", "off", outputFilePath <> ".pdf", outputFilePath <> ".png"}, "StandardOutput", "StandardError"];
+];
 (* Save all variables *)
 Names["Global `*"];
 DumpSave["FoxH_Results.mx", "Global`"];

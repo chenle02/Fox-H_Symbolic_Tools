@@ -13,6 +13,14 @@ then
   exit 1
 fi
 
+../FoxH.wls -s FoxH32-21.wls
+../FoxH.wls -s FoxH32-21-Y.wls
+../FoxH.wls -s FoxH32-21-Z-Star.wls
+../FoxH.wls -s FoxH32-21-Z.wls
+../FoxH.wls -s FoxH-Cos.wls
+../FoxH.wls -s FoxH-Mittag-Leffler.wls
+../FoxH.wls -s FoxH-Sin.wls
+
 ../FoxH.wls FoxH32-21.wls
 ../FoxH.wls FoxH32-21-Y.wls
 ../FoxH.wls FoxH32-21-Z-Star.wls
