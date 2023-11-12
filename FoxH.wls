@@ -288,7 +288,8 @@ lowerRearList = formatList[A[[2, 2]]];
 
 
 (* LaTeX header *)
-WriteString[file, "\\documentclass[preview]{standalone}\n"];
+(* WriteString[file, "\\documentclass[preview]{standalone}\n"]; *)
+WriteString[file, "\\documentclass[11pt]{article}\n"];
 WriteString[file, "\\usepackage{amsmath, url, hyperref, minted, fontspec}\n"];
 WriteString[file, "\\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]\n"];
 WriteString[file, "\\newcommand{\\FoxH}[5]{H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\: \\begin{array}{l}#4\\\\[0.4em] #5\\end{array}\\right)}\n"];

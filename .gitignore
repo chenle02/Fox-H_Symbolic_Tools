@@ -3,14 +3,15 @@
 *.log
 *.bbl
 *.blg
+*.pyg
+_minted*
 
 debug.wls
 FoxH_Results.mx
 a.wls
-_minted-FoxH32-21-Y_output
-_minted-FoxH32-21-Z_output
-_minted-anther
 anther.tex
 anther.pdf
 anther.synctex.gz
 refs/_minted-FoxH-Parametration
+
+_minted-test_output

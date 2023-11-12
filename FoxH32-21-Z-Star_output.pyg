@@ -1,9 +1,0 @@
-{
-  (* Upper List *) {
-    (* Upper Front List *) {{1, 1}},
-    (* Upper Rear List *)  {{1, I^\262}}
-  },
-  (* Lower List *) {
-    (* Lower Front List *) {{d/2, I^+-/2}, {1, 1}},
-    (* Lower Rear List *)  {{1, I^+-/2}}
-  }
