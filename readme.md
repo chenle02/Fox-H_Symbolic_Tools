@@ -70,7 +70,7 @@ Quit[] (* start a fresh kernel *)
 
 # Cite this Repository
 
-* Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function." <https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository.
+* Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function." <https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository, V1.3.
  
 ```
 @misc{chen:22:some,
