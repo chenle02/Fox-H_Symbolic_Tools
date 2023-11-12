@@ -13,15 +13,20 @@ then
   exit 1
 fi
 
-./FoxH.wls FoxH32-21.wls
-./FoxH.wls FoxH32-21-Y.wls
-./FoxH.wls FoxH32-21-Z-Star.wls
-./FoxH.wls FoxH32-21-Z.wls
-./FoxH.wls FoxH-Cos.wls
-./FoxH.wls FoxH-Mittag-Leffler.wls
-./FoxH.wls FoxH-Sin.wls
-cd refs
-lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
-bibtex FoxH-Parametration
-lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
-cd ..
+../FoxH.wls FoxH32-21.wls
+../FoxH.wls FoxH32-21-Y.wls
+../FoxH.wls FoxH32-21-Z-Star.wls
+../FoxH.wls FoxH32-21-Z.wls
+../FoxH.wls FoxH-Cos.wls
+../FoxH.wls FoxH-Mittag-Leffler.wls
+../FoxH.wls FoxH-Sin.wls
+rm *.aux
+rm *.log
+rm *.out
+rm FoxH_Results.mx
+rm -r _minted*
+# cd refs
+# lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
+# bibtex FoxH-Parametration
+# lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
+# cd ..

@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, url, hyperref, minted, fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
+\newcommand{\FoxHext}[7]{
+  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
+  H_{#2}^{#1}\left(#3\:\middle\vert\:
+  \begin{array}{c|c}
+    #4 & #5 \\ \hline
+    #6 & #7
+  \end{array}
+  \right)
+}
+\renewcommand{\arraystretch}{1.8}
+
+\begin{document}
+
+\section{Example \url{FoxH-Cos.wls}}
+
+\paragraph{File content}
+
+\inputminted{text}{FoxH-Cos.wls}
+
+\paragraph{Fox H-function}
+
+\begin{align*}
+  \FoxH
+    {0,1}
+    {2,0}
+    {\cdot}
+    {\left(1, \frac{1}{2}\right), \left(\frac{1}{2}, \frac{1}{2}\right)}
+    {}
+\end{align*}
+
+\begin{align*}
+  \FoxHext
+    {0,1}
+    {2,0}
+    {\cdot}
+    {\left(1, \frac{1}{2}\right)}
+    {\left(\frac{1}{2}, \frac{1}{2}\right)}
+    {}
+    {}
+\end{align*}
+
+\paragraph{Summary}
+
+\begin{align*}
+  a^*    & = 0 \\
+  \Delta & = -1 \\
+  \delta & = 0 \\
+  \mu    & = -\frac{1}{2} \\
+  a_1^*  & = -\frac{1}{2} \\
+  a_2^*  & = \frac{1}{2} \\
+  \xi    & = \frac{1}{2} \\
+  c^*    & = 0 \\
+\end{align*}
+
+\paragraph{Poles}
+
+\noindent\textbf{1. First ten poles from upper front list}
+
+\begin{align*}
+  a_{i,k} = 
+  \left(
+\begin{array}{c}
+ 0 \\
+ 2 \\
+ 4 \\
+ 6 \\
+ 8 \\
+ 10 \\
+ 12 \\
+ 14 \\
+ 16 \\
+ 18 \\
+ 20 \\
+\end{array}
+\right)
+\end{align*}
+\noindent\textbf{2. First ten poles from lower front list}
+
+\begin{align*}
+  b_{j,\ell} = 
+  \{\{\},\{\},\{\},\{\},\{\},\{\},\{\},\{\},\{\},\{\},\{\}\}
+\end{align*}
+
+\end{document}
