@@ -15,9 +15,11 @@
     % Draw a rectangle node
     \tikzstyle{poles}  = [rectangle, rounded corners, minimum width  = 3cm, minimum height = 0.8cm, text centered, draw = black, fill = white]
     \tikzstyle{others} = [rectangle, rounded corners, minimum width  = 1cm, minimum height = 0.8cm, text centered, draw = black, fill = white]
+    \tikzstyle{Res}    = [minimum width  = 10cm, minimum height = 0.8cm, text centered, fill = white]
     \tikzstyle{arrow}  = [thick,->,  >= stealth]
 
-    \node[poles] (poles) at (0,0) {No poles overlap and $z\ne 0$};
+    \node[poles] (poles) at (0,0) {No overlap between $a_{ik}$ poles and $b_{j\ell}$ poles};
+    % \node[others, below of = poles] (Nonzero) {$z\ne 0$};
     \node[others, below of = poles, yshift = -1em] (D0) {$\Delta = 0$};
     \node[others, xshift = -9em, left of  = D0] (DN) {$\Delta < 0$};
     \node[others, xshift = +9em, right of = D0] (DP) {$\Delta > 0$};
@@ -26,8 +28,14 @@
     \node[others, xshift = +2em, right of = D00] (D0N) {$0<|z|<\delta$};
     \node[others, below of = D00] (D000) {$\text{Re}(\mu)<-1$};
 
-    \node[below of = D000, xshift = +10em, yshift = -2em] (b) {$ \displaystyle H_{p,q}^{m,n}(z) = \sum_{j=1}^{m} \sum_{\ell=0}^{\infty} \Res_{s = b_{j\ell}} \left[\mathcal{H}_{p,q}^{m,n}(s) z^{-s}\right]$};
-    \node[below of = D000, xshift = -10em, yshift = -2em] (a) {$ \displaystyle H_{p,q}^{m,n}(z) = \sum_{i=1}^{n} \sum_{k=0}^{\infty}    \Res_{s = a_{ik}}    \left[\mathcal{H}_{p,q}^{m,n}(s) z^{-s}\right]$};
+    \node[others, below of = DN] (DN0) {$z\ne 0$};
+    \node[others, below of = DP] (DP0) {$z\ne 0$};
+
+    \node[below of = D000, xshift = +9em, yshift = -2em] (b) {$b_{j\ell}$ poles};
+    \node[below of = D000, xshift = -9em, yshift = -2em] (a) {$a_{ik}$ poles};
+
+    \node[below of = b, yshift = +1em] (bf) {$ \displaystyle H_{p,q}^{m,n}(z) = \sum_{j=1}^{m} \sum_{\ell=0}^{\infty} \Res_{s = b_{j\ell}} \left[\mathcal{H}_{p,q}^{m,n}(s) z^{-s}\right]$};
+    \node[below of = a, yshift = +1em] (af) {$ \displaystyle H_{p,q}^{m,n}(z) = \sum_{i=1}^{n} \sum_{k=0}^{\infty}    \Res_{s = a_{ik}}    \left[\mathcal{H}_{p,q}^{m,n}(s) z^{-s}\right]$};
 
     \draw[arrow] (poles) -- (D0);
     \draw[arrow] (poles) -- (DN);
@@ -37,8 +45,11 @@
     \draw[arrow] (D0) -- (D0N);
     \draw[arrow] (D00) -- (D000);
 
-    \draw[arrow] (DN) -- (a);
-    \draw[arrow] (DP) -- (b);
+    \draw[arrow] (DN) -- (DN0);
+    \draw[arrow] (DP) -- (DP0);
+
+    \draw[arrow] (DN0) -- (a);
+    \draw[arrow] (DP0) -- (b);
 
     \draw[arrow] (D0N)  -- (b);
     \draw[arrow] (D0P)  -- (a);
