@@ -63,7 +63,7 @@ Let $a_i,b_j\in \mathbb{C}$ and $\alpha_i, \beta_j \in\R_+$ be the parameters gi
 \end{center}
 and denote
 \begin{align}\label{E:H}
-  H^{m,n}_{p,q}(s) \coloneqq
+  \mathcal{H}^{m,n}_{p,q}(s) \coloneqq
          \dfrac{ \displaystyle \prod_{i=1}^n\Gamma\left(1-a_i-\alpha_is\right) }{ \displaystyle \prod_{i=n+1}^p\Gamma\left(a_j+\alpha_is\right)    }
   \times \dfrac{ \displaystyle \prod_{j=1}^m\Gamma\left(b_j+\beta_js\right)    }{ \displaystyle \prod_{j=m+1}^q\Gamma\left(1- b_j-\alpha_js\right) }\:.
 \end{align}
@@ -99,13 +99,31 @@ three cases:
 \end{enumerate}
 
 We need a set of conditions to ensure the convergence of the integral
-in~\eqref{E:Fox-H}. To explain this, let's denote
-(following~p.~2~of~\cite{kilbas.saigo:04:h-transforms})
+in~\eqref{E:Fox-H}. To explain this, we need to introduce some notation
+(following~p.~2~of~\cite{kilbas.saigo:04:h-transforms}). First denote
 \begin{align*}
-  a^*    & \coloneqq\sum_{i=1}^n \alpha_i -\sum_{i=n+1}^p\alpha_i+\sum_{j=1}^m\beta_j-\sum_{j=m+1}^{q}\beta_j; \\
-  \Delta & \coloneqq \sum_{j=1}^q\beta_j-\sum_{i=1}^p\alpha_i \\
-  \delta & \coloneqq \prod_{n=1 }^{\infty} \cdots
+  a_1^* & \coloneqq \sum_{j=1}^{m}\beta_j  - \sum_{i=n+1}^{p}\alpha_i, \\
+  a_2^* & \coloneqq \sum_{i=1}^{n}\alpha_i - \sum_{j=m+1}^{q}\beta_j .
 \end{align*}
+The following two parameters play the most important role:
+\begin{alignat*}{4}
+  a^*    & \coloneqq a^*_2 + a^*_1 &  & =  \sum_{i=1}^n \alpha_i -\sum_{i=n+1}^p \alpha_i + \sum_{j=1}^m \beta_j - \sum_{j=m+1}^{q}\beta_j; \\
+  \Delta & \coloneqq a^*_2 - a^*_1 &  & = \sum_{j=1}^q\beta_j-\sum_{i=1}^p\alpha_i.
+\end{alignat*}
+Similar to $a^*$, we define
+\begin{align*}
+  \xi & \coloneqq \sum_{i=1}^n a_i -\sum_{i=n+1}^p a_i + \sum_{j=1}^m b_j - \sum_{j=m+1}^{q} b_j.
+\end{align*}
+Additionally, set
+\begin{align*}
+  c^* \coloneqq m+n - \frac{p+q}{2}.
+\end{align*}
+In the critical cases, we need to use the following two parameters:
+\begin{align*}
+  \delta & \coloneqq \prod_{i=1}^{p}\alpha_i^{-\alpha_i} \prod_{j=1}^{q}\beta_j^{\beta_i}; \\
+  \mu    & \coloneqq \sum_{j=1}^{q}b_j - \sum_{i=1}^{p}a_i + \frac{p-q}{2}                 \\
+\end{align*}
+
 \begin{figure}[htp]
   \centering
   \includegraphics[width=1.0\textwidth]{./FoxH-Diagram.pdf}
