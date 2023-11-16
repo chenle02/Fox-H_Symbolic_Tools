@@ -9,3 +9,4 @@ Screenshot() {
 }
 
 alias help='cat ./myzsh.zsh'
+alias description="gh repo edit --description 'Some symbolic tools for the Fox H-function (V1.4)'"

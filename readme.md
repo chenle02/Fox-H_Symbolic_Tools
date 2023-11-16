@@ -1,3 +1,6 @@
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10143786.svg)](https://doi.org/10.5281/zenodo.10143786)
+
 ![Fox H-function Diagram](./media/FoxH-Diagram.png)
 ![Well-posedness Diagram](./media/Well-posedness.png)
 ![Screenshot](./media/Screenshot.png)
@@ -71,16 +74,17 @@ Quit[] (* start a fresh kernel *)
 
 # Cite this Repository
 
-* Chen, Le. 2022. "Some Symbolic Tools for the Fox $H$-Function." <https://github.com/chenle02/Fox-H_Symbolic_Tools>; GitHub Repository, V1.3.
+* Le Chen (2023) “Some symbolic tools for the Fox H-function”. Zenodo. doi: 10.5281/zenodo.10143785.
  
 ```
-@misc{chen:22:some,
-  author       = {Chen, Le},
-  title        = {Some symbolic tools for the {F}ox {$H$}-function},
-  year         = {2022},
-  publisher    = {GitHub Repository},
-  howpublished = {\url{https://github.com/chenle02/Fox-H_Symbolic_Tools}},
-  note         = {Accessed: 11/11/2023, Version V1.3}
+@misc{le_chen_2023_10143785,
+  author        = {Le Chen},
+  title         = {Some symbolic tools for the Fox H-function},
+  month         = nov,
+  year          = 2023,
+  publisher     = {Zenodo},
+  doi           = {10.5281/zenodo.10143785},
+  url           = {https://doi.org/10.5281/zenodo.10143785}
 }
 ```
 
