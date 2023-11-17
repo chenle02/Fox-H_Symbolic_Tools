@@ -59,6 +59,7 @@ If[argc == 0,
   Print["Help Options:"];
   Print["-h, --help           Show help for typing Greek letters."];
   Print["-s, --standalone     Generate standalone latex and pdf."];
+  Print["-t, --transpose      Show ten poles in column vector."];
   Print[""];
   Print["Common Greek Letters Input:"];
   Print["\[Alpha]              Type \\[Alpha] to get the α character."];
@@ -365,11 +366,19 @@ Print["Poles overlap? ", Flatten[poles]]
 WriteString[file, "\\paragraph{Poles}\n\n"];
 WriteString[file, "\\noindent\\textbf{1. First ten poles from upper front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "  a_{i,k} = \n  ", TeXForm[Transpose[aik]],  "\n"];
+
+If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
+  WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "\n"],
+  WriteString[file, "  a_{i,k} = \n  ", TeXForm[Transpose[aik]],  "\n"]
+]
+
 WriteString[file, "\\end{align*}", "\n"];
 WriteString[file, "\\noindent\\textbf{2. First ten poles from lower front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[Transpose[bjl]], "\n"];
+If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
+  WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[bjl], "\n"],
+  WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[Transpose[bjl]], "\n"]
+]
 WriteString[file, "\\end{align*}", "\n\n"];
 WriteString[file, "\\end{document}"];
 Close[file];

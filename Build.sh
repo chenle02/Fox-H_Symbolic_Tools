@@ -13,7 +13,7 @@ then
 fi
 
 cd Examples
-./Build.sh Yes
+./Build.sh
 cd -
 
 cd ./documentation

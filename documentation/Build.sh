@@ -23,7 +23,11 @@ files=(
     "FoxH-Cos_output.tex"
     "FoxH-Mittag-Leffler_output.tex"
     "FoxH-Sin_output.tex"
+    "FoxH-2_9_4_output.tex"
+    "FoxH-Bessel-J_2_9_18_output.tex"
 )
+
+echo "" > "Examples.tex"
 
 # Loop over each file
 for file in "${files[@]}"; do
@@ -35,6 +39,12 @@ for file in "${files[@]}"; do
 
     # Change section to subsection
     sed -i 's/section/subsection/g' "${file}"
+
+    # Extract the base name without the extension
+    base_name=$(basename "$file" .tex)
+
+    # Append the input command to the file
+    echo "\input{$base_name}" >> "Examples.tex"
 done
 
 lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration

@@ -10,29 +10,39 @@
 \contentsline {paragraph}{Fox H-function}{6}{section*.7}%
 \contentsline {paragraph}{Summary}{6}{section*.8}%
 \contentsline {paragraph}{Poles}{7}{section*.9}%
-\contentsline {subsection}{\numberline {2.3}Example \url {FoxH32-21-Z.wls}}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Example \url {FoxH32-21-Z-Star.wls}}{7}{subsection.2.3}%
 \contentsline {paragraph}{File content}{7}{section*.10}%
 \contentsline {paragraph}{Fox H-function}{7}{section*.11}%
 \contentsline {paragraph}{Summary}{8}{section*.12}%
 \contentsline {paragraph}{Poles}{8}{section*.13}%
-\contentsline {subsection}{\numberline {2.4}Example \url {FoxH32-21-Z-Star.wls}}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Example \url {FoxH32-21-Z.wls}}{8}{subsection.2.4}%
 \contentsline {paragraph}{File content}{8}{section*.14}%
 \contentsline {paragraph}{Fox H-function}{8}{section*.15}%
 \contentsline {paragraph}{Summary}{9}{section*.16}%
 \contentsline {paragraph}{Poles}{9}{section*.17}%
-\contentsline {subsection}{\numberline {2.5}Example \url {FoxH-Sin.wls}}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Example \url {FoxH-Cos.wls}}{9}{subsection.2.5}%
 \contentsline {paragraph}{File content}{9}{section*.18}%
 \contentsline {paragraph}{Fox H-function}{10}{section*.19}%
 \contentsline {paragraph}{Summary}{10}{section*.20}%
 \contentsline {paragraph}{Poles}{10}{section*.21}%
-\contentsline {subsection}{\numberline {2.6}Example \url {FoxH-Cos.wls}}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}Example \url {FoxH-Mittag-Leffler.wls}}{10}{subsection.2.6}%
 \contentsline {paragraph}{File content}{10}{section*.22}%
 \contentsline {paragraph}{Fox H-function}{11}{section*.23}%
 \contentsline {paragraph}{Summary}{11}{section*.24}%
 \contentsline {paragraph}{Poles}{11}{section*.25}%
-\contentsline {subsection}{\numberline {2.7}Example \url {FoxH-Mittag-Leffler.wls}}{11}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.7}Example \url {FoxH-Sin.wls}}{11}{subsection.2.7}%
 \contentsline {paragraph}{File content}{11}{section*.26}%
 \contentsline {paragraph}{Fox H-function}{12}{section*.27}%
 \contentsline {paragraph}{Summary}{12}{section*.28}%
 \contentsline {paragraph}{Poles}{12}{section*.29}%
-\contentsline {section}{References}{12}{section*.29}%
+\contentsline {subsection}{\numberline {2.8}Example \url {FoxH-2_9_4.wls}}{12}{subsection.2.8}%
+\contentsline {paragraph}{File content}{12}{section*.30}%
+\contentsline {paragraph}{Fox H-function}{13}{section*.31}%
+\contentsline {paragraph}{Summary}{13}{section*.32}%
+\contentsline {paragraph}{Poles}{13}{section*.33}%
+\contentsline {subsection}{\numberline {2.9}Example \url {FoxH-Bessel-J_2_9_18.wls}}{13}{subsection.2.9}%
+\contentsline {paragraph}{File content}{13}{section*.34}%
+\contentsline {paragraph}{Fox H-function}{14}{section*.35}%
+\contentsline {paragraph}{Summary}{14}{section*.36}%
+\contentsline {paragraph}{Poles}{14}{section*.37}%
+\contentsline {section}{References}{15}{section*.37}%
