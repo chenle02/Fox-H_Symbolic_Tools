@@ -41,14 +41,14 @@ lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
 bibtex FoxH-Parametration
 lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
 
-rm FoxH32-21_output.tex
-rm FoxH32-21_output.tex
-rm FoxH32-21-Y_output.tex
-rm FoxH32-21-Z-Star_output.tex
-rm FoxH32-21-Z_output.tex
-rm FoxH-Cos_output.tex
-rm FoxH-Mittag-Leffler_output.tex
-rm FoxH-Sin_output.tex
+# FoxH32-21_output.tex
+# FoxH32-21_output.tex
+# FoxH32-21-Y_output.tex
+# FoxH32-21-Z-Star_output.tex
+# FoxH32-21-Z_output.tex
+# FoxH-Cos_output.tex
+# FoxH-Mittag-Leffler_output.tex
+# FoxH-Sin_output.tex
 
 rm *.aux
 rm *.log
