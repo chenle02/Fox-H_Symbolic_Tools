@@ -119,12 +119,12 @@ included in your acknowledgments section or as a footnote:
 ```
 
 Or, if you prefer to directly cite this repository, please feel free to use the
-following BibTeX entry:
+following BibTeX entry[^1]:
 
   * Le Chen (2023) “Some symbolic tools for the Fox H-function”. Zenodo. doi: 10.5281/zenodo.10143785.
  
 ```
-@misc{le_chen_2023_10143785,
+@misc{chen:23:some,
   author        = {Le Chen},
   title         = {Some symbolic tools for the Fox H-function},
   month         = nov,
@@ -135,8 +135,11 @@ following BibTeX entry:
 }
 ```
 
+[^1]: To properly show the entry, one may replace `misc` by `book`.
+
 Your support in recognizing the effort put into compiling and maintaining this
 repository is much appreciated.
 
 # LICENSE
 [MIT License](LICENSE)
+
