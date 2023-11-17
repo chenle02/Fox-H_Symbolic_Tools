@@ -365,11 +365,11 @@ Print["Poles overlap? ", Flatten[poles]]
 WriteString[file, "\\paragraph{Poles}\n\n"];
 WriteString[file, "\\noindent\\textbf{1. First ten poles from upper front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "\n"];
+WriteString[file, "  a_{i,k} = \n  ", TeXForm[Transpose[aik]],  "\n"];
 WriteString[file, "\\end{align*}", "\n"];
 WriteString[file, "\\noindent\\textbf{2. First ten poles from lower front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
-WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[bjl], "\n"];
+WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[Transpose[bjl]], "\n"];
 WriteString[file, "\\end{align*}", "\n\n"];
 WriteString[file, "\\end{document}"];
 Close[file];

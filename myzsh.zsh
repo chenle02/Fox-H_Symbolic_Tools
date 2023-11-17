@@ -8,5 +8,11 @@ Screenshot() {
   import "./media/Screenshot_${filename}.png"
 }
 
+alias description="gh repo edit --description 'Some symbolic tools for the Fox H-function (V1.42)'"
+
+
+# Build the documentation of the project
+alias make='./Build.sh yes'
+
+# Print help information.
 alias help='cat ./myzsh.zsh'
-alias description="gh repo edit --description 'Some symbolic tools for the Fox H-function (V1.4)'"
