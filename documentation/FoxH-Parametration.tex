@@ -1,4 +1,5 @@
 \documentclass[11pt]{article}
+\usepackage[margin = 1in]{geometry}
 \usepackage{amsmath,amsthm,amsfonts,amssymb, xcolor,enumerate,enumitem,xfrac,tikz,comment, pgfplots,soul, mathtools, minted, fontspec, standalone}
 \usetikzlibrary{shapes.geometric,positioning,calc}
 \usepackage{url}
@@ -40,7 +41,9 @@
 }
 
 \maketitle
+\tableofcontents
 
+\section{Introduction}
 In this note, we explain the code for checking the conditions of the Fox
 $H$-function~\cite{fox:61:g}. Here we follow the notation from Kilbas and
 Saigo~\cite{kilbas.saigo:04:h-transforms}. \bigskip
@@ -142,14 +145,16 @@ figure~\ref{F:Wellposedness}:
   \label{F:Wellposedness}
 \end{figure}
 
-\include{FoxH32-21_output}
-\include{FoxH32-21-Y_output}
-\include{FoxH32-21-Z_output}
-\include{FoxH32-21-Z-Star_output}
-\include{FoxH-Cos_output}
-\include{FoxH-Mittag-Leffler_output}
-\include{FoxH-Sin_output}
+\section{Examples}
+\input{FoxH32-21_output}
+\input{FoxH32-21-Y_output}
+\input{FoxH32-21-Z_output}
+\input{FoxH32-21-Z-Star_output}
+\input{FoxH-Sin_output}
+\input{FoxH-Cos_output}
+\input{FoxH-Mittag-Leffler_output}
 
+\addcontentsline{toc}{section}{References}
 \bibliographystyle{alpha} \bibliography{../refs/refs.bib}
 \end{document}
 
