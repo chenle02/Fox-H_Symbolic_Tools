@@ -72,7 +72,7 @@ Quit[] (* start a fresh kernel *)
 6. Documentation [Fox Parametration pdf](./documentation/FoxH-Parametration.pdf) (Under construction)
 7. Several examples are given in [examples](./examples) folder.
 
-# References
+# Related references
 
 1. Conditions and conventions for the Fox H function follow from
 
@@ -105,7 +105,7 @@ Don't forget to give the project a star! Thanks again!
 
 Alternatively, see the issues section to report any bugs or file feature requests, or just send me an email (chenle02@gmail.com) for any other inquiries or further discussion.
 
-# Acknowledgment
+# Cite this work?
 
 We hope that the resources have been supportive in your research endeavors. We
 are sincerely grateful for any form of acknowledgment you might extend. Should
@@ -121,15 +121,16 @@ included in your acknowledgments section or as a footnote:
 Or, if you prefer to directly cite this repository, please feel free to use the
 following BibTeX entry[^1]:
 
-  * Le Chen (2023) “Some symbolic tools for the Fox H-function”. Zenodo. doi: 10.5281/zenodo.10143785.
+  * Le Chen (2023) “Some symbolic tools for the Fox $H$-function”. GitHub & Zenodo. doi: 10.5281/zenodo.10143785.
  
 ```
-@misc{chen:23:some,
+@book{chen:23:some,
   author        = {Le Chen},
-  title         = {Some symbolic tools for the Fox H-function},
-  month         = nov,
-  year          = 2023,
-  publisher     = {Zenodo},
+  title         = {Some symbolic tools for the Fox {$H$}-function},
+  month         = {nov},
+  year          = {2023},
+  publisher     = {GitHub \& Zenodo},
+  journal       = {GitHub repository},
   doi           = {10.5281/zenodo.10143785},
   url           = {https://doi.org/10.5281/zenodo.10143785}
 }
