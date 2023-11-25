@@ -124,7 +124,7 @@ following BibTeX entry[^1]:
   * Le Chen (2023) “Some symbolic tools for the Fox $H$-function”. GitHub & Zenodo. doi: 10.5281/zenodo.10143785.
  
 ```
-@book{chen:23:some,
+@misc{chen:23:some,
   author        = {Le Chen},
   title         = {Some symbolic tools for the Fox {$H$}-function},
   month         = {nov},
