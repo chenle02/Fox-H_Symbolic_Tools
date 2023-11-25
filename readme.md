@@ -118,8 +118,8 @@ included in your acknowledgments section or as a footnote:
   supported this research.
 ```
 
-Or, if you prefer to directly cite this repository, please feel free to use the
-following BibTeX entry[^1]:
+Or, if you prefer to directly cite this repository, please use the following
+BibTeX entry[^1]:
 
   * Le Chen (2023) “Some symbolic tools for the Fox $H$-function”. GitHub & Zenodo. doi: 10.5281/zenodo.10143785.
  
