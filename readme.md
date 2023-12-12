@@ -1,22 +1,52 @@
+# Symbolic computation tools for Fox-H function
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10143786.svg)](https://doi.org/10.5281/zenodo.10143786)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10143786.svg)](https://doi.org/10.5281/zenodo.10143786) ![Version](https://img.shields.io/github/v/release/chenle02/Fox-H_Symbolic_Tools) ![License](https://img.shields.io/github/license/chenle02/Fox-H_Symbolic_Tools) ![Downloads](https://img.shields.io/npm/dm/package-name) ![GitHub stars](https://img.shields.io/github/stars/chenle02/Fox-H_Symbolic_Tools) ![GitHub forks](https://img.shields.io/github/forks/chenle02/Fox-H_Symbolic_Tools)
+
+<!-- vim-markdown-toc GFM -->
+
+* [Motivation](#motivation)
+* [Demonstration](#demonstration)
+* [Prerequisites](#prerequisites)
+* [Usage](#usage)
+* [Documentation](#documentation)
+* [Related references](#related-references)
+* [How to contribute](#how-to-contribute)
+* [Cite this work?](#cite-this-work)
+* [LICENSE](#license)
+
+<!-- vim-markdown-toc -->
+
+
+
+# Motivation
+
+It is often very tedious and error-prone to check the conditions for the Fox-H function. This repo is to provide some symbolic tools to help check the conditions for the Fox-H function.
+
+The parametrization of the Fox-H function is given by the following diagram:
 
 ![Fox H-function Diagram](./media/FoxH-Diagram.png)
+
+The well-posedness of the Fox-H function is given by the following diagram:
+
 ![Well-posedness Diagram](./media/Well-posedness.png)
+
+* The codes are used to verify Theorem C.1 of [arXiv:2206.10069](https://arxiv.org/abs/2206.10069).
+
+# Demonstration
+
 ![Screenshot](./media/Screenshot.png)
+
 [![asciicast](https://asciinema.org/a/620136.svg)](https://asciinema.org/a/620136)
 
-# Symbolic computation tools for Fox-H function
-1. In this repo, we have some Mathematica codes that are used to show conditions for Fox-H function.
-2. The codes are used to verify Theorem C.1 of [arXiv:2206.10069](https://arxiv.org/abs/2206.10069).
-
 # Prerequisites
-1. Wolfram Mathematica
-2. Python 3.8
+
+1. Wolfram Mathematica and Wolfram Script.
+2. Python > 3.8.
 3. [lualatex](https://www.luatex.org/) for generating pdf files.
 4. Some scripts are written in bash, run in Linux. For Mac OS or Windows, you need to modify the scripts accordingly.
 
 # Usage
+
 1. The input file for the Fox H function can be either csv file or wls file.
   * If the input the file is csv file, it should contain four rows, corresponding four lists:
     * Upper Front List
@@ -24,7 +54,7 @@
     * Lower Front List
     * Lower Rear List
   * Example is here: [test csv](test.csv), where comment lines start with `#`.
-```
+```wolframscript
 # Comment line starts with #
 {1, \[Alpha]^(-1)}, {1, 1}
 {Ceil[\[Beta]], \[Beta]}, {1, 1}
@@ -34,7 +64,7 @@
 
 ```
   * Or you can directly write the wls file in the format given in [test.wls](test.wls). Here is one example in the compact form:
-```
+```wolframscript
 {
   (* Upper List *) {
     (* Upper Front list *) {{1, \[Alpha]^(-1)}, {1, 1}},
@@ -51,26 +81,29 @@
 
 2. Use [FoxH wls](./FoxH.wls) to compute all conditions:
   * Run
-    ```bash
+    ```shell
     ./FoxH.wls
     ```
     to see the usage.
   * Run
-    ```bash
+    ```shell
     ./FoxH.wls --help
     ```
     to see how to type Greek letters.
   * In action, run
-    ```bash
+    ```shell
     ./FoxH.wls FoxH32-21.wls
     ```
 4. The results are stored in [FoxH_Results mx](./FoxH_Results.mx). See the Mathematica Notebook [Result_Handle nb](./Result_Handle.nb) for how to load the results.
 5. To load the results from the Mathematica notebook, do the following `<<FoxH_Results.mx`, make sure
-```
+```wolframscript
 Quit[] (* start a fresh kernel *)
 ```
-6. Documentation [Fox Parametration pdf](./documentation/FoxH-Parametration.pdf) (Under construction)
-7. Several examples are given in [examples](./examples) folder.
+
+# Documentation
+
+1. Documentation [Fox Parametration pdf](./documentation/FoxH-Parametration.pdf) (Under construction)
+2. More examples are under development under in [examples](./examples) folder.
 
 # Related references
 
