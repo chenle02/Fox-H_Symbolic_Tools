@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, url, hyperref, minted, fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
+\newcommand{\FoxHext}[7]{
+  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
+  H_{#2}^{#1}\left(#3\:\middle\vert\:
+  \begin{array}{c|c}
+    #4 & #5 \\ \hline
+    #6 & #7
+  \end{array}
+  \right)
+}
+\renewcommand{\arraystretch}{1.8}
+
+\begin{document}
+
+\section{Example \url{FoxH-2_9_13.wls}}
+
+\paragraph{File content}
+
+\inputminted{text}{FoxH-2_9_13.wls}
+
+\paragraph{Fox H-function}
+
+\begin{align*}
+  \FoxH
+    {1,2}
+    {2,2}
+    {\cdot}
+    {\left(\frac{1}{2}, 1\right), \left(1, 1\right)}
+    {\left(\frac{1}{2}, 1\right), \left(0, 1\right)}
+\end{align*}
+
+\begin{align*}
+  \FoxHext
+    {1,2}
+    {2,2}
+    {\cdot}
+    {\left(\frac{1}{2}, 1\right), \left(1, 1\right)}
+    {}
+    {\left(\frac{1}{2}, 1\right)}
+    {\left(0, 1\right)}
+\end{align*}
+
+\paragraph{Summary}
+
+\begin{align*}
+  a^*    & = 2 \\
+  \Delta & = 0 \\
+  \delta & = \text{ComplexInfinity} \\
+  \mu    & = -1 \\
+  a_1^*  & = 1 \\
+  a_2^*  & = 1 \\
+  \xi    & = 2 \\
+  c^*    & = 1 \\
+\end{align*}
+
+\paragraph{Poles}
+
+\noindent\textbf{1. First ten poles from upper front list}
+
+\begin{align*}
+  a_{i,k} = 
+  \left(
+\begin{array}{ccccccccccc}
+ \frac{1}{2} & \frac{3}{2} & \frac{5}{2} & \frac{7}{2} & \frac{9}{2} & \frac{11}{2} & \frac{13}{2} & \frac{15}{2} & \frac{17}{2} & \frac{19}{2} & \frac{21}{2} \\
+ 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\end{array}
+\right)
+\end{align*}
+\noindent\textbf{2. First ten poles from lower front list}
+
+\begin{align*}
+  b_{j,\ell} = 
+  \left(
+\begin{array}{ccccccccccc}
+ -\frac{1}{2} & -\frac{3}{2} & -\frac{5}{2} & -\frac{7}{2} & -\frac{9}{2} & -\frac{11}{2} & -\frac{13}{2} & -\frac{15}{2} & -\frac{17}{2} & -\frac{19}{2} & -\frac{21}{2} \\
+\end{array}
+\right)
+\end{align*}
+
+\end{document}
