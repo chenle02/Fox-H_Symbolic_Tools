@@ -17,4 +17,4 @@ cd Examples
 cd -
 
 cd ./documentation
-./Build.sh Yes
+./Build_All.sh Yes
