@@ -1,0 +1,79 @@
+\documentclass[preview]{standalone}
+\usepackage{amsmath, url, hyperref, minted, fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
+\newcommand{\FoxHext}[7]{
+  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
+  H_{#2}^{#1}\left(#3\:\middle\vert\:
+  \begin{array}{c|c}
+    #4 & #5 \\ \hline
+    #6 & #7
+  \end{array}
+  \right)
+}
+\renewcommand{\arraystretch}{1.8}
+
+\begin{document}
+
+\subsection{Example \url{FoxH-Bessel-Y_2_9_20.wls}}
+
+\paragraph{File content}
+
+\inputminted{text}{../Examples/FoxH-Bessel-Y_2_9_20.wls}
+
+\paragraph{Fox H-function}
+
+\begin{align*}
+  \FoxH
+    {2,0}
+    {1,3}
+    {\cdot}
+    {\left(\frac{1}{2} (a-\eta -1), 1\right)}
+    {\left(\frac{a-\eta }{2}, 1\right), \left(\frac{a+\eta }{2}, 1\right), \left(\frac{1}{2} (a-\eta -1), 1\right)}
+\end{align*}
+
+\begin{align*}
+  \FoxHext
+    {2,0}
+    {1,3}
+    {\cdot}
+    {}
+    {\left(\frac{1}{2} (a-\eta -1), 1\right)}
+    {\left(\frac{a-\eta }{2}, 1\right), \left(\frac{a+\eta }{2}, 1\right)}
+    {\left(\frac{1}{2} (a-\eta -1), 1\right)}
+\end{align*}
+
+\paragraph{Summary}
+
+\begin{align*}
+  a^*    & = 0 \\
+  \Delta & = 2 \\
+  \delta & = \text{ComplexInfinity} \\
+  \mu    & = a-1 \\
+  a_1^*  & = 1 \\
+  a_2^*  & = -1 \\
+  \xi    & = \eta +1 \\
+  c^*    & = 0 \\
+\end{align*}
+
+\paragraph{Poles}
+
+\noindent\textbf{1. First ten poles from upper front list}
+
+\begin{align*}
+  a_{i,k} = 
+  \{\}
+\end{align*}
+\noindent\textbf{2. First ten poles from lower front list}
+
+\begin{align*}
+  b_{j,\ell} = 
+  \left(
+\begin{array}{ccccccccccc}
+ \frac{\eta -a}{2} & \frac{1}{2} (-a+\eta -2) & \frac{1}{2} (-a+\eta -4) & \frac{1}{2} (-a+\eta -6) & \frac{1}{2} (-a+\eta -8) & \frac{1}{2} (-a+\eta -10) & \frac{1}{2} (-a+\eta -12) & \frac{1}{2} (-a+\eta -14) & \frac{1}{2} (-a+\eta -16) & \frac{1}{2} (-a+\eta -18) & \frac{1}{2} (-a+\eta -20) \\
+ \frac{1}{2} (-a-\eta ) & \frac{1}{2} (-a-\eta -2) & \frac{1}{2} (-a-\eta -4) & \frac{1}{2} (-a-\eta -6) & \frac{1}{2} (-a-\eta -8) & -\frac{a}{2}-\frac{\eta }{2}-5 & -\frac{a}{2}-\frac{\eta }{2}-6 & -\frac{a}{2}-\frac{\eta }{2}-7 & -\frac{a}{2}-\frac{\eta }{2}-8 & -\frac{a}{2}-\frac{\eta }{2}-9 & \frac{1}{2} (-a-\eta -20) \\
+\end{array}
+\right)
+\end{align*}
+
+\end{document}
