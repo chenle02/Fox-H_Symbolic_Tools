@@ -12,6 +12,20 @@
             pdfpagemode=FullScreen,
           ]{hyperref}
 
+
+% -------------------------------------------------
+% BibTex Setup
+% -------------------------------------------------
+\usepackage[strict=true,style=english]{csquotes}
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  natbib=true,
+  abbreviate=true
+  ]{biblatex}
+
+\addbibresource{../latex_sources/Fox-H_biber.bib}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Norm}[1]{\left|\left|  #1   \right|\right|}
 \newcommand{\E}{\mathbb{E}}
@@ -161,6 +175,8 @@ figure~\ref{F:Wellposedness}:
 \input{Examples}
 
 \addcontentsline{toc}{section}{References}
-\bibliographystyle{alpha} \bibliography{../refs/refs.bib}
+% \bibliographystyle{alpha} \bibliography{../refs/refs.bib}
+
+\printbibliography[title={References}]
 \end{document}
 
