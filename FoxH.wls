@@ -316,18 +316,11 @@ WriteString[file, "\\usepackage{amsmath, url, hyperref, minted, fontspec}\n"];
 WriteString[file, "\\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]\n"];
 WriteString[file, "\\newcommand{\\FoxH}[5]{H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\: \\begin{array}{l}#4\\\\[0.4em] #5\\end{array}\\right)}\n"];
 WriteString[file,
-"\\newcommand{\\FoxHext}[7]{\n",
-"  \\renewcommand{\\arraystretch}{1.5} % Adjust the factor 1.5 as needed\n",
-"  H_{#2}^{#1}\\left(#3\\:\\middle\\vert\\:\n",
-"  \\begin{array}{c|c}\n",
-"    #4 & #5 \\\\ \\hline\n",
-"    #6 & #7\n",
-"  \\end{array}\n",
-"  \\right)\n",
-"}\n"
+"\\input{../latex_sources/preamble.tex}",
+"\\addbibresource{../latex_sources/Fox-H_biber.bib}",
+"}\n",
+"\\begin{document}\n\n",
 ];
-WriteString[file,"\\renewcommand{\\arraystretch}{1.8}\n\n"];
-WriteString[file, "\\begin{document}\n\n"];
 WriteString[file, "\\section{Example \\url{" <> inputFilePath <>"}}\n\n"];
 WriteString[file, "\\paragraph{File content}\n\n"];
 (* WriteString[file, "\\begin{minted}{text}\n"]; *)
@@ -406,10 +399,22 @@ If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
   WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[Transpose[bjl]], "\n"]
 ]
 WriteString[file, "\\end{align*}", "\n\n"];
+
+
+additionalFilePath = StringReplace[outputFilePath, "_output" -> "_additional"];
+(* If outputFilePath <> "_additional.tex" exists, then append the content to the output file *)
+If[FileExistsQ[additionalFilePath <> ".tex"],
+  WriteString[file, 
+  "\n",
+  "\\input{../Examples/" <> additionalFilePath <> ".tex",
+  "\n"];
+
+WriteString[file, "\\printbibliography[title={References}]\n\n"];
 WriteString[file, "\\end{document}"];
 Close[file];
 
 result = RunProcess[{"lualatex", "--interaction=nonstopmode --shell-escape", outputFilePath}, "StandardOutput", "StandardError"];
+result = RunProcess[{"biber", "--shell-escape", outputFilePath}, "StandardOutput", "StandardError"];
 result = RunProcess[{"lualatex", "--shell-escape", outputFilePath}, "StandardOutput", "StandardError"];
 (* Print[result["StandardOutput"]]; *)
 (* Print[result["StandardError"]]; *)
