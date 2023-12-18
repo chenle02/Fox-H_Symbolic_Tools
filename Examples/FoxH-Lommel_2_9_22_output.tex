@@ -2,17 +2,9 @@
 \usepackage{amsmath, url, hyperref, minted, fontspec}
 \setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
 \newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
-\newcommand{\FoxHext}[7]{
-  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
-  H_{#2}^{#1}\left(#3\:\middle\vert\:
-  \begin{array}{c|c}
-    #4 & #5 \\ \hline
-    #6 & #7
-  \end{array}
-  \right)
-}
-\renewcommand{\arraystretch}{1.8}
 
+\input{../latex_sources/preamble.tex}
+\addbibresource{../latex_sources/Fox-H_biber.bib}
 \begin{document}
 
 \section{Example \url{FoxH-Lommel_2_9_22.wls}}
@@ -58,27 +50,41 @@
 
 \paragraph{Poles}
 
-\noindent\textbf{1. First ten poles from upper front list}
+\noindent\textbf{1. First eight poles from upper front list}
 
 \begin{align*}
   a_{i,k} = 
   \left(
-\begin{array}{ccccccccccc}
- \frac{1-\mu }{2} & \frac{3-\mu }{2} & \frac{5-\mu }{2} & \frac{7-\mu }{2} & \frac{9-\mu }{2} & \frac{11-\mu }{2} & \frac{13-\mu }{2} & \frac{15-\mu }{2} & \frac{17-\mu }{2} & \frac{19-\mu }{2} & \frac{21-\mu }{2} \\
+\begin{array}{c}
+ \frac{1-\mu }{2} \\
+ \frac{3-\mu }{2} \\
+ \frac{5-\mu }{2} \\
+ \frac{7-\mu }{2} \\
+ \frac{9-\mu }{2} \\
+ \frac{11-\mu }{2} \\
+ \frac{13-\mu }{2} \\
+ \frac{15-\mu }{2} \\
 \end{array}
-\right)
+\right)^T 
 \end{align*}
-\noindent\textbf{2. First ten poles from lower front list}
+\noindent\textbf{2. First eight poles from lower front list}
 
 \begin{align*}
   b_{j,\ell} = 
   \left(
-\begin{array}{ccccccccccc}
- \frac{1}{2} (-\mu -1) & \frac{1}{2} (-\mu -3) & \frac{1}{2} (-\mu -5) & \frac{1}{2} (-\mu -7) & \frac{1}{2} (-\mu -9) & \frac{1}{2} (-\mu -11) & \frac{1}{2} (-\mu -13) & \frac{1}{2} (-\mu -15) & \frac{1}{2} (-\mu -17) & \frac{1}{2} (-\mu -19) & \frac{1}{2} (-\mu -21) \\
- -\frac{\eta }{2} & -\frac{\eta }{2}-1 & -\frac{\eta }{2}-2 & -\frac{\eta }{2}-3 & -\frac{\eta }{2}-4 & -\frac{\eta }{2}-5 & -\frac{\eta }{2}-6 & -\frac{\eta }{2}-7 & -\frac{\eta }{2}-8 & -\frac{\eta }{2}-9 & -\frac{\eta }{2}-10 \\
- \frac{\eta }{2} & \frac{\eta -2}{2} & \frac{\eta -4}{2} & \frac{\eta -6}{2} & \frac{\eta -8}{2} & \frac{\eta }{2}-5 & \frac{\eta }{2}-6 & \frac{\eta }{2}-7 & \frac{\eta }{2}-8 & \frac{\eta }{2}-9 & \frac{\eta -20}{2} \\
+\begin{array}{ccc}
+ \frac{1}{2} (-\mu -1) & -\frac{\eta }{2} & \frac{\eta }{2} \\
+ \frac{1}{2} (-\mu -3) & -\frac{\eta }{2}-1 & \frac{\eta -2}{2} \\
+ \frac{1}{2} (-\mu -5) & -\frac{\eta }{2}-2 & \frac{\eta -4}{2} \\
+ \frac{1}{2} (-\mu -7) & -\frac{\eta }{2}-3 & \frac{\eta -6}{2} \\
+ \frac{1}{2} (-\mu -9) & -\frac{\eta }{2}-4 & \frac{\eta -8}{2} \\
+ \frac{1}{2} (-\mu -11) & -\frac{\eta }{2}-5 & \frac{\eta }{2}-5 \\
+ \frac{1}{2} (-\mu -13) & -\frac{\eta }{2}-6 & \frac{\eta }{2}-6 \\
+ \frac{1}{2} (-\mu -15) & -\frac{\eta }{2}-7 & \frac{\eta }{2}-7 \\
 \end{array}
-\right)
+\right)^T 
 \end{align*}
+
+\printbibliography[title={References}]
 
 \end{document}

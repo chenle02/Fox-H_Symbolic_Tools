@@ -20,6 +20,7 @@ if compgen -G "$pattern" > /dev/null; then
 
     # Change section to subsection
     sed -i 's/section/subsection/g' "${file}"
+    sed -i '/^\\printbibliography\[title={References}\]/d' "${file}"
 
     # Extract the base name without the extension
     base_name=$(basename "$file" .tex)
@@ -33,7 +34,7 @@ else
 fi
 
 lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
-bibtex FoxH-Parametration
+biber FoxH-Parametration
 lualatex --shell-escape --interaction=nonstopmode FoxH-Parametration
 
 # FoxH32-21_output.tex
