@@ -157,11 +157,11 @@ included in your acknowledgments section or as a footnote:
 Or, if you prefer to directly cite this repository, please use the following
 BibTeX entry[^1]:
 
-  * Le Chen (2023) “Some symbolic tools for the Fox $H$-function”. GitHub & Zenodo. doi: 10.5281/zenodo.10143785.
+  * Le Chen and Guannan Hu (2023) “Some symbolic tools for the Fox $H$-function”. GitHub & Zenodo. doi: 10.5281/zenodo.10143785.
  
 ```
 @misc{chen:23:some,
-  author        = {Le Chen},
+  author        = {Le Chen and Guannan Hu},
   title         = {Some symbolic tools for the Fox {$H$}-function},
   month         = {nov},
   year          = {2023},
