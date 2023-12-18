@@ -4,7 +4,9 @@
 *.bbl
 *.blg
 *.pyg
-_minted*
+*.gz
+*.run.xml
+**/_minted*
 
 **/.directory
 debug.wls
