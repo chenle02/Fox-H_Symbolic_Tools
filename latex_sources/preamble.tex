@@ -1,0 +1,27 @@
+
+\usepackage{amsmath, url, hyperref, minted, fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
+\newcommand{\FoxHext}[7]{
+  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
+  H_{#2}^{#1}\left(#3\:\middle\vert\:
+  \begin{array}{c|c}
+    #4 & #5 \\ \hline
+    #6 & #7
+  \end{array}
+  \right)
+}
+\renewcommand{\arraystretch}{1.8}
+
+% -------------------------------------------------
+% BibTex Setup
+% -------------------------------------------------
+\usepackage[strict=true,style=english]{csquotes}
+\setlength{\parskip}{0.5cm plus4mm minus3mm}
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  natbib=true,
+  abbreviate=true
+  ]{biblatex}
+\addbibresource{./Examples/biblatex-examples.bib}
