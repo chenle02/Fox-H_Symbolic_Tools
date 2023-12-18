@@ -1,0 +1,19 @@
+\documentclass[11pt]{article}
+\input{../latex_sources/preamble.tex}
+\addbibresource{../latex_sources/Fox-H_biber.bib}
+\begin{document}
+
+\paragraph{Source} This example is from (2.9.4) of
+~\cite{kilbas.saigo:04:h-transforms}:
+\begin{align*}
+  \FoxH
+    {1,0}
+    {0,1}
+    {z}
+    {}
+    {\left(b, \beta\right)}
+    = \frac{1}{\beta} z^{b/\beta} \exp\left(-z^{1 /\beta}\right).
+\end{align*}
+
+\printbibliography[title={References}]
+\end{document}
