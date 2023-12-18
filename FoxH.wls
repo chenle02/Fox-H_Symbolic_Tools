@@ -59,7 +59,7 @@ If[argc == 0,
   Print["Help Options:"];
   Print["-h, --help           Show help for typing Greek letters."];
   Print["-s, --standalone     Generate standalone latex and pdf."];
-  Print["-t, --transpose      Show ten poles in column vector."];
+  Print["-t, --transpose      Show eigth poles in column vector."];
   Print[""];
   Print["Common Greek Letters Input:"];
   Print["\[Alpha]              Type \\[Alpha] to get the α character."];
@@ -358,8 +358,8 @@ Print["Poles:"]
 
 (* Compute aik if n is greater than zero *)
 If[n > 0,
-  aik = FullSimplify[Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]], {i, 1, n}], {k, 0, 10}]];
-  Print["First ten Poles aik = ", Flatten[aik]],
+  aik = FullSimplify[Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]], {i, 1, n}], {k, 0, 7}]];
+  Print["First eight Poles aik = ", Flatten[aik]],
   (* Handle the case when n is zero *)
   Print["n is zero, aik computation skipped"];
   aik = {}  (* Assign an empty list to aik *)
@@ -367,8 +367,8 @@ If[n > 0,
 
 (* Compute bjl if m is greater than zero *)
 If[m > 0,
-  bjl = FullSimplify[Table[Table[(-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {j, 1, m}], {l, 0, 10}]];
-  Print["First ten Poles bjl = ", Flatten[bjl]],
+  bjl = FullSimplify[Table[Table[(-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {j, 1, m}], {l, 0, 7}]];
+  Print["First eight Poles bjl = ", Flatten[bjl]],
   (* Handle the case when m is zero *)
   Print["m is zero, bjl computation skipped"];
   bjl = {}  (* Assign an empty list to bjl *)
@@ -385,7 +385,7 @@ If[n > 0 && m > 0,
 
 
 WriteString[file, "\\paragraph{Poles}\n\n"];
-WriteString[file, "\\noindent\\textbf{1. First ten poles from upper front list}\n\n"];
+WriteString[file, "\\noindent\\textbf{1. First eight poles from upper front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
 
 (* If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"], *)
@@ -394,17 +394,17 @@ WriteString[file, "\\begin{align*}\n"];
 (* ] *)
 
 If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
-  Print["Debug: a_{i,k} = ", aik];
-  WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "\n"],
-  Print["Debug: Transposed a_{i,k} = ", Transpose[aik]];
+  (* Print["Debug: a_{i,k} = ", aik]; *)
+  WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "^T \n"],
+  (* Print["Debug: Transposed a_{i,k} = ", Transpose[aik]]; *)
   WriteString[file, "  a_{i,k} = \n  ", TeXForm[Transpose[aik]],  "\n"]
 ]
 
 WriteString[file, "\\end{align*}", "\n"];
-WriteString[file, "\\noindent\\textbf{2. First ten poles from lower front list}\n\n"];
+WriteString[file, "\\noindent\\textbf{2. First eight poles from lower front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
 If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
-  WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[bjl], "\n"],
+  WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[bjl], "^T \n"],
   WriteString[file, "  b_{j,\\ell} = \n  ", TeXForm[Transpose[bjl]], "\n"]
 ]
 WriteString[file, "\\end{align*}", "\n\n"];
