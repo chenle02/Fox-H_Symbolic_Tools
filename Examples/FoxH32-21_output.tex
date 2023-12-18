@@ -2,17 +2,9 @@
 \usepackage{amsmath, url, hyperref, minted, fontspec}
 \setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
 \newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
-\newcommand{\FoxHext}[7]{
-  \renewcommand{\arraystretch}{1.5} % Adjust the factor 1.5 as needed
-  H_{#2}^{#1}\left(#3\:\middle\vert\:
-  \begin{array}{c|c}
-    #4 & #5 \\ \hline
-    #6 & #7
-  \end{array}
-  \right)
-}
-\renewcommand{\arraystretch}{1.8}
 
+\input{../latex_sources/preamble.tex}
+\addbibresource{../latex_sources/Fox-H_biber.bib}
 \begin{document}
 
 \section{Example \url{FoxH32-21.wls}}
@@ -58,26 +50,28 @@
 
 \paragraph{Poles}
 
-\noindent\textbf{1. First ten poles from upper front list}
+\noindent\textbf{1. First eight poles from upper front list}
 
 \begin{align*}
   a_{i,k} = 
   \left(
-\begin{array}{ccccccccccc}
- 0 & \alpha  & 2 \alpha  & 3 \alpha  & 4 \alpha  & 5 \alpha  & 6 \alpha  & 7 \alpha  & 8 \alpha  & 9 \alpha  & 10 \alpha  \\
+\begin{array}{cccccccc}
+ 0 & \alpha  & 2 \alpha  & 3 \alpha  & 4 \alpha  & 5 \alpha  & 6 \alpha  & 7 \alpha  \\
 \end{array}
 \right)
 \end{align*}
-\noindent\textbf{2. First ten poles from lower front list}
+\noindent\textbf{2. First eight poles from lower front list}
 
 \begin{align*}
   b_{j,\ell} = 
   \left(
-\begin{array}{ccccccccccc}
- -\frac{1}{\alpha } & -\frac{3}{\alpha } & -\frac{5}{\alpha } & -\frac{7}{\alpha } & -\frac{9}{\alpha } & -\frac{11}{\alpha } & -\frac{13}{\alpha } & -\frac{15}{\alpha } & -\frac{17}{\alpha } & -\frac{19}{\alpha } & -\frac{21}{\alpha } \\
- -1 & -2 & -3 & -4 & -5 & -6 & -7 & -8 & -9 & -10 & -11 \\
+\begin{array}{cccccccc}
+ -\frac{1}{\alpha } & -\frac{3}{\alpha } & -\frac{5}{\alpha } & -\frac{7}{\alpha } & -\frac{9}{\alpha } & -\frac{11}{\alpha } & -\frac{13}{\alpha } & -\frac{15}{\alpha } \\
+ -1 & -2 & -3 & -4 & -5 & -6 & -7 & -8 \\
 \end{array}
 \right)
 \end{align*}
+
+\printbibliography[title={References}]
 
 \end{document}

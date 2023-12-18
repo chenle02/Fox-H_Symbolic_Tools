@@ -4,7 +4,10 @@
 *.bbl
 *.blg
 *.pyg
-_minted*
+*.gz
+*.bcf
+*.run.xml
+**/_minted*
 
 **/.directory
 debug.wls
@@ -31,3 +34,5 @@ documentation/FoxH-Bessel-J_2_9_18_output.tex
 documentation/FoxH-2_9_4_output.tex
 
 documentation/FoxH-Parametration.toc
+
+Examples/*.bib

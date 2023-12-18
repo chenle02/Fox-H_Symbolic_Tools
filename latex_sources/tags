@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+chen.hu:23:some	Fox-H_biber.bib	/^@MISC{chen.hu:23:some,$/;"	b
+chen:23:spdes-bib	Fox-H_biber.bib	/^@MISC{chen:23:spdes-bib,$/;"	b
+eidelman.ivasyshen.ea:04:analytic	Fox-H_biber.bib	/^@BOOK{eidelman.ivasyshen.ea:04:analytic,$/;"	b
+fox:61:g	Fox-H_biber.bib	/^@ARTICLE{fox:61:g,$/;"	b
+kilbas.saigo:04:h-transforms	Fox-H_biber.bib	/^@BOOK{kilbas.saigo:04:h-transforms,$/;"	b
+kilbas.srivastava.ea:06:theory	Fox-H_biber.bib	/^@BOOK{kilbas.srivastava.ea:06:theory,$/;"	b
+mathai.saxena.ea:10:h-function	Fox-H_biber.bib	/^@BOOK{mathai.saxena.ea:10:h-function,$/;"	b
+mathai.saxena:78:h-function	Fox-H_biber.bib	/^@BOOK{mathai.saxena:78:h-function,$/;"	b
+olver.lozier.ea:10:nist	Fox-H_biber.bib	/^@BOOK{olver.lozier.ea:10:nist,$/;"	b
+prudnikov.brychkov.ea:90:integrals	Fox-H_biber.bib	/^@BOOK{prudnikov.brychkov.ea:90:integrals,$/;"	b

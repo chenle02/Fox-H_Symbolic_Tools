@@ -3,14 +3,29 @@
 \usepackage{amsmath,amsthm,amsfonts,amssymb, xcolor,enumerate,enumitem,xfrac,tikz,comment, pgfplots,soul, mathtools, minted, fontspec, standalone}
 \usetikzlibrary{shapes.geometric,positioning,calc}
 \usepackage{url}
-\usepackage[colorlinks=true,
-            linkcolor=blue,
-            filecolor=magenta,
-            urlcolor=black,
-            citecolor=magenta,
-            pdftitle={Reviewing report},
-            pdfpagemode=FullScreen,
-          ]{hyperref}
+
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=black,
+  citecolor=magenta,
+  pdftitle={Reviewing report},
+  pdfpagemode=FullScreen,
+  ]{hyperref}
+
+% -------------------------------------------------
+% BibTex Setup
+% -------------------------------------------------
+\usepackage[strict=true,style=english]{csquotes}
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  natbib=true,
+  abbreviate=true
+  ]{biblatex}
+
+\addbibresource{../latex_sources/Fox-H_biber.bib}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Norm}[1]{\left|\left|  #1   \right|\right|}
@@ -161,6 +176,8 @@ figure~\ref{F:Wellposedness}:
 \input{Examples}
 
 \addcontentsline{toc}{section}{References}
-\bibliographystyle{alpha} \bibliography{../refs/refs.bib}
+% \bibliographystyle{alpha} \bibliography{../refs/refs.bib}
+
+\printbibliography[title={References}]
 \end{document}
 
