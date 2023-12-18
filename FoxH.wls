@@ -418,8 +418,8 @@ WriteString[file, "\\end{document}"];
 Close[file];
 
 result = RunProcess[{"lualatex", "--interaction=nonstopmode --shell-escape", outputFilePath}, "StandardOutput", "StandardError"];
-result = RunProcess[{"biber", "--shell-escape", outputFilePath}, "StandardOutput", "StandardError"];
-result = RunProcess[{"lualatex", "--shell-escape", outputFilePath}, "StandardOutput", "StandardError"];
+result = RunProcess[{"biber", outputFilePath}, "StandardOutput", "StandardError"];
+result = RunProcess[{"lualatex", "--interaction=nonstopmode --shell-escape", outputFilePath}, "StandardOutput", "StandardError"];
 (* Print[result["StandardOutput"]]; *)
 (* Print[result["StandardError"]]; *)
 
