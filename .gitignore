@@ -6,6 +6,7 @@
 *.pyg
 _minted*
 
+**/.directory
 debug.wls
 a.wls
 anther.tex
