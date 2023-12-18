@@ -394,9 +394,7 @@ WriteString[file, "\\begin{align*}\n"];
 (* ] *)
 
 If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
-  (* Print["Debug: a_{i,k} = ", aik]; *)
   WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "^T \n"],
-  (* Print["Debug: Transposed a_{i,k} = ", Transpose[aik]]; *)
   WriteString[file, "  a_{i,k} = \n  ", TeXForm[Transpose[aik]],  "\n"]
 ]
 
