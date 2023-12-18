@@ -5,7 +5,7 @@
     (* Upper Rear List *)  {}
   },
   (* Lower List *) {
-    (* Lower Front List *) {{(a+η)/2, 1},{(a-η)/2, 1}},
-    (* Lower Rear List *)  {}
+    (* Lower Front List *) {{(a+η)/2, 1}},
+    (* Lower Rear List *)  {{(a-η)/1, 1}}
   }
 }

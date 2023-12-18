@@ -23,6 +23,10 @@ show_help() {
 # Array of exceptional filenames
 exceptional_files=(
     "FoxH-Bessel-J_2_9_18.wls"
+    "FoxH-Bessel-K_2_9_19.wls"
+    "FoxH-Bessel-Y_2_9_20.wls"
+    "FoxH-Whittaker_2_9_21.wls"
+    "FoxH-Lommel_2_9_22.wls"
     # Add any other exceptional files here
 )
 
