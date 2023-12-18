@@ -75,8 +75,20 @@ Then the Fox $H$-function $\FoxH{2,1}{2,3}{z}{\cdots}{\cdots}$ is defined by a M
   \FoxH{p,q}{m,n}{z}{(a_1,\alpha_1),\cdots, (a_p,\alpha_p)}{(b_1,\beta_1),\cdots, (b_q,\beta_q)}
   \coloneqq \frac{1}{2\pi i} \int_{\mathcal{L}} H^{m,n}_{p,q}(s) z^{-s} \ud s.
 \end{align}
+It is more convenient to use the following notation:
+\begin{align*}
+  \FoxHext
+    {p,q}
+    {m,n}
+    {z}
+    {\left(a_1,\alpha_1\right),\cdots, \left(a_n,\alpha_n\right)}
+    {\left(a_{n+1},\alpha_{n+1}\right),\cdots, \left(a_p,\alpha_p\right)}
+    {\left(b_1,\beta\right),\cdots, \left(b_m,\beta_m\right)}
+    {\left(b_{m+1},\beta_{m+1}\right),\cdots, \left(b_q,\beta_q\right)},
+\end{align*}
+in order to emphasize the front and rear lists. \bigskip
 
-The basic assumption for the well-posedness of the Fox H-function is that two
+The basic assumption for the well-posedness of the Fox $H$-function is that two
 sets of poles do not overlap, i.e.,
 \begin{align}\label{E:poles}
   \bigg\{b_{j\ell}=\frac{-b_j-\ell}{\beta_j },  \ell =0, 1, \cdots\bigg\} \bigcap
