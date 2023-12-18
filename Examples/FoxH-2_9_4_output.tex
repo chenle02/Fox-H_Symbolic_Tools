@@ -1,7 +1,8 @@
 \documentclass[11pt]{article}
-\input{../latex_sources/preamble.tex}
-\addbibresource{../latex_sources/Fox-H_biber.bib}
-\begin{document}
+\usepackage{amsmath, url, hyperref, minted, fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+\newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
+\input{../latex_sources/preamble.tex}\addbibresource{../latex_sources/Fox-H_biber.bib}\begin{document}
 
 \section{Example \url{FoxH-2_9_4.wls}}
 
@@ -46,24 +47,25 @@
 
 \paragraph{Poles}
 
-\noindent\textbf{1. First ten poles from upper front list}
+\noindent\textbf{1. First eight poles from upper front list}
 
 \begin{align*}
   a_{i,k} = 
   \{\}
 \end{align*}
-\noindent\textbf{2. First ten poles from lower front list}
+\noindent\textbf{2. First eight poles from lower front list}
 
 \begin{align*}
   b_{j,\ell} = 
   \left(
-\begin{array}{ccccccccccc}
- -\frac{b}{\beta } & -\frac{b+1}{\beta } & -\frac{b+2}{\beta } & -\frac{b+3}{\beta } & -\frac{b+4}{\beta } & -\frac{b+5}{\beta } & -\frac{b+6}{\beta } & -\frac{b+7}{\beta } & -\frac{b+8}{\beta } & -\frac{b+9}{\beta } & -\frac{b+10}{\beta } \\
+\begin{array}{cccccccc}
+ -\frac{b}{\beta } & -\frac{b+1}{\beta } & -\frac{b+2}{\beta } & -\frac{b+3}{\beta } & -\frac{b+4}{\beta } & -\frac{b+5}{\beta } & -\frac{b+6}{\beta } & -\frac{b+7}{\beta } \\
 \end{array}
 \right)
 \end{align*}
 
-\input{../Examples/FoxH-H.G_2_9_14_additional.tex}
 
+\input{../Examples/FoxH-2_9_4_additional.tex}
 \printbibliography[title={References}]
+
 \end{document}

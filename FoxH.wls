@@ -318,8 +318,7 @@ WriteString[file, "\\newcommand{\\FoxH}[5]{H_{#2}^{#1}\\left(#3\\:\\middle\\vert
 WriteString[file,
 "\\input{../latex_sources/preamble.tex}",
 "\\addbibresource{../latex_sources/Fox-H_biber.bib}",
-"}\n",
-"\\begin{document}\n\n",
+"\\begin{document}\n\n"
 ];
 WriteString[file, "\\section{Example \\url{" <> inputFilePath <>"}}\n\n"];
 WriteString[file, "\\paragraph{File content}\n\n"];
@@ -401,13 +400,18 @@ If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
 WriteString[file, "\\end{align*}", "\n\n"];
 
 
-additionalFilePath = StringReplace[outputFilePath, "_output" -> "_additional"];
-(* If outputFilePath <> "_additional.tex" exists, then append the content to the output file *)
+print[outputFilePath];
+additionalFilePath = StringReplace[inputFilePath, ".wls" -> "_additional"];
+print[additionalFilePath];
 If[FileExistsQ[additionalFilePath <> ".tex"],
-  WriteString[file, 
-  "\n",
-  "\\input{../Examples/" <> additionalFilePath <> ".tex",
-  "\n"];
+  (
+    WriteString[file, 
+      "\n",
+      "\\input{../Examples/" <> additionalFilePath <> ".tex}",
+      "\n"
+    ];
+  )
+];
 
 WriteString[file, "\\printbibliography[title={References}]\n\n"];
 WriteString[file, "\\end{document}"];
