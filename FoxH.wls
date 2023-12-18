@@ -355,20 +355,48 @@ WriteString[file, "\\end{align*}",  "\n\n"];
 
 (* Poles *)
 Print["Poles:"]
-aik = FullSimplify[Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]],{i,1,n}],{k,0,10}]]
-Print["First ten Poles aik = ", Flatten[aik]]
-bjl = FullSimplify[Table[Table[(-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]],{j,1,m}],{l,0,10}]]
-Print["First ten Poles bjl = ", Flatten[bjl]]
-poles = FullSimplify[Table[Solve[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]] == (-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {k}], {i,1,n}, {j,1,m}]]
-Print["Poles overlap? ", Flatten[poles]]
+
+(* Compute aik if n is greater than zero *)
+If[n > 0,
+  aik = FullSimplify[Table[Table[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]], {i, 1, n}], {k, 0, 10}]];
+  Print["First ten Poles aik = ", Flatten[aik]],
+  (* Handle the case when n is zero *)
+  Print["n is zero, aik computation skipped"];
+  aik = {}  (* Assign an empty list to aik *)
+];
+
+(* Compute bjl if m is greater than zero *)
+If[m > 0,
+  bjl = FullSimplify[Table[Table[(-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {j, 1, m}], {l, 0, 10}]];
+  Print["First ten Poles bjl = ", Flatten[bjl]],
+  (* Handle the case when m is zero *)
+  Print["m is zero, bjl computation skipped"];
+  bjl = {}  (* Assign an empty list to bjl *)
+];
+
+(* Check and compute pole overlaps only if both m and n are greater than zero *)
+If[n > 0 && m > 0,
+  poles = FullSimplify[Table[Solve[(1-A[[1]][[1]][[i]][[1]] + k) / A[[1]][[1]][[i]][[2]] == (-A[[2]][[1]][[j]][[1]] - l) / A[[2]][[1]][[j]][[2]], {k}], {i, 1, n}, {j, 1, m}]];
+  Print["Poles overlap? ", Flatten[poles]],
+  (* No pole overlap if either m or n is zero *)
+  Print["No pole overlap as either m or n is zero"];
+  poles = {}  (* Assign an empty list to poles *)
+];
 
 
 WriteString[file, "\\paragraph{Poles}\n\n"];
 WriteString[file, "\\noindent\\textbf{1. First ten poles from upper front list}\n\n"];
 WriteString[file, "\\begin{align*}\n"];
 
+(* If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"], *)
+(*   WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "\n"], *)
+(*   WriteString[file, "  a_{i,k} = \n  ", TeXForm[Transpose[aik]],  "\n"] *)
+(* ] *)
+
 If[MemberQ[argv, "-t"] || MemberQ[argv, "--transpose"],
+  Print["Debug: a_{i,k} = ", aik];
   WriteString[file, "  a_{i,k} = \n  ", TeXForm[aik],  "\n"],
+  Print["Debug: Transposed a_{i,k} = ", Transpose[aik]];
   WriteString[file, "  a_{i,k} = \n  ", TeXForm[Transpose[aik]],  "\n"]
 ]
 
