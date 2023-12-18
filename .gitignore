@@ -5,6 +5,7 @@
 *.blg
 *.pyg
 *.gz
+*.bcf
 *.run.xml
 **/_minted*
 
