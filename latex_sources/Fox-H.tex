@@ -1,6 +1,6 @@
 % \documentclass[preview]{standalone}
 \documentclass{article}
-\usepackage{amsmath, url, hyperref, minted, fontspec, listings, color}
+\usepackage{amsmath, url, hyperref, minted, fontspec, listings, color, amssymb}
 \setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
 \newcommand{\FoxH}[5]{H_{#2}^{#1}\left(#3\:\middle\vert\: \begin{array}{l}#4\\[0.4em] #5\end{array}\right)}
 \newcommand{\FoxHext}[7]{
@@ -28,6 +28,8 @@
   backend=biber,
   style=alphabetic,
   natbib=true,
+  maxbibnames=10,
+  maxcitenames=3,
   abbreviate=true
   ]{biblatex}
 \addbibresource{./All.bib}
@@ -67,7 +69,12 @@ fundamental solutions to our equations. It is a generalization of the
   \item About this repo: \cite{chen.hu:23:some}.
 \end{enumerate}
 
-
+In the context of the stochastic partial differential equations (SPDEs), the Fox
+$H$-function is used to express the fundamental solutions for the slow and fast
+diffusion equations; see, e.g., \cite{chen.hu.ea:17:space-time},
+\cite{chen.hu.ea:19:nonlinear}, \cite{chen.eisenberg:22:interpolating},
+\cite{chen.hu:22:holder}, \cite{chen.guo.ea:22:moments},
+\cite{mijena.nane:15:space-time}.
 
 \printbibliography[title={References}]
 
