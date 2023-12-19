@@ -26,8 +26,8 @@ if compgen -G "$pattern" > /dev/null; then
     base_name=$(basename "$file" .tex)
 
     # Append the input command to the file
-    echo "\newpage" >> "Examples.tex"
     echo "\input{$base_name}" >> "Examples.tex"
+    echo "\newpage" >> "Examples.tex"
   done
 else
     # No files found
