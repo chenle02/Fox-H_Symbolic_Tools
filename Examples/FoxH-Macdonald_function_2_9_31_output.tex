@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+
+\input{../latex_sources/preamble.tex}
+\addbibresource{../latex_sources/Fox-H_biber.bib}
+\begin{document}
+
+\section{Example \url{FoxH-Macdonald_function_2_9_31.wls}}
+
+\paragraph{File content}
+
+\inputminted{text}{FoxH-Macdonald_function_2_9_31.wls}
+
+\paragraph{Fox H-function}
+
+\begin{align*}
+  \FoxH
+    {2,0}
+    {0,2}
+    {\cdot}
+    {}
+    {\left(0, 1\right), \left(\frac{\gamma }{\beta }, \frac{1}{\beta }\right)}
+\end{align*}
+
+\begin{align*}
+  \FoxHext
+    {2,0}
+    {0,2}
+    {\cdot}
+    {}
+    {}
+    {\left(0, 1\right), \left(\frac{\gamma }{\beta }, \frac{1}{\beta }\right)}
+    {}
+\end{align*}
+
+\paragraph{Summary}
+
+\begin{align*}
+  a^*    & = \frac{1}{\beta }+1 \\
+  \Delta & = \frac{1}{\beta }+1 \\
+  \delta & = \text{Indeterminate} \\
+  \mu    & = \frac{\gamma }{\beta }-1 \\
+  a_1^*  & = \frac{1}{\beta }+1 \\
+  a_2^*  & = 0 \\
+  \xi    & = \frac{\gamma }{\beta } \\
+  c^*    & = 1 \\
+\end{align*}
+
+\paragraph{Poles}
+
+\noindent\textbf{1. First eight poles from upper front list}
+
+\begin{align*}
+  a_{i,k} = 
+  \{\}
+\end{align*}
+\noindent\textbf{2. First eight poles from lower front list}
+
+\begin{align*}
+  b_{j,\ell} = 
+  \left(
+\begin{array}{cccccccc}
+ 0 & -1 & -2 & -3 & -4 & -5 & -6 & -7 \\
+ -\gamma  & -\beta -\gamma  & -2 \beta -\gamma  & -3 \beta -\gamma  & -4 \beta -\gamma  & -5 \beta -\gamma  & -6 \beta -\gamma  & -7 \beta -\gamma  \\
+\end{array}
+\right)
+\end{align*}
+
+\printbibliography[title={References}]
+
+\end{document}

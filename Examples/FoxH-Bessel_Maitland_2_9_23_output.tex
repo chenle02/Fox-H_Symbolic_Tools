@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+
+\input{../latex_sources/preamble.tex}
+\addbibresource{../latex_sources/Fox-H_biber.bib}
+\begin{document}
+
+\section{Example \url{FoxH-Bessel_Maitland_2_9_23.wls}}
+
+\paragraph{File content}
+
+\inputminted{text}{FoxH-Bessel_Maitland_2_9_23.wls}
+
+\paragraph{Fox H-function}
+
+\begin{align*}
+  \FoxH
+    {1,0}
+    {0,2}
+    {\cdot}
+    {}
+    {\left(0, 1\right), \left(-\nu, \mu\right)}
+\end{align*}
+
+\begin{align*}
+  \FoxHext
+    {1,0}
+    {0,2}
+    {\cdot}
+    {}
+    {}
+    {\left(0, 1\right)}
+    {\left(-\nu, \mu\right)}
+\end{align*}
+
+\paragraph{Summary}
+
+\begin{align*}
+  a^*    & = 1-\mu \\
+  \Delta & = \mu +1 \\
+  \delta & = \text{ComplexInfinity} \\
+  \mu    & = -\nu -1 \\
+  a_1^*  & = 1 \\
+  a_2^*  & = -\mu \\
+  \xi    & = \nu \\
+  c^*    & = 0 \\
+\end{align*}
+
+\paragraph{Poles}
+
+\noindent\textbf{1. First eight poles from upper front list}
+
+\begin{align*}
+  a_{i,k} = 
+  \{\}
+\end{align*}
+\noindent\textbf{2. First eight poles from lower front list}
+
+\begin{align*}
+  b_{j,\ell} = 
+  \left(
+\begin{array}{cccccccc}
+ 0 & -1 & -2 & -3 & -4 & -5 & -6 & -7 \\
+\end{array}
+\right)
+\end{align*}
+
+\printbibliography[title={References}]
+
+\end{document}

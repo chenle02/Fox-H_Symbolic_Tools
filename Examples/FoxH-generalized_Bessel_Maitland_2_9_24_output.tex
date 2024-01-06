@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\input{../latex_sources/preamble.tex}
+\addbibresource{../latex_sources/Fox-H_biber.bib}
+\begin{document}
+
+\section{Example \url{FoxH-generalized_Bessel_Maitland_2_9_24.wls}}
+
+\paragraph{File content}
+
+\inputminted{text}{FoxH-generalized_Bessel_Maitland_2_9_24.wls}
+
+\paragraph{Fox H-function}
+
+\begin{align*}
+  \FoxH
+    {1,1}
+    {1,3}
+    {\cdot}
+    {\left(\lambda +\frac{\nu }{2}, 1\right)}
+    {\left(\lambda +\frac{\nu }{2}, 1\right), \left(\frac{\nu }{2}, 1\right), \left(\mu \left(\lambda +\frac{\nu }{2}\right)-\lambda -\nu, \mu\right)}
+\end{align*}
+
+\begin{align*}
+  \FoxHext
+    {1,1}
+    {1,3}
+    {\cdot}
+    {\left(\lambda +\frac{\nu }{2}, 1\right)}
+    {}
+    {\left(\lambda +\frac{\nu }{2}, 1\right)}
+    {\left(\frac{\nu }{2}, 1\right), \left(\mu \left(\lambda +\frac{\nu }{2}\right)-\lambda -\nu, \mu\right)}
+\end{align*}
+
+\paragraph{Summary}
+
+\begin{align*}
+  a^*    & = 1-\mu \\
+  \Delta & = \mu +1 \\
+  \delta & = \text{ComplexInfinity} \\
+  \mu    & = \mu \left(\lambda +\frac{\nu }{2}\right)-\lambda -\frac{\nu }{2}-1 \\
+  a_1^*  & = 1 \\
+  a_2^*  & = -\mu \\
+  \xi    & = -\mu \left(\lambda +\frac{\nu }{2}\right)+3 \lambda +\frac{3 \nu }{2} \\
+  c^*    & = 0 \\
+\end{align*}
+
+\paragraph{Poles}
+
+\noindent\textbf{1. First eight poles from upper front list}
+
+\begin{align*}
+  a_{i,k} = 
+  \left(
+\begin{array}{c}
+ -\lambda -\frac{\nu }{2}+1 \\
+ -\lambda -\frac{\nu }{2}+2 \\
+ -\lambda -\frac{\nu }{2}+3 \\
+ -\lambda -\frac{\nu }{2}+4 \\
+ -\lambda -\frac{\nu }{2}+5 \\
+ -\lambda -\frac{\nu }{2}+6 \\
+ -\lambda -\frac{\nu }{2}+7 \\
+ -\lambda -\frac{\nu }{2}+8 \\
+\end{array}
+\right)^T 
+\end{align*}
+\noindent\textbf{2. First eight poles from lower front list}
+
+\begin{align*}
+  b_{j,\ell} = 
+  \left(
+\begin{array}{c}
+ -\lambda -\frac{\nu }{2} \\
+ -\lambda -\frac{\nu }{2}-1 \\
+ -\lambda -\frac{\nu }{2}-2 \\
+ -\lambda -\frac{\nu }{2}-3 \\
+ -\lambda -\frac{\nu }{2}-4 \\
+ -\lambda -\frac{\nu }{2}-5 \\
+ -\lambda -\frac{\nu }{2}-6 \\
+ -\lambda -\frac{\nu }{2}-7 \\
+\end{array}
+\right)^T 
+\end{align*}
+
+\printbibliography[title={References}]
+
+\end{document}
