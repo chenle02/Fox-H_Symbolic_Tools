@@ -14,35 +14,35 @@
 
 \begin{align*}
   \FoxH
-    {2,0}
+    {2,1}
     {1,2}
     {\cdot}
-    {\left(\text{ComplexInfinity}, \text{ComplexInfinity}\right)}
-    {\left(\text{$\gamma $n}, 1\right), \left(0, \text{ComplexInfinity}\right)}
+    {\left(\gamma, 1\right)}
+    {\left(\gamma, 1\right), \left(0, 1\right)}
 \end{align*}
 
 \begin{align*}
   \FoxHext
-    {2,0}
+    {2,1}
     {1,2}
     {\cdot}
+    {\left(\gamma, 1\right)}
     {}
-    {\left(\text{ComplexInfinity}, \text{ComplexInfinity}\right)}
-    {\left(\text{$\gamma $n}, 1\right), \left(0, \text{ComplexInfinity}\right)}
+    {\left(\gamma, 1\right), \left(0, 1\right)}
     {}
 \end{align*}
 
 \paragraph{Summary}
 
 \begin{align*}
-  a^*    & = \text{Indeterminate} \\
-  \Delta & = \text{Indeterminate} \\
+  a^*    & = 3 \\
+  \Delta & = 1 \\
   \delta & = \text{Indeterminate} \\
-  \mu    & = \text{ComplexInfinity} \\
-  a_1^*  & = \text{Indeterminate} \\
-  a_2^*  & = 0 \\
-  \xi    & = \text{ComplexInfinity} \\
-  c^*    & = \frac{1}{2} \\
+  \mu    & = -\frac{1}{2} \\
+  a_1^*  & = 2 \\
+  a_2^*  & = 1 \\
+  \xi    & = 2 \gamma \\
+  c^*    & = \frac{3}{2} \\
 \end{align*}
 
 \paragraph{Poles}
@@ -51,7 +51,11 @@
 
 \begin{align*}
   a_{i,k} = 
-  \{\}
+  \left(
+\begin{array}{cccccccc}
+ 1-\gamma  & 2-\gamma  & 3-\gamma  & 4-\gamma  & 5-\gamma  & 6-\gamma  & 7-\gamma  & 8-\gamma  \\
+\end{array}
+\right)
 \end{align*}
 \noindent\textbf{2. First eight poles from lower front list}
 
@@ -59,8 +63,8 @@
   b_{j,\ell} = 
   \left(
 \begin{array}{cccccccc}
- -\text{$\gamma $n} & -\text{$\gamma $n}-1 & -\text{$\gamma $n}-2 & -\text{$\gamma $n}-3 & -\text{$\gamma $n}-4 & -\text{$\gamma $n}-5 & -\text{$\gamma $n}-6 & -\text{$\gamma $n}-7 \\
- 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ -\gamma  & -\gamma -1 & -\gamma -2 & -\gamma -3 & -\gamma -4 & -\gamma -5 & -\gamma -6 & -\gamma -7 \\
+ 0 & -1 & -2 & -3 & -4 & -5 & -6 & -7 \\
 \end{array}
 \right)
 \end{align*}
