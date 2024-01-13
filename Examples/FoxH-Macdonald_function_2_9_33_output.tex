@@ -14,35 +14,35 @@
 
 \begin{align*}
   \FoxH
-    {2,1}
+    {2,0}
     {1,2}
     {\cdot}
-    {\left(\gamma -\frac{1}{c}+1, \frac{1}{c}\right)}
-    {\left(c \gamma, 1\right), \left(0, \frac{1}{c}\right)}
+    {\left(\gamma -\frac{1}{N}+1, \frac{1}{N}\right)}
+    {\left(\gamma  N, 1\right), \left(0, \frac{1}{N}\right)}
 \end{align*}
 
 \begin{align*}
   \FoxHext
-    {2,1}
+    {2,0}
     {1,2}
     {\cdot}
-    {\left(\gamma -\frac{1}{c}+1, \frac{1}{c}\right)}
     {}
-    {\left(c \gamma, 1\right), \left(0, \frac{1}{c}\right)}
+    {\left(\gamma -\frac{1}{N}+1, \frac{1}{N}\right)}
+    {\left(\gamma  N, 1\right), \left(0, \frac{1}{N}\right)}
     {}
 \end{align*}
 
 \paragraph{Summary}
 
 \begin{align*}
-  a^*    & = \frac{c+2}{c} \\
+  a^*    & = 1 \\
   \Delta & = 1 \\
   \delta & = \text{Indeterminate} \\
-  \mu    & = c \gamma -\gamma +\frac{1}{c}-\frac{3}{2} \\
-  a_1^*  & = \frac{1}{c}+1 \\
-  a_2^*  & = \frac{1}{c} \\
-  \xi    & = c \gamma +\gamma -\frac{1}{c}+1 \\
-  c^*    & = \frac{3}{2} \\
+  \mu    & = -\gamma +\gamma  N+\frac{1}{N}-\frac{3}{2} \\
+  a_1^*  & = 1 \\
+  a_2^*  & = 0 \\
+  \xi    & = -\gamma +\gamma  N+\frac{1}{N}-1 \\
+  c^*    & = \frac{1}{2} \\
 \end{align*}
 
 \paragraph{Poles}
@@ -51,22 +51,24 @@
 
 \begin{align*}
   a_{i,k} = 
-  \left(
-\begin{array}{cccccccc}
- 1-c \gamma  & -\gamma  c+c+1 & 1-c (\gamma -2) & 1-c (\gamma -3) & 1-c (\gamma -4) & 1-c (\gamma -5) & 1-c (\gamma -6) & 1-c (\gamma -7) \\
-\end{array}
-\right)
+  \{\}^T 
 \end{align*}
 \noindent\textbf{2. First eight poles from lower front list}
 
 \begin{align*}
   b_{j,\ell} = 
   \left(
-\begin{array}{cccccccc}
- -c \gamma  & -c \gamma -1 & -c \gamma -2 & -c \gamma -3 & -c \gamma -4 & -c \gamma -5 & -c \gamma -6 & -c \gamma -7 \\
- 0 & -c & -2 c & -3 c & -4 c & -5 c & -6 c & -7 c \\
+\begin{array}{cc}
+ \gamma  (-N) & 0 \\
+ \gamma  (-N)-1 & -N \\
+ \gamma  (-N)-2 & -2 N \\
+ \gamma  (-N)-3 & -3 N \\
+ \gamma  (-N)-4 & -4 N \\
+ \gamma  (-N)-5 & -5 N \\
+ \gamma  (-N)-6 & -6 N \\
+ \gamma  (-N)-7 & -7 N \\
 \end{array}
-\right)
+\right)^T 
 \end{align*}
 
 \printbibliography[title={References}]

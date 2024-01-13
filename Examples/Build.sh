@@ -28,6 +28,7 @@ exceptional_files=(
     "FoxH-Whittaker_2_9_21.wls"
     "FoxH-Lommel_2_9_22.wls"
     "FoxH-generalized_Bessel_Maitland_2_9_24.wls"
+    "FoxH-Macdonald_function_2_9_33.wls"
     "FoxH-Macdonald_function_2_9_35.wls"
     # Add any other exceptional files here
 )
