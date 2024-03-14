@@ -6,12 +6,9 @@
     {2,2}
     {\cdot}
     {\left(1-a, 1\right), \left(1-b, 1\right)}
-    {\left(0, 1\right), \left(1-c, 1\right)}
+    {\left(0, 1\right), \left(1-c, 1\right)}=\frac{\Gamma(a)\Gamma(b)}{\Gamma(c)}{}_2F_1(a,b;c;-z)
 \end{align*}
 \paragraph{Notes:}
-;p(2.9.15) is the following confluent hypergeometric function of Kummer (see ~\cite{erdelyi.magnus.ea:81:higher*1},equation (1), 6.1, page 248).
-\begin{equation}\label{kummer} 
-1+ \frac{a}{c}\frac{x}{1!} + \frac{a(a+1)}{c(c+1)}\frac{x^2}{2!} + \cdots .
-\end{equation}
-${}_1F_1(a;c;x)$ is the following generalized hypergeomeiric series
-$$ x \frac{d^2 y}{d x^2}+(c-x) \frac{d y}{d x}-a y=0.$$
+${}_2F_1(a;b;c;z)$ is the following Guass' hypergeometric series (see ~\cite{erdelyi.magnus.ea:81:higher*1} chapter 4 ).
+$$F(a, b ; c ; z)=1+\frac{a b}{1 \cdot c} z+\frac{a(a+1) b(b+1)}{1 \cdot 2 \cdot c(c+1)} z^2+\cdots .$$
+
