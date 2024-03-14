@@ -1,0 +1,14 @@
+\paragraph{Source} This example is from (2.9.16) of
+~\cite{kilbas.saigo:04:h-transforms}:
+\begin{align*}
+  \FoxH
+    {1,p}
+    {p,q+1}
+    {\cdot}
+    {\left(1-a_i, 1\right)_{1,p}}
+    {\left(0, 1\right), \left(1-b_j, 1\right)_{1,q}}=\frac{\displaystyle\prod_{i=1}^{p}\Gamma(a_i)}{\displaystyle\prod_{j=1}^{q}\Gamma(b_j)}{}_pF_q(a_1,\cdots, a_p;b_1,\cdots, b_q;-z)
+\end{align*}
+\paragraph{Notes:}
+${}_pF_q$ is the generalized hypergeometric series (see ~\cite{erdelyi.magnus.ea:81:higher*1} chapter 4).
+$${}_pF_q(a_1, \ldots, a_p; b_1, \ldots, b_q; z) = \sum_{n=0}^{\infty} \frac{(a_1)_n \cdots (a_p)_n}{(b_1)_n \cdots (b_q)_n} \frac{z^n}{n!},$$
+where  $(a)_n$denotes the Pochhammer symbol, which represents the rising factorial $\frac{\Gamma{(a+n-1)}}{\Gamma{(a)}} = a(a+1)(a+2)⋯(a+n−1)a(a+1)(a+2)⋯(a+n−1)$ for $n > 0$, and $(a)_0=1$.
