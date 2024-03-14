@@ -1,0 +1,8 @@
+PWD /home/ma/githubwork/Fox-H_Symbolic_Tools/Examples
+INPUT /opt/texlive/2022/texmf.cnf
+INPUT /opt/texlive/2022/texmf-dist/web2c/texmf.cnf
+INPUT /opt/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT FoxH-H.G_2_9_14_additional.tex
+OUTPUT FoxH-H.G_2_9_14_additional.log
+INPUT /opt/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /opt/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm

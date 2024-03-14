@@ -1,0 +1,17 @@
+\paragraph{Source} This example is from (2.9.14) of
+~\cite{kilbas.saigo:04:h-transforms}:
+\begin{align*}
+  \FoxH
+    {1,1}
+    {1,2}
+    {\cdot}
+    {\left(1-a, 1\right)}
+    {\left(0, 1\right), \left(1-c, 1\right)}
+\end{align*}
+\paragraph{Notes:}
+(2.9.14) is the following confluent hypergeometric function of Kummer (see ~\cite{erdelyi.magnus.ea:81:higher*1},equation (1), 6.1, page 248).
+\begin{equation}\label{kummer} 
+1+ \frac{a}{c}\frac{x}{1!} + \frac{a(a+1)}{c(c+1)}\frac{x^2}{2!} + \cdots .
+\end{equation}
+In the notation of generalized hypergeomeiric series,\eqref{kummer} is ${}_1F_1(a;c;x)$, which satisfies the so-called confluent hypergeometric equation
+$$ x \frac{d^2 y}{d x^2}+(c-x) \frac{d y}{d x}-a y=0.$$
