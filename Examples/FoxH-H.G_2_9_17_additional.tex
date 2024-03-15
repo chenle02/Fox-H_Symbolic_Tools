@@ -1,0 +1,40 @@
+\paragraph{Source} This example is from (2.9.17) of
+~\cite{kilbas.saigo:04:h-transforms}:
+\begin{align*}
+  \FoxH
+    {p,1}
+    {q+1,p}
+    {z}
+    {(1,1), \left(b_j, 1\right)_{1,q}}
+    {\left(a_i, 1\right)_{1,p}}=E(a_1,\cdots, a_p;b_1,\cdots, b_q;z)
+\end{align*}
+\paragraph{Notes:}
+$E(a_1,\cdots, a_p;b_1,\cdots, b_q;z)$ is the MacRobert E-function(see ~\cite{erdelyi.magnus.ea:81:higher*1}, Section 5.2).
+$${}_pF_q(a_1, \ldots, a_p; b_1, \ldots, b_q; z) = \sum_{n=0}^{\infty} \frac{(a_1)_n \cdots (a_p)_n}{(b_1)_n \cdots (b_q)_n} \frac{z^n}{n!},$$
+where  $(a)_n$denotes the Pochhammer symbol, which represents the rising factorial $\frac{\Gamma{(a+n-1)}}{\Gamma{(a)}} = a(a+1)(a+2)⋯(a+n−1)a(a+1)(a+2)⋯(a+n−1)$ for $n > 0$, and $(a)_0=1$.
+
+The MacRobert E-function is an generalization of the generalized hypergeometric series
+ $${}_pF_q(a_1, \ldots, a_p; b_1, \ldots, b_q; z) = \sum_{n=0}^{\infty} \frac{(a_1)_n \cdots (a_p)_n}{(b_1)_n \cdots (b_q)_n} \frac{z^n}{n!},$$ for the case of $p>q+1$, when the generalized hypergeometric series diverges for any $x\neq 0$.
+For $p \leq q+1$ we have
+$$
+E\left(p ; a_r: q ; \rho_s: x\right)=\frac{\Gamma\left(a_1\right) \cdots\left(a_p\right)}{\Gamma\left(\rho_1\right) \cdots\left(\rho_q\right)} \times{ }_p F_q\left(a_1, \ldots, a_p ; \rho_1, \ldots, \rho_q ;-1 / x\right)
+$$
+where $x \neq 0$ if $p<q$ and $|x|>1$ if $p=q+1$.
+
+For $p \geq q+1$ we have
+$$
+\begin{aligned}
+&E\left(p ; a_r: q ; \rho_s: x\right)=\sum_{r=1}^p \frac{\prod_{s=1,s\neq r}^p \Gamma\left(a_s-a_r\right)}{\prod_{t=1}^q \Gamma\left(\rho_t-a_r\right)} \Gamma\left(a_r\right) x^{a_r}\\
+&\times {}_{q+1} F_{p-1} [a_r, a_r-\rho_1+1, \ldots, a_r-\rho_q+1 ; \\
+				     & a_r-a_1, \ldots, a_r-a_{r-1}+1,a_r-a_{r+1}+1,\ldots, a_r-a_p+1 ;(-1)^{p+q} x]
+\end{aligned}
+$$
+where $a_r\neq 0,-1,-2 \ldots$
+
+The MacRobert E-function can also be represented as a paricular case of Meijer G-function.
+$$
+E\left(p ; a_r: q ; \rho_s: x\right)=G_{q+1, p}^{p, 1}\Biggl(x \Bigg|\, \begin{array}{c} 
+1, \beta_1, \ldots, \beta_q  \\
+a_1, \ldots, a_p
+\end{array}\Biggl)
+$$
