@@ -252,7 +252,8 @@ Delta = FullSimplify[sumbetafront + sumbetabehind - sumalphafront - sumalphabehi
 Print["(1.1.8) ", Spaces, "\[CapitalDelta] = ", Delta]
 
 f[x_] := x^x
-delta = FullSimplify[(Total[f /@ A[[2]][[1]]] Total[f /@ A[[2]][[2]]] / Total[f /@ A[[1]][[1]]] / Total[f /@ A[[1]][[2]]] )[[2]]]
+(* delta = FullSimplify[(Total[f /@ A[[2]][[1]]] Total[f /@ A[[2]][[2]]] / Total[f /@ A[[1]][[1]]] / Total[f /@ A[[1]][[2]]] )[[2]]] *)
+delta = FullSimplify[(Times @@ (f /@ A[[2]][[1]]) Times @@ (f /@ A[[2]][[2]]) / Times @@ (f /@ A[[1]][[1]]) / Times @@ (f /@ A[[1]][[2]]))[[2]]]
 Print["(1.1.9) ", Spaces, "\[Delta] = ", delta]
 
 mu = FullSimplify[sumbfront + sumbbehind - sumafront - sumabehind + (p-q)/2]
